@@ -1,3 +1,3 @@
 # BurritoSwarm
 Delivering burritos in a swarmy fashion
-![BurritoSwarm Screenshot](screenshots/burritoshot.png)
+![BurritoSwarm Screenshot](android/screenshots/burritoshot.png)
