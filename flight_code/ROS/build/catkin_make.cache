@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/ian/BurritoSwarm/flight_code/ROS/devel -DCMAKE_INSTALL_PREFIX=/home/ian/BurritoSwarm/flight_code/ROS/install -G Unix Makefiles
