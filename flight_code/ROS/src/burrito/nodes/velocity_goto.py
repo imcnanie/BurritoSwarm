@@ -52,6 +52,18 @@ class brekinIt:
         self.velocity_init()
 
         #self.velocity_init()
+
+
+
+    def setmode(self,base_mode=0,custom_mode="OFFBOARD",delay=2):
+        # Optimize time delay
+        set_mode = rospy.ServiceProxy('/mavros/set_mode', mavros_msgs.srv.SetMode)  
+        ret = set_mode(base_mode=base_mode, custom_mode=custom_mode)
+        print "Changing modes: ", ret
+        time.sleep(delay)
+
+
+
         
     def handle_pose(self, msg):
         pos = msg.pose.pose.position
@@ -216,27 +228,6 @@ class brekinIt:
         t.start()
 
         
-    def takeoff(self, alt=4):
-        # Make margin hella better
-
-        lat = self.current_lat
-        lon = self.current_lon
-
-        #ret = command.takeoff(altitude=alt)
-        #takeoff = rospy.ServiceProxy('/mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
-        #takeoff( 0, 0, lat, lon, 1)  
-        while abs(self.current_alt - alt) > 0.5:
-            #self.set_local_coord(0, 0, alt, delay=0.1)
-            self.x = 0
-            self.y = 0
-            self.z = 10
-            print "going to alt", self.current_alt,  alt
-
-
-        time.sleep(2)
-        
-        rospy.loginfo("Reached target Alt!")
-
     def arm(self):
         print dir(mavros)
         arm = rospy.ServiceProxy('/mavros/cmd/arming', mavros_msgs.srv.CommandBool)  
@@ -278,14 +269,7 @@ class brekinIt:
 
     ##    rospy.loginfo("Landed?")
         
-    def setmode(self,base_mode=0,custom_mode="OFFBOARD",delay=2):
-        # Optomize time delay
-        # Optimize spelling of Optimize
 
-        set_mode = rospy.ServiceProxy('/mavros/set_mode', mavros_msgs.srv.SetMode)  
-        ret = set_mode(base_mode=base_mode, custom_mode=custom_mode)
-        print "Changing modes: ", ret
-        time.sleep(delay)
 
 
 
@@ -463,25 +447,21 @@ if __name__ == '__main__':
     brekin.subscribe_pose_thread()
     
     time.sleep(1)
-    #brekin.setmode(custom_mode="MANUAL")
-    
-    #brekin.publish_pose_thread()
-    #
+
     brekin.set_velocity_publish(True)
 
     time.sleep(.1)
 
     
     print "set mode"
-    brekin.setmode()
+    brekin.setmode(custom_mode="OFFBOARD")
     brekin.arm()
-    #brekin.setmode()
-    #brekin
+
     time.sleep(.1)
     brekin.takeoff_velocity()
-    #brekin.set_velocity(0,0,0.1)
+
     print "out of takeoff"
-    #time.sleep(10)
+
 
     brekin.set_publish(False)
 
@@ -505,7 +485,3 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         #print "Current Lat: ", brekin.current_lat, " Current Lon: ", brekin.current_lon
         print "Landed!"
-
-
-
-    
