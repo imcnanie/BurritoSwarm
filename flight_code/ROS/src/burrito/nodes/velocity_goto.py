@@ -102,6 +102,7 @@ class brekinIt:
         self.vy = 0.0
         self.vz = 0.0
         self.yaw = 0.0
+        self.yaw_target = 0.0
         self.velocity_publish = False
         self.use_pid = True
 
@@ -131,6 +132,8 @@ class brekinIt:
                 stamp=rospy.Time.now()),    # stamp should update
         )
         i =0
+
+        #angle_cont
         while not rospy.is_shutdown():
             #print "publishing velocity"
             self.throttle_update = self.pid_throttle.update(self.current_alt)
@@ -139,11 +142,14 @@ class brekinIt:
                 msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude+pid_offset)
             else:
                 msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
+                #msg.twist.linear = geometry_msgs.msg.Vector3(0, 1, self.vz*magnitude)
 
             # Yaw won't work
             yaw_degrees = self.yaw  # North
             yaw = radians(yaw_degrees)
             quaternion = quaternion_from_euler(0, 0, yaw)
+
+            #msg.twist.angular = geometry_msgs.msg.Vector3(0,0,self.yaw_target)
             if self.velocity_publish:
                 self.pub_vel.publish(msg)
             
@@ -173,7 +179,48 @@ class brekinIt:
 
     def velocity_gps_goto(self, lat, lon, alt):
         pid_lat = pid_controller.PID()
+        pid_lon = pid_controller.PID()
+        magnitude = 4 #m/s
+        #pid_yaw = pid_controller.PID()
+
+        #pid_yaw.setPoint(0)
         
+        pid_lat.setPoint(lat)
+        pid_lon.setPoint(lon)
+        
+        while True:
+            print "cur lat: ", self.current_lat, " target lat: ", lat, " cur lon: ", self.current_lon, " target lon: ", lon
+
+            self.vx = pid_lat.update(self.current_lat)
+            self.vy = pid_lon.update(self.current_lon)
+            if self.vx > magnitude:
+                self.vx = magnitude
+            if self.vx < -magnitude:
+                self.vx = -magnitude
+            if self.vy > magnitude:
+                self.vy = magnitude
+            if self.vy < -magnitude:
+                self.vy = -magnitude
+            
+            #print "vely: ", self.vy, "velx: ", self.vx
+
+            #self.yaw_target = pid_yaw.update(angle_error)
+
+            
+            ## if angle_error > 0:
+            ##     self.yaw_target = -0.25
+            ## elif angle_error < 0:
+            ##     self.yaw_target = 0.25
+            ## else:
+            ##     self.yaw_target = 0
+
+            ##if self.yaw_target > 0.25:
+            ##    self.yaw_target = 0.25
+            ##elif self.yaw_target < -0.25:
+            ##    self.yaw_target = -0.25
+
+            ## ##print "ANG ERROR: ", angle_error, " YAW Target: ", self.yaw_target
+                
         self.pid_alt.setPoint(alt)
         self.use_pid = True
         pid_lat.setPoint(lat)
@@ -181,6 +228,9 @@ class brekinIt:
         self.set_velocity_publish(True)
         
         while abs(self.current_lat - lat) > 0.2:
+
+             
+            
             vel_x = pid_lat.update(self.current_lat)
             if vel_x > 5:
                 vel_x = 5
@@ -188,12 +238,10 @@ class brekinIt:
                 vel_x = -5
             #self.publish_orientation()
             self.yaw = 67
-            self.set_velocity(vel_x, 0, 0)
+            self.set_velocity(vel_x, 0, 0, yaw=60)
             print "ABS current lat min lat: ", abs(self.current_lat - lat)
             #print "Current lat, target lat: ", self.current_lat, " ", lat
 
-
-            
     def land_velocity(self):
         self.use_pid = False
         #self.set_velocity(0, 0, -0.4)
@@ -205,8 +253,7 @@ class brekinIt:
         #self.disarm()
 
     def takeoff_velocity(self, alt=7):
-        # Make margin hella better
-        
+        # Make margin hella better        
         self.use_pid = False
         while abs(self.current_alt - alt) > 0.2:
         
@@ -247,7 +294,6 @@ if __name__ == '__main__':
     brekin.set_velocity_publish(True)
 
     time.sleep(.1)
-
     
     print "set mode"
     brekin.setmode(custom_mode="OFFBOARD")
@@ -258,13 +304,12 @@ if __name__ == '__main__':
 
     print "out of takeoff"
 
+    #brekin.blocked_yaw()
+    #print "blocked_yaw"
+    #time.sleep(1)
 
-    brekin.blocked_yaw()
-    print "blocked_yaw"
-    time.sleep(1)
-
-    print "going to gps"
-    brekin.velocity_gps_goto(465700.071181, brekin.current_lon, 10)
+    print "going to gps", brekin.current_lat
+    brekin.velocity_gps_goto(465698.83783, 5249502.63081, 10)
     print "at gps, waiting"
     time.sleep(1)
     print "done"

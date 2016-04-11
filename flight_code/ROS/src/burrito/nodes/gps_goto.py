@@ -98,8 +98,8 @@ class brekinIt:
 
     def gps_goto(self, lat, lon, alt, delay=0):
         #print "in coord"
-        self.x = lat - self.home_lat
-        self.y = lon - self.home_lon
+        self.x = lat
+        self.y = lon
         self.z = alt
         time.sleep(delay)
         
@@ -441,22 +441,31 @@ class brekinIt:
         rospy.loginfo("Reached target Alt!")
         self.use_pid = True
 
-    def blocked_yaw(self, yaw = 167):
-        att_pub = SP.get_pub_attitude_pose(queue_size=10)
-        thd_pub = SP.get_pub_attitude_throttle(queue_size=10)
-
-        #while not rospy.is_shutdown():
-        pose = SP.PoseStamped(header=SP.Header(stamp=rospy.get_rostime()))
-        q = quaternion_from_euler(0, 0, self.yaw)
-        pose.pose.orientation = SP.Quaternion(*q)
-        
-        
-        if self.attitude_publish or True:
-            att_pub.publish(pose)
-            thd_pub.publish(data=0.4)
+    def blocked_yaw(self, yaw = 120):
+        throttle_pid = pid_controller.PID(P = 1.0, I = 0.0, D = 0.5, Integrator_max = 0.5, Integrator_min = 0.0)
+        throttle_pid.setPoint(self.current_alt)
+        "attempting to maintain alt: ", self.current_alt
+        time.sleep(2)
+        while True:
+            att_pub = SP.get_pub_attitude_pose(queue_size=10)
+            thd_pub = SP.get_pub_attitude_throttle(queue_size=10)
             
-            print "pose orientation: ", self.throttle_update
-            #self.attitude_publish = False
+            #while not rospy.is_shutdown():
+            pose = SP.PoseStamped(header=SP.Header(stamp=rospy.get_rostime()))
+            q = quaternion_from_euler(0, 0, 90)
+            pose.pose.orientation = SP.Quaternion(*q)
+            
+            throt = throttle_pid.update(self.current_alt)
+            #if throt > 0.6:
+            #    throt = 0.6
+            #if throt < 0.4:
+            #    throt = 0.6
+            if self.attitude_publish or True:
+                att_pub.publish(pose)
+                thd_pub.publish(data=throt)
+                
+                print "pose orientation: ", throt
+                #self.attitude_publish = False
         
 if __name__ == '__main__':
     brekin = brekinIt()
@@ -483,8 +492,11 @@ if __name__ == '__main__':
     print "out of takeoff"
     #time.sleep(10)
 
-    brekin.set_publish(False)
-
+    brekin.set_publish(True)
+    print "gps goto"
+    brekin.gps_goto(1,1,10)
+    time.sleep(10)
+    brekin.set_velocity_publish(False)
 
     brekin.blocked_yaw()
     print "blocked_yaw"
