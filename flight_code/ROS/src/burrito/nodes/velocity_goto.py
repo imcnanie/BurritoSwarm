@@ -5,6 +5,7 @@ import rospy
 import tf
 from math import *
 from nav_msgs.msg import Odometry
+from sensor_msgs.msg import NavSatFix
 import geometry_msgs.msg
 import mavros
 import mavros_msgs.srv
@@ -18,6 +19,8 @@ import thread
 import pid_controller
 print "broadcasting"
 
+import utm
+
 #roslib.load_manifest('odom_publisher')
 
 #import mavros
@@ -25,7 +28,7 @@ print "broadcasting"
 #pub = SP.get_pub_position_local(queue_size=10)
 class brekinIt:
     def __init__(self):
-        rospy.init_node('gps_goto')
+        rospy.init_node('velocity_goto')
         mavros.set_namespace()  # initialize mavros module with default namespace
         self.x = 0.0
         self.y = 0.0
@@ -60,6 +63,16 @@ class brekinIt:
         self.current_lon = pos.y
         self.current_alt = pos.z
 
+        if not self.setHome:
+            self.home_lat = self.current_lat
+            self.home_lon = self.current_lon
+            self.home_alt = self.current_alt
+            self.setHome = True
+        
+    def handle_global_pose(self, msg):
+        self.current_lat = msg.latitude
+        self.current_lon = msg.longitude
+
 
         if not self.setHome:
             self.home_lat = self.current_lat
@@ -76,6 +89,9 @@ class brekinIt:
         rospy.Subscriber('/mavros/global_position/local',
                          Odometry,
                          self.handle_pose)
+        ## rospy.Subscriber('/mavros/global_position/global',
+        ##                  NavSatFix,
+        ##                  self.handle_global_pose)
          
         rospy.spin()
 
@@ -189,8 +205,8 @@ class brekinIt:
         pid_lon.setPoint(lon)
         
         while True:
-            print "cur lat: ", self.current_lat, " target lat: ", lat, " cur lon: ", self.current_lon, " target lon: ", lon
-
+            #print "cur lat: ", self.current_lat, " target lat: ", lat, " cur lon: ", self.current_lon, " target lon: ", lon
+            print "self.vx: ", self.vx, "self.vy: ", self.vy
             self.vx = pid_lat.update(self.current_lat)
             self.vy = pid_lon.update(self.current_lon)
             if self.vx > magnitude:
@@ -304,12 +320,12 @@ if __name__ == '__main__':
 
     print "out of takeoff"
 
-    #brekin.blocked_yaw()
-    #print "blocked_yaw"
-    #time.sleep(1)
-
     print "going to gps", brekin.current_lat
-    brekin.velocity_gps_goto(465698.83783, 5249502.63081, 10)
+    #brekin.velocity_gps_goto(465698.83783, 5249502.63081, 10)
+
+    utm_coords = utm.from_latlon(47.3980341, 8.5459503)
+    #brekin.velocity_gps_goto(465737.856878, 5249497.69158, 10)
+    brekin.velocity_gps_goto(utm_coords[0], utm_coords[1], 10)
     print "at gps, waiting"
     time.sleep(1)
     print "done"
