@@ -101,7 +101,7 @@ class brekinIt:
         s.start()
         
     def arm(self):
-        print dir(mavros)
+        #print dir(mavros)
         arm = rospy.ServiceProxy('/mavros/cmd/arming', mavros_msgs.srv.CommandBool)  
         print "Arm: ", arm(True)
         
@@ -123,7 +123,7 @@ class brekinIt:
         self.use_pid = True
 
         self.pid_alt = pid_controller.PID()
-        self.pid_alt.setPoint(1.0)
+        self.pid_alt.setPoint(10.0)
         # publisher for mavros/setpoint_position/local
         self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
         # subscriber for mavros/local_position/local
@@ -196,17 +196,18 @@ class brekinIt:
     def velocity_gps_goto(self, lat, lon, alt):
         pid_lat = pid_controller.PID()
         pid_lon = pid_controller.PID()
-        magnitude = 4 #m/s
+        magnitude = 3.5 #m/s
         #pid_yaw = pid_controller.PID()
 
         #pid_yaw.setPoint(0)
         
         pid_lat.setPoint(lat)
         pid_lon.setPoint(lon)
+        self.pid_alt.setPoint(alt)
         
         while True:
             #print "cur lat: ", self.current_lat, " target lat: ", lat, " cur lon: ", self.current_lon, " target lon: ", lon
-            print "self.vx: ", self.vx, "self.vy: ", self.vy
+            #print "self.vx: ", self.vx, "self.vy: ", self.vy
             self.vx = pid_lat.update(self.current_lat)
             self.vy = pid_lon.update(self.current_lon)
             if self.vx > magnitude:
@@ -217,6 +218,11 @@ class brekinIt:
                 self.vy = magnitude
             if self.vy < -magnitude:
                 self.vy = -magnitude
+
+            print "a: ",abs(self.current_lat - lat), "b: ",abs(self.current_lon - lon)
+            if abs(self.current_lon - lon) < 0.30 and abs(self.current_lat - lat) < 0.50:
+                break
+
             
             #print "vely: ", self.vy, "velx: ", self.vx
 
@@ -263,7 +269,7 @@ class brekinIt:
         #self.set_velocity(0, 0, -0.4)
         self.set_velocity(0, 0, -1)
         while self.current_alt > 0.2:
-            pass #print "landing: ", self.current_alt
+            print "landing: ", self.current_alt
         print "Landed, disarming"
         self.set_velocity(0, 0, 0)
         #self.disarm()
@@ -325,7 +331,7 @@ if __name__ == '__main__':
 
     utm_coords = utm.from_latlon(47.3980341, 8.5459503)
     #brekin.velocity_gps_goto(465737.856878, 5249497.69158, 10)
-    brekin.velocity_gps_goto(utm_coords[0], utm_coords[1], 10)
+    brekin.velocity_gps_goto(utm_coords[0], utm_coords[1],40.0)
     print "at gps, waiting"
     time.sleep(1)
     print "done"
@@ -333,5 +339,5 @@ if __name__ == '__main__':
     brekin.land_velocity()
     brekin.set_velocity_publish(False)
 
-    while not rospy.is_shutdown():
-        print "Landed!"
+    #while not rospy.is_shutdown():
+    print "Landed!"
