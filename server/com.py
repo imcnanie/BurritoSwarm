@@ -79,7 +79,7 @@ class vehicleLink:
 
         self.alt = 0
 
-    def connect(self, ip = '', port = 5008):
+    def connect(self, ip = '127.0.0.1', port = 5008):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         #self.sock.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 

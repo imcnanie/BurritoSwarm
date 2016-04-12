@@ -196,7 +196,7 @@ class brekinIt:
     def velocity_gps_goto(self, lat, lon, alt):
         pid_lat = pid_controller.PID()
         pid_lon = pid_controller.PID()
-        magnitude = 3.5 #m/s
+        magnitude = 1.5 #m/s
         #pid_yaw = pid_controller.PID()
 
         #pid_yaw.setPoint(0)

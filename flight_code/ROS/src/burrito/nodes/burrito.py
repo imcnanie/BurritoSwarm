@@ -17,6 +17,10 @@ from com import vehicleLink
 from com import vehicleCommander
 
 
+import utm
+
+SIMULATE = True
+
 def status(message, server_comm):
     print message
     if server_comm:
@@ -38,7 +42,7 @@ class dropper:
 class vehicleController:
     def __init__(self, veh_obj, bas_obj):
         #self.dronekit_vc = connect('127.0.0.1:14550', wait_ready = True)
-        self.brekin = brekinIt()
+        self.brekin = velocity_goto.brekinIt()
         self.brekin.subscribe_pose_thread()
 
 
@@ -62,12 +66,12 @@ class vehicleController:
         self.brekin.set_velocity_publish(True)
         time.sleep(.1)
         print "set mode"
-        brekin.setmode(custom_mode="OFFBOARD")
-        brekin.arm()
+        self.brekin.setmode(custom_mode="OFFBOARD")
+        self.brekin.arm()
         print "ARMING"
 
         time.sleep(.1)
-        brekin.takeoff_velocity()
+        self.brekin.takeoff_velocity()
 
         status("TAKING OFF", self.bas_obj)
 
@@ -78,9 +82,9 @@ class vehicleController:
     def go_to(self, x, y, convert_to_utm=True):
         if convert_to_utm:
             utm_coords = utm.from_latlon(x, y)
-            brekin.velocity_gps_goto(utm_coords[0], utm_coords[1],40.0)
+            self.brekin.velocity_gps_goto(utm_coords[0], utm_coords[1],40.0)
         else:
-            brekin.velocity_gps_goto(x, y,40.0)
+            self.brekin.velocity_gps_goto(x, y,40.0)
         print "at gps, waiting"
         time.sleep(1)
         print "done"
@@ -141,8 +145,8 @@ class vehicleController:
         else:
             status("LANDING", self.bas_obj)
             #self.dronekit_vc.mode = VehicleMode("LAND")
-            brekin.land_velocity()
-            brekin.set_velocity_publish(False)
+            self.brekin.land_velocity()
+            self.brekin.set_velocity_publish(False)
             print "reimplement armed check"
             # while self.dronekit_vc.armed: 
             #     time.sleep(0.1)
@@ -158,8 +162,8 @@ class vehicleController:
         situation = self.go_to(h_x, h_y, convert_to_utm=False)
 
         status("LANDING...", self.bas_obj)
-        brekin.land_velocity()
-        brekin.set_velocity_publish(False)
+        self.brekin.land_velocity()
+        self.brekin.set_velocity_publish(False)
         #self.dronekit_vc.mode = VehicleMode("LAND")
 
         status("HOME!", self.bas_obj)
@@ -170,16 +174,33 @@ if __name__ == '__main__':
 
 
     vl = vehicleLink()
-    vl.connect()
+    vl.connect(ip = '127.0.0.1')
     vl.listen()
 
     bc = vehicleCommander()
-    bc.connect(port = 5009)
+    bc.connect(ip = '127.0.0.1', port = 5009)
     bc.start_streaming()
 
     v = vehicleController(vl, bc)
 
     while True:
+        if SIMULATE:
+            status("WAITING FOR HOME OFFSET...", bc)
+    
+            if True:
+                while True:
+                    if vl.message == "GO": break
+                    time.sleep(0.01)
+    
+            vl.message = ""
+
+
+            offset_lat = vl.dists[0]
+            offset_lon = vl.dists[1]
+            sim_lat, sim_lon = utm.to_latlon(v.brekin.home_lat, v.brekin.home_lon, 32, 'U')
+            offset_lat = sim_lat - offset_lat
+            offset_lon = sim_lon - offset_lon
+            
         status("WAITING FOR COORDINATES...", bc)
 
         if True:
@@ -192,13 +213,18 @@ if __name__ == '__main__':
         coord = []
         for i in range(4): coord.append(0.0)
 
+
         coord[2] = vl.dists[0]
         coord[3] = vl.dists[1]
 
+        if SIMULATE:
+            coord[2] = coord[2] + offset_lat
+            coord[3] = coord[3] + offset_lon
+            
         v.alt = 40     # FOR NOW
 
         status("PROCEEDING TO " + str(coord[2]) + ", " + str(coord[3]), bc)
-
+        #v.brekin.home_lat
         #v.dronekit_vc.mode = VehicleMode("GUIDED")
         v.brekin.setmode(custom_mode="OFFBOARD")
         time.sleep(2.5)
