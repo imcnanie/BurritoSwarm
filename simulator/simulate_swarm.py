@@ -35,8 +35,9 @@ for i in range(14, cops+14):
 	#os.chdir(os.path.join(os.path.abspath(os.path.curdir),".."))
         time.sleep(1)
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),u'Firmware'))
-        subprocess.call('cp ../flight_code/ROS/src/burrito/launch/px4_swarm.launch ../flight_code/ROS/src/mavros/mavros/launch/', shell=True)
-        subprocess.call('cp ../flight_code/ROS/src/burrito/launch/node_swarm.launch ../flight_code/ROS/src/mavros/mavros/launch/', shell=True)
+        if i == 14:
+            subprocess.call('cp ../flight_code/ROS/src/burrito/launch/px4_swarm.launch ../flight_code/ROS/src/mavros/mavros/launch/', shell=True)
+            subprocess.call('cp ../flight_code/ROS/src/burrito/launch/node_swarm.launch ../flight_code/ROS/src/mavros/mavros/launch/', shell=True)
     else:
         print filena, " exists."
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),filena+'/Firmware'))
