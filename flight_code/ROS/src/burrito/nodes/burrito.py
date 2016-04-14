@@ -40,9 +40,9 @@ class dropper:
         
 
 class vehicleController:
-    def __init__(self, veh_obj, bas_obj):
+    def __init__(self, veh_obj, bas_obj, copter_id):
         #self.dronekit_vc = connect('127.0.0.1:14550', wait_ready = True)
-        self.brekin = velocity_goto.brekinIt()
+        self.brekin = velocity_goto.brekinIt(copter_id=copter_id, mavros_string="/mavros/copter"+copter_id)
         self.brekin.subscribe_pose_thread()
 
 
@@ -62,15 +62,15 @@ class vehicleController:
             self.dronekit_vc.flush()
 
     def take_off(self):
-        time.sleep(1)
+        time.sleep(0.1)
         self.brekin.set_velocity_publish(True)
-        time.sleep(.1)
+        time.sleep(0.1)
         print "set mode"
         self.brekin.setmode(custom_mode="OFFBOARD")
         self.brekin.arm()
         print "ARMING"
 
-        time.sleep(.1)
+        time.sleep(0.1)
         self.brekin.takeoff_velocity()
 
         status("TAKING OFF", self.bas_obj)
@@ -86,7 +86,7 @@ class vehicleController:
         else:
             self.brekin.velocity_gps_goto(x, y,40.0)
         print "at gps, waiting"
-        time.sleep(1)
+        time.sleep(0.1)
         print "done"
         ## a_location = LocationGlobalRelative(x, y, self.alt)
         ## self.dronekit_vc.simple_goto(a_location)
@@ -181,10 +181,13 @@ if __name__ == '__main__':
     bc.connect(ip = '127.0.0.1', port = 5009)
     bc.start_streaming()
 
-    v = vehicleController(vl, bc)
+    copter_id = raw_input("Copter ID: ")
+    
+    v = vehicleController(vl, bc, copter_id)
 
     while True:
         if SIMULATE:
+            
             status("WAITING FOR HOME OFFSET...", bc)
     
             if True:
@@ -227,7 +230,7 @@ if __name__ == '__main__':
         #v.brekin.home_lat
         #v.dronekit_vc.mode = VehicleMode("GUIDED")
         v.brekin.setmode(custom_mode="OFFBOARD")
-        time.sleep(2.5)
+        time.sleep(0.1)
 
         v.deliver(coord, bc) # BANG
 

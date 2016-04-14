@@ -27,9 +27,9 @@ import utm
 #mavros.set_namespace()
 #pub = SP.get_pub_position_local(queue_size=10)
 class brekinIt:
-    def __init__(self):
-        rospy.init_node('velocity_goto')
-        mavros.set_namespace()  # initialize mavros module with default namespace
+    def __init__(self, copter_id="1", mavros_string="/mavros/copter1"):
+        rospy.init_node('velocity_goto_'+copter_id)
+        mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
         self.x = 0.0
         self.y = 0.0
         self.z = 0.0
@@ -38,6 +38,8 @@ class brekinIt:
         self.current_alt = 0.0
         self.throttle_update = 0.0
         self.attitude_publish = True
+        self.mavros_string = mavros_string
+        self.copter_id = copter_id
 
         self.pid_throttle = pid_controller.PID(P = 0.8, I = 0.8, D = 0.8, Integrator_max=1, Integrator_min=0)
         self.pid_throttle.setPoint(10)
@@ -49,9 +51,9 @@ class brekinIt:
         self.publish = True
         self.velocity_init()
 
-    def setmode(self,base_mode=0,custom_mode="OFFBOARD",delay=2):
+    def setmode(self,base_mode=0,custom_mode="OFFBOARD",delay=0.1):
         # Optimize time delay
-        set_mode = rospy.ServiceProxy('/mavros/set_mode', mavros_msgs.srv.SetMode)  
+        set_mode = rospy.ServiceProxy(self.mavros_string+'/set_mode', mavros_msgs.srv.SetMode)  
         ret = set_mode(base_mode=base_mode, custom_mode=custom_mode)
         print "Changing modes: ", ret
         time.sleep(delay)
@@ -86,7 +88,7 @@ class brekinIt:
     def subscribe_pose(self):
         #rate = rospy.Rate(10.0)
         #while not rospy.is_shutdown():
-        rospy.Subscriber('/mavros/global_position/local',
+        rospy.Subscriber(self.mavros_string+'/global_position/local',
                          Odometry,
                          self.handle_pose)
         ## rospy.Subscriber('/mavros/global_position/global',
@@ -102,11 +104,11 @@ class brekinIt:
         
     def arm(self):
         #print dir(mavros)
-        arm = rospy.ServiceProxy('/mavros/cmd/arming', mavros_msgs.srv.CommandBool)  
+        arm = rospy.ServiceProxy(self.mavros_string+'/cmd/arming', mavros_msgs.srv.CommandBool)  
         print "Arm: ", arm(True)
         
     def disarm(self):
-        arm = rospy.ServiceProxy('/mavros/cmd/arming', mavros_msgs.srv.CommandBool)  
+        arm = rospy.ServiceProxy(self.mavros_string+'/cmd/arming', mavros_msgs.srv.CommandBool)  
         print "Disarm: ", arm(False)
 
     
@@ -285,7 +287,7 @@ class brekinIt:
             self.set_velocity(0, 0, 2.5)
         
 
-        time.sleep(2)
+        time.sleep(0.1)
         
         rospy.loginfo("Reached target Alt!")
         self.use_pid = True
@@ -311,17 +313,17 @@ if __name__ == '__main__':
     brekin = brekinIt()
     brekin.subscribe_pose_thread()
     
-    time.sleep(1)
+    time.sleep(0.1)
 
     brekin.set_velocity_publish(True)
 
-    time.sleep(.1)
+    time.sleep(0.1)
     
     print "set mode"
     brekin.setmode(custom_mode="OFFBOARD")
     brekin.arm()
 
-    time.sleep(.1)
+    time.sleep(0.1)
     brekin.takeoff_velocity()
 
     print "out of takeoff"
@@ -333,7 +335,7 @@ if __name__ == '__main__':
     #brekin.velocity_gps_goto(465737.856878, 5249497.69158, 10)
     brekin.velocity_gps_goto(utm_coords[0], utm_coords[1],40.0)
     print "at gps, waiting"
-    time.sleep(1)
+    time.sleep(0.1)
     print "done"
 
     brekin.land_velocity()

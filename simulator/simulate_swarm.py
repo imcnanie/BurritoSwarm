@@ -29,6 +29,10 @@ for i in range(14, cops+14):
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),filena))
         
         subprocess.call(["git", "clone", "https://github.com/imcnanie/Firmware.git"])
+        #working gazebo commit
+	#os.chdir(os.path.join(os.path.abspath(os.path.curdir),"Firmware"))
+        #subprocess.call(["git", "reset", "--hard", "8810ee33a4d44fbcc83606c175bff024ce937e68"])
+	#os.chdir(os.path.join(os.path.abspath(os.path.curdir),".."))
         time.sleep(1)
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),u'Firmware'))
     else:
@@ -47,6 +51,10 @@ for i in range(14, cops+14):
     inplace_change(path+"/Vagrantfile", old+"556", new+"556")
     inplace_change(path+"/Vagrantfile", old+"560", new+"560")
     inplace_change(path+"/src/modules/mavlink/mavlink_main.cpp", old+"556", new+"556")
+    inplace_change(path+"/posix-configs/SITL/init/rcS_gazebo_iris", old+"556", new+"556")
+    inplace_change(path+"/posix-configs/SITL/init/rcS_gazebo_iris", old+"557", new+"557")
+    inplace_change(path+"/posix-configs/SITL/init/rcS_gazebo_iris", old+"540", new+"540")
+    inplace_change(path+"/posix-configs/SITL/init/rcS_jmavsim_iris", old+"556", new+"556")
     inplace_change(path+"/posix-configs/SITL/init/rcS_jmavsim_iris", old+"557", new+"557")
     inplace_change(path+"/posix-configs/SITL/init/rcS_jmavsim_iris", old+"540", new+"540")
     inplace_change(path+"/Tools/CI/MissionCheck.py", old+"540", new+"540")
@@ -78,8 +86,11 @@ for i in range(14, cops+14):
     #subprocess.call('sed -e -i s/1' +old+ '550/' +new+ '550/g' +path+ '/src/modules/mavlink/mavlink_main.cpp', shell=True)
     #subprocess.call('sed -e -i s/1' +old+ '560/' +new+ '560/g' +path+ '/Tools/sitl_run.sh', shell=True)
     #subprocess.call('sed -e -i s/1' +old+ '560/' +new+ '560/g' +path+ '/src/modules/simulator/simulator_mavlink.cpp', shell=True)
-    print 'gnome-terminal '+ '--working-directory='+path+ '\" make posix_sitl_default jmavsim\" &'
-    subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim\"', shell=True)
+    #print 'gnome-terminal '+ '--working-directory='+path+ '\" make posix_sitl_default jmavsim\" &'
+    #print 'gnome-terminal '+ '--working-directory='+path+ ' -e \"no_sim=1 make posix_sitl_default gazebo\"'
+    #subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"../../make_sim.sh\"', shell=True)
+    print 'gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim\"'
+    subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim"', shell=True)
 
     os.chdir(os.path.join(os.path.abspath(os.path.curdir),"../.."))
     
