@@ -7,6 +7,28 @@ key = raw_input()
 
 cops = int(key)
 
+THREEDR_ROOF_FAR_LEFT = [37.8733607443866,-122.30264715850353]
+#THREEDR_ROOF_CENTER = [37.87337688844867,-122.30254221707584]
+THREEDR_ROOF_FAR_RIGHT = [37.87342029213903,-122.30243761092424]
+THREEDR_ROOF_ALT = 4
+THREEDR_ROOF_LENGTH_LAT = THREEDR_ROOF_FAR_RIGHT[0] - THREEDR_ROOF_FAR_LEFT[0]
+THREEDR_ROOF_LENGTH_LON = THREEDR_ROOF_FAR_RIGHT[1] - THREEDR_ROOF_FAR_LEFT[1]
+THREEDR_ROOF_CENTER = [THREEDR_ROOF_FAR_LEFT[0] + (THREEDR_ROOF_LENGTH_LAT)/2, THREEDR_ROOF_FAR_LEFT[1] + (THREEDR_ROOF_LENGTH_LON)/2]
+swarm_coords = []
+cop_lat, cop_lon = [THREEDR_ROOF_FAR_LEFT[0], THREEDR_ROOF_FAR_LEFT[1]]
+
+
+for copter in range(cops):
+    lat_step = THREEDR_ROOF_LENGTH_LAT/(cops+1)
+    lon_step = THREEDR_ROOF_LENGTH_LAT/(cops+1)
+    cop_lat = lat_step + cop_lat
+    cop_lon = lat_step + cop_lon
+    swarm_coords.append(str((cop_lat, cop_lon, THREEDR_ROOF_ALT)))
+
+print "SWARM COORDS: ", swarm_coords
+
+
+
 def inplace_change(filename, old_string, new_string):
     s=open(filename).read()
     if old_string in s:
@@ -19,6 +41,10 @@ def inplace_change(filename, old_string, new_string):
     else:
         print 'No occurances of "{old_string}" found.'.format(**locals())
 
+
+
+
+        
 for i in range(14, cops+14):
 
     filena = "copter"+str(i-13)
@@ -38,10 +64,15 @@ for i in range(14, cops+14):
         if i == 14:
             subprocess.call('cp ../flight_code/ROS/src/burrito/launch/px4_swarm.launch ../flight_code/ROS/src/mavros/mavros/launch/', shell=True)
             subprocess.call('cp ../flight_code/ROS/src/burrito/launch/node_swarm.launch ../flight_code/ROS/src/mavros/mavros/launch/', shell=True)
+
+
     else:
         print filena, " exists."
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),filena+'/Firmware'))
 
+
+    
+        
 
     print "filena"
     old = str(14)
@@ -49,7 +80,13 @@ for i in range(14, cops+14):
     path = os.path.abspath(os.path.curdir)
     print "THE PATH: ", path
 
-
+    subprocess.call('mv /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java.orig', shell=True)
+    subprocess.call('cp ../../extras/Simulator.java /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java', shell=True)
+    
+    oldsim_str = "public static LatLonAlt DEFAULT_ORIGIN_POS = new LatLonAlt(47.397742, 8.545594, 488);"
+    newsim_str = "public static LatLonAlt DEFAULT_ORIGIN_POS = new LatLonAlt"+swarm_coords[i-14]+";"
+    print newsim_str
+    inplace_change(path+"/Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java", oldsim_str, newsim_str)
 
     inplace_change(path+"/Vagrantfile", old+"556", new+"556")
     inplace_change(path+"/Vagrantfile", old+"560", new+"560")
@@ -65,33 +102,10 @@ for i in range(14, cops+14):
     inplace_change(path+"/src/modules/mavlink/mavlink_main.cpp", old+"550", new+"550")
     inplace_change(path+"/Tools/sitl_run.sh", old+"560", new+"560")
     inplace_change(path+"/src/modules/simulator/simulator_mavlink.cpp", old+"560", new+"560")
+    
+   
 
     
-    ## print "pysed -r \""+old+"560\" "+new+"560 "+path+"/Vagrantfile"
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"556 "+new+"556 "+path+"/Vagrantfile", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"560 "+new+"560 "+path+"/Vagrantfile", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"556 "+new+"556 "+path+"/src/modules/mavlink/mavlink_main.cpp", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"557 "+new+"557 "+path+"/posix-configs/SITL/init/rcS_jmavsim_iris", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"540 "+new+"540 "+path+"/posix-configs/SITL/init/rcS_jmavsim_iris", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"540 "+new+"540 "+path+"/Tools/CI/MissionCheck.py", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"550 "+new+"550 "+path+"/posix-configs/SITL/README.md", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"550 "+new+"550 "+path+"/src/modules/mavlink/mavlink_main.cpp", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"560 "+new+"560 "+path+"/Tools/sitl_run.sh", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    ## subprocess.call("/usr/local/bin/pysed -r "+old+"560 "+new+"560 "+path+"/src/modules/simulator/simulator_mavlink.cpp", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    #subprocess.call("echo \"trip\"",shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '556/' +new+ '556/g' +path+ '/Vagrantfile', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '560/' +new+ '560/g' +path+ '/Vagrantfile', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '556/' +new+ '556/g' +path+ '/src/modules/mavlink/mavlink_main.cpp ', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '557/' +new+ '557/g' +path+ '/posix-configs/SITL/init/rcS_jmavsim_iris', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '540/' +new+ '540/g' +path+ '/posix-configs/SITL/init/rcS_jmavsim_iris', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '540/' +new+ '540/g' +path+ '/Tools/CI/MissionCheck.py ', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '550/' +new+ '550/g' +path+ '/posix-configs/SITL/README.md ', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '550/' +new+ '550/g' +path+ '/src/modules/mavlink/mavlink_main.cpp', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '560/' +new+ '560/g' +path+ '/Tools/sitl_run.sh', shell=True)
-    #subprocess.call('sed -e -i s/1' +old+ '560/' +new+ '560/g' +path+ '/src/modules/simulator/simulator_mavlink.cpp', shell=True)
-    #print 'gnome-terminal '+ '--working-directory='+path+ '\" make posix_sitl_default jmavsim\" &'
-    #print 'gnome-terminal '+ '--working-directory='+path+ ' -e \"no_sim=1 make posix_sitl_default gazebo\"'
-    #subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"../../make_sim.sh\"', shell=True)
     print 'gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim\"'
     subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim"', shell=True)
 
