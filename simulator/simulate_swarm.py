@@ -55,6 +55,7 @@ for i in range(14, cops+14):
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),filena))
         
         subprocess.call(["git", "clone", "https://github.com/imcnanie/Firmware.git"])
+        subprocess.call(["git submodule update --init --recursive"], shell=True)
         #working gazebo commit
 	#os.chdir(os.path.join(os.path.abspath(os.path.curdir),"Firmware"))
         #subprocess.call(["git", "reset", "--hard", "8810ee33a4d44fbcc83606c175bff024ce937e68"])
@@ -80,13 +81,16 @@ for i in range(14, cops+14):
     path = os.path.abspath(os.path.curdir)
     print "THE PATH: ", path
 
-    subprocess.call('mv /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java.orig', shell=True)
-    subprocess.call('cp ../../extras/Simulator.java /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java', shell=True)
+    try:
+        subprocess.call('mv /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java.orig', shell=True)
+        subprocess.call('cp ../../extras/Simulator.java /Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java', shell=True)
     
-    oldsim_str = "public static LatLonAlt DEFAULT_ORIGIN_POS = new LatLonAlt(47.397742, 8.545594, 488);"
-    newsim_str = "public static LatLonAlt DEFAULT_ORIGIN_POS = new LatLonAlt"+swarm_coords[i-14]+";"
-    print newsim_str
-    inplace_change(path+"/Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java", oldsim_str, newsim_str)
+        oldsim_str = "public static LatLonAlt DEFAULT_ORIGIN_POS = new LatLonAlt(47.397742, 8.545594, 488);"
+        newsim_str = "public static LatLonAlt DEFAULT_ORIGIN_POS = new LatLonAlt"+swarm_coords[i-14]+";"
+        print newsim_str
+        inplace_change(path+"/Tools/jMAVSim/src/me/drton/jmavsim/Simulator.java", oldsim_str, newsim_str)
+    except:
+        print "Couldn't fix jMAVsim, please run simulate swarm again when this is finished!"
 
     inplace_change(path+"/Vagrantfile", old+"556", new+"556")
     inplace_change(path+"/Vagrantfile", old+"560", new+"560")

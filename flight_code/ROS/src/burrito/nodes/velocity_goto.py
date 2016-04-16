@@ -28,7 +28,7 @@ import utm
 #pub = SP.get_pub_position_local(queue_size=10)
 class brekinIt:
     def __init__(self, copter_id="1", mavros_string="/mavros/copter1"):
-        rospy.init_node('velocity_goto_'+copter_id)
+        #rospy.init_node('velocity_goto')
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
         self.x = 0.0
         self.y = 0.0

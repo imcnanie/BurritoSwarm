@@ -4,7 +4,7 @@ import time
 import json
 import ast
 import os
-
+import rospy
 # ROS movement functions
 import velocity_goto
 
@@ -19,7 +19,9 @@ from com import vehicleCommander
 
 import utm
 
-SIMULATE = True
+rospy.init_node('burrito')
+
+SIMULATE = False
 
 def status(message, server_comm):
     print message
@@ -181,9 +183,12 @@ if __name__ == '__main__':
     bc.connect(ip = '127.0.0.1', port = 5009)
     bc.start_streaming()
 
-    copter_id = raw_input("Copter ID: ")
-    
-    v = vehicleController(vl, bc, copter_id)
+    #copter_id = raw_input("Copter ID: ")
+    copter_id = raw_input("How many copters? ")
+    vehicles = []
+    for cops in range(int(copter_id)):
+        v = vehicleController(vl, bc, str(cops+1))
+        vehicles.append(v)
 
     while True:
         if SIMULATE:
@@ -200,7 +205,7 @@ if __name__ == '__main__':
 
             offset_lat = vl.dists[0]
             offset_lon = vl.dists[1]
-            sim_lat, sim_lon = utm.to_latlon(v.brekin.home_lat, v.brekin.home_lon, 32, 'U')
+            sim_lat, sim_lon = utm.to_latlon(vehicles[0].brekin.home_lat, vehicles[0].brekin.home_lon, 32, 'U')
             offset_lat = sim_lat - offset_lat
             offset_lon = sim_lon - offset_lon
             
@@ -217,25 +222,26 @@ if __name__ == '__main__':
         for i in range(4): coord.append(0.0)
 
 
+        
         coord[2] = vl.dists[0]
         coord[3] = vl.dists[1]
 
         if SIMULATE:
             coord[2] = coord[2] + offset_lat
             coord[3] = coord[3] + offset_lon
-            
-        v.alt = 40     # FOR NOW
+        for cops in range(int(copter_id)):
+            vehicles[cops].alt = 40     # FOR NOW
 
-        status("PROCEEDING TO " + str(coord[2]) + ", " + str(coord[3]), bc)
-        #v.brekin.home_lat
-        #v.dronekit_vc.mode = VehicleMode("GUIDED")
-        v.brekin.setmode(custom_mode="OFFBOARD")
-        time.sleep(0.1)
+            status("PROCEEDING TO " + str(coord[2]) + ", " + str(coord[3]), bc)
+            #v.brekin.home_lat
+            #v.dronekit_vc.mode = VehicleMode("GUIDED")
+            vehicles[cops].brekin.setmode(custom_mode="OFFBOARD")
+            time.sleep(0.1)
 
-        v.deliver(coord, bc) # BANG
+            vehicles[cops].deliver(coord, bc) # BANG
 
-        status("HOME!", bc)
-        time.sleep(0.5)
+            status("HOME!", bc)
+            time.sleep(0.5)
 
         try:
             pass
