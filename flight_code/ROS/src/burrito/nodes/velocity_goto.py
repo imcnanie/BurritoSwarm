@@ -252,8 +252,6 @@ class brekinIt:
         self.set_velocity_publish(True)
         
         while abs(self.current_lat - lat) > 0.2:
-
-             
             
             vel_x = pid_lat.update(self.current_lat)
             if vel_x > 5:
@@ -308,6 +306,88 @@ class brekinIt:
             
             print "pose orientation: ", self.throttle_update
             #self.attitude_publish = False
+
+class posVel:
+    def __init__(self):
+        self.final_alt = 0.0
+        self.final_pos_x = 0.0
+        self.final_pos_y = 0.0        
+        self.final_vel = 0.0
+        
+        self.cur_alt = 0.0
+        self.cur_pos_x = 0.0
+        self.cur_pos_y = 0.0
+        self.cur_vel = 0.0
+
+        self.vx = 0.0
+        self.vy = 0.0
+        self.vz = 0.0
+
+        self.reached = False
+
+        # publisher for mavros/setpoint_position/local
+        self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
+        # subscriber for mavros/local_position/local
+        self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
+
+    def update(self, com_x, com_y, com_v):
+        self.final_pos_x = com_x
+        self.final_pos_y = com_y
+        self.final_vel = com_v
+
+    def subscribe_pose(self):
+        rospy.Subscriber(self.mavros_string+'/global_position/local',
+                         Odometry,
+                         self.handle_pose)
+         
+        rospy.spin()
+
+    def subscribe_pose_thread(self):
+        s = Thread(target=self.subscribe_pose, args=())
+        s.daemon = True
+        s.start()
+        
+    def handle_pose(self, msg):
+        pos = msg.pose.pose.position
+        
+        self.cur_pos_x = pos.x 
+        self.cur_pos_y = pos.y
+        self.cur_alt = pos.z
+
+    def navigate(self):
+        rate = rospy.Rate(30)   # 30hz
+        magnitude = 1  # in meters/sec
+
+        msg = SP.TwistStamped(
+            header=SP.Header(
+                frame_id="base_footprint",  # doesn't matter
+                stamp=rospy.Time.now()),    # stamp should update
+        )
+        i =0
+
+        while not rospy.is_shutdown():
+            #print "publishing velocity"
+            #self.throttle_update = self.pid_throttle.update(self.current_alt)
+            
+            if True:  # heavy trig right about here
+                "The "
+
+            if True:
+                if (self.final_alt - self.cur_alt) > 0.1: # threshold
+                    self.vz = 1.0
+                if (self.final_alt - self.cur_alt) < 0.1: # threshold
+                    self.vz = -1.0
+
+            if True:
+                msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
+
+            if self.velocity_publish:
+                self.pub_vel.publish(msg)
+            
+            rate.sleep()
+            i +=1
+
+
         
 if __name__ == '__main__':
     brekin = brekinIt()
