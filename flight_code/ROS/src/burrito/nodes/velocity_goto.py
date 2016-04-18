@@ -314,6 +314,7 @@ class posVel:
         self.final_pos_y = 0.0        
         self.final_vel = 0.0
         
+        self.cur_rad = 0.0
         self.cur_alt = 0.0
         self.cur_pos_x = 0.0
         self.cur_pos_y = 0.0
@@ -349,7 +350,12 @@ class posVel:
         
     def handle_pose(self, msg):
         pos = msg.pose.pose.position
-        
+        q = msg.pose.pose.orientation
+
+        euler = tf.transformations.euler_from_quaternion(q)
+
+        self.cur_rad = euler[2]
+
         self.cur_pos_x = pos.x 
         self.cur_pos_y = pos.y
         self.cur_alt = pos.z
@@ -369,8 +375,23 @@ class posVel:
             #print "publishing velocity"
             #self.throttle_update = self.pid_throttle.update(self.current_alt)
             
-            if True:  # heavy trig right about here
-                "The "
+            if True:  # heavy stuff right about here
+                vector_base = self.final_pos_x - self.cur_pos_x
+                vector_height = self.final_pos_y - self.cur_pos_y
+                
+                copter_rad = self.cur_rad
+                vector_rad = atan(vector_base/(vector_height+0.000001))
+                if self.final_pos_x < self.cur_pos_x:
+                    vector_rad = -vector_rad
+
+                glob_vx = sin(vector_rad)
+                glob_vy = cos(vector_rad)
+
+                beta = ((vector_rad-copter_rad) * (180.0/pi) + 360.0*100.0) % (360.0)
+                beta = beta / (180.0/pi)
+
+                self.vx = sin(beta)
+                self.vy = cos(beta) 
 
             if True:
                 if (self.final_alt - self.cur_alt) > 0.1: # threshold
