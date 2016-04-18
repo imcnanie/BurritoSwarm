@@ -1,6 +1,5 @@
 #!/usr/bin/env python  
 import roslib
-
 import rospy
 import tf
 from math import *
@@ -13,6 +12,7 @@ from mavros import setpoint as SP
 from mavros import command
 from threading import Thread
 from tf.transformations import quaternion_from_euler
+from tf.transformations import euler_from_quaternion
 import time
 import threading
 import thread
@@ -307,7 +307,14 @@ class brekinIt:
             #self.attitude_publish = False
 
 class posVel:
-    def __init__(self):
+    def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
+        rospy.init_node('velocity_goto_'+copter_id)
+        mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
+
+        self.pid_alt = pid_controller.PID()
+
+        self.mavros_string = mavros_string
+
         self.final_alt = 0.0
         self.final_pos_x = 0.0
         self.final_pos_y = 0.0        
@@ -323,20 +330,31 @@ class posVel:
         self.vy = 0.0
         self.vz = 0.0
 
+        self.alt_control = False
         self.override_nav = False
         self.reached = False
         self.done = False
 
+        self.last_sign_dist = 0.0
+
+    def temp(self, topic):
+        pass
+
+    def start_subs(self):
         # publisher for mavros/setpoint_position/local
         self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
         # subscriber for mavros/local_position/local
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
 
-    def update(self, com_x, com_y, com_v):
+    def update(self, com_x, com_y, com_z):
+        self.alt_control = True
+        self.reached = False
         self.override_nav = False
         self.final_pos_x = com_x
         self.final_pos_y = com_y
-        self.final_vel = com_v
+        self.final_alt = com_z
+
+        self.pid_alt.setPoint(self.final_alt)
 
     def set_velocity(self, vel_x, vel_y, vel_z):
         self.override_nav = True
@@ -371,7 +389,8 @@ class posVel:
         time.sleep(delay)
 
     def takeoff_velocity(self, alt=7):
-        while abs(self.current_alt - alt) > 0.2:        
+        self.alt_control = False
+        while abs(self.cur_alt - alt) > 0.2:        
             self.set_velocity(0, 0, 2.5)
 
         time.sleep(0.1)
@@ -380,17 +399,23 @@ class posVel:
         rospy.loginfo("Reached target Alt!")
 
     def land_velocity(self):
+        self.alt_control = False
         self.set_velocity(0, 0, -1)
         while self.cur_alt > 0.2: # not for real ground landing
-            print "landing: ", self.current_alt
+            print "landing: ", self.cur_alt
 
         self.set_velocity(0, 0, 0)
 
     def handle_pose(self, msg):
         pos = msg.pose.pose.position
-        q = msg.pose.pose.orientation
+        qq = msg.pose.pose.orientation
 
-        euler = tf.transformations.euler_from_quaternion(q)
+        q = (msg.pose.pose.orientation.x,
+             msg.pose.pose.orientation.y,
+             msg.pose.pose.orientation.z,
+             msg.pose.pose.orientation.w)
+
+        euler = euler_from_quaternion(q)
 
         self.cur_rad = euler[2]
 
@@ -413,9 +438,14 @@ class posVel:
             if not self.override_nav:  # heavy stuff right about here
                 vector_base = self.final_pos_x - self.cur_pos_x
                 vector_height = self.final_pos_y - self.cur_pos_y
-                
+                try:
+                    slope = vector_base/(vector_height+0.000001)
+                    p_slope = vector_height/(vector_base+0.000001)
+                except:
+                    print "This should never happen..."
+
                 copter_rad = self.cur_rad
-                vector_rad = atan(vector_base/(vector_height+0.000001))
+                vector_rad = atan(slope)
                 if self.final_pos_x < self.cur_pos_x:
                     vector_rad = -vector_rad
 
@@ -425,19 +455,42 @@ class posVel:
                 beta = ((vector_rad-copter_rad) * (180.0/pi) + 360.0*100.0) % (360.0)
                 beta = beta / (180.0/pi)
 
-                self.vx = sin(beta)
-                self.vy = cos(beta) 
+                if not self.reached:
+                    cx = self.cur_pos_x
+                    cy = self.cur_pos_y
+                    fx = self.final_pos_x
+                    fy = self.final_pos_y
+
+                    b_c = cy - cx * p_slope 
+                    b_f = fy - fx * p_slope
+                    sign_dist = b_f - b_c 
+
+                    if self.last_sign_dist < 0.0 and sign_dist > 0.0:
+                        self.reached = True
+                    if self.last_sign_dist > 0.0 and sign_dist < 0.0:
+                        self.reached = True
+
+                    print "THE B: ", sign_dist, " ", self.reached
+
+                    self.last_sign_dist = sign_dist 
+
+                if self.reached:
+                    self.last_sign_dist = 0.0
+
+                else:
+                    self.vx = sin(beta)
+                    self.vy = cos(beta)
+
+                    #print "THE VIX: ", self.vx, " THE VIY: ", self.vy
 
             if True:
-                if (self.final_alt - self.cur_alt) > 0.1: # threshold
-                    self.vz = 1.0
-                if (self.final_alt - self.cur_alt) < 0.1: # threshold
-                    self.vz = -1.0
+                if self.alt_control:
+                    pid_offset = self.pid_alt.update(self.cur_alt)
+                    msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude+pid_offset)
+                else:
+                    msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
 
             if True:
-                msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
-
-            if self.velocity_publish:
                 self.pub_vel.publish(msg)
             
             rate.sleep()
@@ -445,12 +498,13 @@ class posVel:
 
     def start_navigating(self):
         t = Thread(target = self.navigate, args = ())
-        t.daemon = true
+        t.daemon = True
         t.start()
 
         
 if __name__ == '__main__':
     pv = posVel()
+    pv.start_subs()
     pv.subscribe_pose_thread()    
 
     time.sleep(0.1)
@@ -471,7 +525,7 @@ if __name__ == '__main__':
 
     print "going to gps", utm_coords
     pv.update(utm_coords[0], utm_coords[1], 40.0)
-    while not pv.reached:
+    while not pv.reached  or True or False or True or True or False:
         time.sleep(0.025)
 
     print "at gps, waiting"
