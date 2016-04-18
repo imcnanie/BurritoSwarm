@@ -110,7 +110,6 @@ class brekinIt:
     def disarm(self):
         arm = rospy.ServiceProxy(self.mavros_string+'/cmd/arming', mavros_msgs.srv.CommandBool)  
         print "Disarm: ", arm(False)
-
     
     """
     This /class/ sends position targets to FCU's position controller
@@ -324,7 +323,9 @@ class posVel:
         self.vy = 0.0
         self.vz = 0.0
 
+        self.override_nav = False
         self.reached = False
+        self.done = False
 
         # publisher for mavros/setpoint_position/local
         self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
@@ -332,9 +333,16 @@ class posVel:
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
 
     def update(self, com_x, com_y, com_v):
+        self.override_nav = False
         self.final_pos_x = com_x
         self.final_pos_y = com_y
         self.final_vel = com_v
+
+    def set_velocity(self, vel_x, vel_y, vel_z):
+        self.override_nav = True
+        self.vx = vel_x
+        self.vy = vel_y
+        self.vz = vel_z
 
     def subscribe_pose(self):
         rospy.Subscriber(self.mavros_string+'/global_position/local',
@@ -347,7 +355,37 @@ class posVel:
         s = Thread(target=self.subscribe_pose, args=())
         s.daemon = True
         s.start()
+
+    def arm(self):
+        arm = rospy.ServiceProxy(self.mavros_string+'/cmd/arming', mavros_msgs.srv.CommandBool)  
+        print "Arm: ", arm(True)
         
+    def disarm(self):
+        arm = rospy.ServiceProxy(self.mavros_string+'/cmd/disarming', mavros_msgs.srv.CommandBool)  
+        print "Disarm: ", arm(False)
+
+    def setmode(self,base_mode=0,custom_mode="OFFBOARD",delay=0.1):
+        set_mode = rospy.ServiceProxy(self.mavros_string+'/set_mode', mavros_msgs.srv.SetMode)  
+        ret = set_mode(base_mode=base_mode, custom_mode=custom_mode)
+        print "Changing modes: ", ret
+        time.sleep(delay)
+
+    def takeoff_velocity(self, alt=7):
+        while abs(self.current_alt - alt) > 0.2:        
+            self.set_velocity(0, 0, 2.5)
+
+        time.sleep(0.1)
+        self.set_velocity(0, 0, 0)
+        
+        rospy.loginfo("Reached target Alt!")
+
+    def land_velocity(self):
+        self.set_velocity(0, 0, -1)
+        while self.cur_alt > 0.2: # not for real ground landing
+            print "landing: ", self.current_alt
+
+        self.set_velocity(0, 0, 0)
+
     def handle_pose(self, msg):
         pos = msg.pose.pose.position
         q = msg.pose.pose.orientation
@@ -372,10 +410,7 @@ class posVel:
         i =0
 
         while not rospy.is_shutdown():
-            #print "publishing velocity"
-            #self.throttle_update = self.pid_throttle.update(self.current_alt)
-            
-            if True:  # heavy stuff right about here
+            if not self.override_nav:  # heavy stuff right about here
                 vector_base = self.final_pos_x - self.cur_pos_x
                 vector_height = self.final_pos_y - self.cur_pos_y
                 
@@ -408,39 +443,42 @@ class posVel:
             rate.sleep()
             i +=1
 
+    def start_navigating(self):
+        t = Thread(target = self.navigate, args = ())
+        t.daemon = true
+        t.start()
 
         
 if __name__ == '__main__':
-    brekin = brekinIt()
-    brekin.subscribe_pose_thread()
-    
-    time.sleep(0.1)
-
-    brekin.set_velocity_publish(True)
+    pv = posVel()
+    pv.subscribe_pose_thread()    
 
     time.sleep(0.1)
-    
+
+    pv.start_navigating()
+
+    time.sleep(0.1)
+
     print "set mode"
-    brekin.setmode(custom_mode="OFFBOARD")
-    brekin.arm()
+    pv.setmode(custom_mode="OFFBOARD")
+    pv.arm()
 
     time.sleep(0.1)
-    brekin.takeoff_velocity()
-
+    pv.takeoff_velocity()
     print "out of takeoff"
 
-    print "going to gps", brekin.current_lat
-    #brekin.velocity_gps_goto(465698.83783, 5249502.63081, 10)
-
     utm_coords = utm.from_latlon(47.3980341, 8.5459503)
-    #brekin.velocity_gps_goto(465737.856878, 5249497.69158, 10)
-    brekin.velocity_gps_goto(utm_coords[0], utm_coords[1],40.0)
+
+    print "going to gps", utm_coords
+    pv.update(utm_coords[0], utm_coords[1], 40.0)
+    while not pv.reached:
+        time.sleep(0.025)
+
     print "at gps, waiting"
-    time.sleep(0.1)
+    time.sleep(2.0)
+
     print "done"
+    pv.land_velocity()
 
-    brekin.land_velocity()
-    brekin.set_velocity_publish(False)
-
-    #while not rospy.is_shutdown():
     print "Landed!"
+

@@ -48,7 +48,7 @@ if __name__ == '__main__':
     rospy.init_node('px4_tf_broadcaster')
     br = tf.TransformBroadcaster()
     rate = rospy.Rate(10.0)
-    rospy.Subscriber('/mavros/global_position/local',
+    rospy.Subscriber('/mavros/copter1/global_position/local',
                      Odometry,
                      handle_pose)
     
