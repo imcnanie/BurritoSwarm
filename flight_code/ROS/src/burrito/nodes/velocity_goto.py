@@ -332,7 +332,7 @@ class posVel:
 
         self.alt_control = False
         self.override_nav = False
-        self.reached = False
+        self.reached = True
         self.done = False
 
         self.last_sign_dist = 0.0
@@ -470,7 +470,7 @@ class posVel:
                     if self.last_sign_dist > 0.0 and sign_dist < 0.0:
                         self.reached = True
 
-                    print "THE B: ", sign_dist, " ", self.reached
+                    print "THE", self.last_sign_dist, sign_dist, self.reached
 
                     self.last_sign_dist = sign_dist 
 
@@ -521,11 +521,12 @@ if __name__ == '__main__':
     pv.takeoff_velocity()
     print "out of takeoff"
 
-    utm_coords = utm.from_latlon(47.3980341, 8.5459503)
+    utm_coords = utm.from_latlon(37.8733893, -122.3026196)
 
     print "going to gps", utm_coords
     pv.update(utm_coords[0], utm_coords[1], 40.0)
-    while not pv.reached  or True or False or True or True or False:
+
+    while not pv.reached:
         time.sleep(0.025)
 
     print "at gps, waiting"
