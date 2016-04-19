@@ -17,18 +17,15 @@ import time
 import threading
 import thread
 import pid_controller
+from random import randint
+
 print "broadcasting"
 
 import utm
 
-#roslib.load_manifest('odom_publisher')
-
-#import mavros
-#mavros.set_namespace()
-#pub = SP.get_pub_position_local(queue_size=10)
+# Depricated
 class brekinIt:
     def __init__(self, copter_id="1", mavros_string="/mavros/copter1"):
-        #rospy.init_node('velocity_goto')
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
         self.x = 0.0
         self.y = 0.0
@@ -75,7 +72,6 @@ class brekinIt:
         self.current_lat = msg.latitude
         self.current_lon = msg.longitude
 
-
         if not self.setHome:
             self.home_lat = self.current_lat
             self.home_lon = self.current_lon
@@ -86,15 +82,9 @@ class brekinIt:
         self.setHome = False
         
     def subscribe_pose(self):
-        #rate = rospy.Rate(10.0)
-        #while not rospy.is_shutdown():
         rospy.Subscriber(self.mavros_string+'/global_position/local',
                          Odometry,
                          self.handle_pose)
-        ## rospy.Subscriber('/mavros/global_position/global',
-        ##                  NavSatFix,
-        ##                  self.handle_global_pose)
-         
         rospy.spin()
 
     def subscribe_pose_thread(self):
@@ -103,7 +93,6 @@ class brekinIt:
         s.start()
         
     def arm(self):
-        #print dir(mavros)
         arm = rospy.ServiceProxy(self.mavros_string+'/cmd/arming', mavros_msgs.srv.CommandBool)  
         print "Arm: ", arm(True)
         
@@ -224,25 +213,6 @@ class brekinIt:
             if abs(self.current_lon - lon) < 0.30 and abs(self.current_lat - lat) < 0.50:
                 break
 
-            
-            #print "vely: ", self.vy, "velx: ", self.vx
-
-            #self.yaw_target = pid_yaw.update(angle_error)
-
-            
-            ## if angle_error > 0:
-            ##     self.yaw_target = -0.25
-            ## elif angle_error < 0:
-            ##     self.yaw_target = 0.25
-            ## else:
-            ##     self.yaw_target = 0
-
-            ##if self.yaw_target > 0.25:
-            ##    self.yaw_target = 0.25
-            ##elif self.yaw_target < -0.25:
-            ##    self.yaw_target = -0.25
-
-            ## ##print "ANG ERROR: ", angle_error, " YAW Target: ", self.yaw_target
                 
         self.pid_alt.setPoint(alt)
         self.use_pid = True
@@ -305,6 +275,33 @@ class brekinIt:
             
             print "pose orientation: ", self.throttle_update
             #self.attitude_publish = False
+
+class rcOverride:
+    def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
+        rospy.init_node('rc_override'+copter_id)
+        mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
+
+        self.rc = OverrideRCIn()
+        self.override_pub = rospy.Publisher(mavros_string+"/rc/override", OverrideRCIn, queue_size=10)
+
+    def get_RC(self):
+        return self.rc
+        
+    def clean_RC(self):
+        RC = []
+        for x in len(range(self.rc)):
+            RC = 1500
+        self.override_pub.publish(RC)
+        
+    def ruin_RC(self):
+        RC = []
+        for x in self.rc:
+            RC.append(randint(1000,2000))
+        self.override_pub.publish(RC)
+        
+    def publish_RC(self, RC):
+        self.override_pub.publish(RC)
+        
 
 class posVel:
     def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
