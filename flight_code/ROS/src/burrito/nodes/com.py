@@ -1,3 +1,11 @@
+#
+# com.py
+#
+# udp socket controller for copter + basestation
+# Josh Jacobs and Ian McNanie
+# 2016
+#
+
 import socket
 import time
 import json

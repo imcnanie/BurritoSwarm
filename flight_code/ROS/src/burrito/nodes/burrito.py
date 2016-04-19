@@ -1,3 +1,11 @@
+#
+# burrito.py
+#
+# flightcode for burritocopter
+# Josh Jacobs and Ian McNanie
+# 2016
+#
+
 import socket
 import math
 import time
