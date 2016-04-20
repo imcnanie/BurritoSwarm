@@ -17,6 +17,7 @@ import time
 import threading
 import thread
 import pid_controller
+
 print "broadcasting"
 
 import utm
@@ -74,7 +75,6 @@ class brekinIt:
     def handle_global_pose(self, msg):
         self.current_lat = msg.latitude
         self.current_lon = msg.longitude
-
 
         if not self.setHome:
             self.home_lat = self.current_lat
@@ -307,7 +307,8 @@ class brekinIt:
             #self.attitude_publish = False
 
 class posVel:
-    def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
+    def __init__(self, copter_id = "1"):
+        mavros_string = "/mavros/copter"+copter_id
         rospy.init_node('velocity_goto_'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
 
@@ -330,7 +331,7 @@ class posVel:
         self.vy = 0.0
         self.vz = 0.0
 
-        self.alt_control = False
+        self.alt_control = True
         self.override_nav = False
         self.reached = True
         self.done = False
@@ -395,6 +396,8 @@ class posVel:
 
         time.sleep(0.1)
         self.set_velocity(0, 0, 0)
+
+        self.final_alt = alt
         
         rospy.loginfo("Reached target Alt!")
 

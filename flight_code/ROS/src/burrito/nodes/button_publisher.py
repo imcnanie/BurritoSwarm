@@ -31,20 +31,7 @@ bh.startListening()
 
 while True:
     if bh.changed():
-        if "RTL" in bh.button:
-            postMode("AUTO.RTL")
-            continue
-        if "Fly" in bh.button:
-            postMode("POSCTL")
-            continue
-        if "Pause" in bh.button:
-            postMode("AUTO.LOITER")
-            continue
-        if "B" in bh.button:
-            postMode("STABILIZED")
-            continue
         bpub.publish(std_msgs.msg.String(bh.button))
-
 
     try:
         pass
