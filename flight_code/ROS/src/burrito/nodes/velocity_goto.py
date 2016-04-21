@@ -27,6 +27,7 @@ import utm
 #import mavros
 #mavros.set_namespace()
 #pub = SP.get_pub_position_local(queue_size=10)
+
 class brekinIt:
     def __init__(self, copter_id="1", mavros_string="/mavros/copter1"):
         #rospy.init_node('velocity_goto')
@@ -309,7 +310,7 @@ class brekinIt:
 class posVel:
     def __init__(self, copter_id = "1"):
         mavros_string = "/mavros/copter"+copter_id
-        rospy.init_node('velocity_goto_'+copter_id)
+        #rospy.init_node('velocity_goto_'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
 
         self.pid_alt = pid_controller.PID()
@@ -331,6 +332,8 @@ class posVel:
         self.vy = 0.0
         self.vz = 0.0
 
+        self.pose_open = []
+
         self.alt_control = True
         self.override_nav = False
         self.reached = True
@@ -338,14 +341,16 @@ class posVel:
 
         self.last_sign_dist = 0.0
 
-    def temp(self, topic):
-        pass
-
-    def start_subs(self):
         # publisher for mavros/setpoint_position/local
         self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
         # subscriber for mavros/local_position/local
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
+
+    def temp(self, topic):
+        pass
+
+    def start_subs(self):
+        pass
 
     def update(self, com_x, com_y, com_z):
         self.alt_control = True
@@ -413,6 +418,8 @@ class posVel:
         pos = msg.pose.pose.position
         qq = msg.pose.pose.orientation
 
+        self.pose_open = qq
+
         q = (msg.pose.pose.orientation.x,
              msg.pose.pose.orientation.y,
              msg.pose.pose.orientation.z,
@@ -449,8 +456,8 @@ class posVel:
 
                 copter_rad = self.cur_rad
                 vector_rad = atan(slope)
-                if self.final_pos_x < self.cur_pos_x:
-                    vector_rad = -vector_rad
+                if self.final_pos_y < self.cur_pos_y:
+                    vector_rad = vector_rad - pi
 
                 glob_vx = sin(vector_rad)
                 glob_vy = cos(vector_rad)
@@ -458,7 +465,9 @@ class posVel:
                 beta = ((vector_rad-copter_rad) * (180.0/pi) + 360.0*100.0) % (360.0)
                 beta = beta / (180.0/pi)
 
-                if not self.reached:
+                #print beta
+
+                if True: # not self.reached:   #this is issues
                     cx = self.cur_pos_x
                     cy = self.cur_pos_y
                     fx = self.final_pos_x
@@ -473,14 +482,14 @@ class posVel:
                     if self.last_sign_dist > 0.0 and sign_dist < 0.0:
                         self.reached = True
 
-                    print "THE", self.last_sign_dist, sign_dist, self.reached
+                    #print "THE", self.last_sign_dist, sign_dist, self.reached
 
                     self.last_sign_dist = sign_dist 
 
                 if self.reached:
                     self.last_sign_dist = 0.0
 
-                else:
+                if True: #else:    #this switch is gonna cause isses
                     self.vx = sin(beta)
                     self.vy = cos(beta)
 
@@ -494,6 +503,8 @@ class posVel:
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
 
             if True:
+                print self.vx, self.vy
+
                 self.pub_vel.publish(msg)
             
             rate.sleep()
