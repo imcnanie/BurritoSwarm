@@ -23,8 +23,10 @@ THREEDR_ROOF_LENGTH_LAT = THREEDR_ROOF_FAR_RIGHT[0] - THREEDR_ROOF_FAR_LEFT[0]
 THREEDR_ROOF_LENGTH_LON = THREEDR_ROOF_FAR_RIGHT[1] - THREEDR_ROOF_FAR_LEFT[1]
 THREEDR_ROOF_CENTER = [THREEDR_ROOF_FAR_LEFT[0] + (THREEDR_ROOF_LENGTH_LAT)/2, THREEDR_ROOF_FAR_LEFT[1] + (THREEDR_ROOF_LENGTH_LON)/2]
 
-
 HOME_ALL_COPTERS_AT_ZERO = False
+
+GLOB_X = 0.0
+GLOB_Y = 0.0
 
 class publish_copter_frame:
     def __init__(self,copter_name):
@@ -38,9 +40,17 @@ class publish_copter_frame:
         #print "MESSAGE", dir(msg)
         pos = msg.pose.pose.position
         if self.get_home:
-            self.home_x = pos.x
-            self.home_y = pos.y
+
+            if self.copter_name == rosnode.get_node_names()[0]:
+                GLOB_X = pos.x
+                GLOB_Y = pos.y
+            
+            self.home_x = GLOB_X #pos.x
+            self.home_y = GLOB_Y #pos.y
+
             self.get_home = False
+
+
         q = msg.pose.pose.orientation
         ang = q.x
         #print pos.x, self.home_x

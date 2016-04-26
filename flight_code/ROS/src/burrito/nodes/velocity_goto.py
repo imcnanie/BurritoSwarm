@@ -496,7 +496,7 @@ class posVel:
                     #print "THE VIX: ", self.vx, " THE VIY: ", self.vy
 
             if True:
-                if self.alt_control:
+                if not self.alt_control:
                     pid_offset = self.pid_alt.update(self.cur_alt)
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude+pid_offset)
                 else:
