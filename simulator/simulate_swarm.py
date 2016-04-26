@@ -111,7 +111,7 @@ for i in range(14, cops+14):
 
     
     print 'gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim\"'
-    subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim"', shell=True)
+    subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default gazebo no_sim=1"', shell=True)
 
     os.chdir(os.path.join(os.path.abspath(os.path.curdir),"../.."))
     
