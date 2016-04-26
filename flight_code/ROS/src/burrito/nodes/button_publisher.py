@@ -32,6 +32,7 @@ bh.startListening()
 while True:
     if bh.changed():
         bpub.publish(std_msgs.msg.String(bh.button))
+        print bh.button
 
     try:
         pass

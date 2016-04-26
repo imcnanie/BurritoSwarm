@@ -398,7 +398,7 @@ class posVel:
         self.alt_control = False
         while abs(self.cur_alt - alt) > 0.2:
 
-            print self.cur_alt - alt
+            #print self.cur_alt - alt
         
             self.set_velocity(0, 0, 2.5)
 
