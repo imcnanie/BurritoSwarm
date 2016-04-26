@@ -34,12 +34,14 @@ rc = pixrc.controller()
 rc_flasher.flash()
 
 while True:
-    print rc.rcChansOut
+    #print rc.rcChansOut
 
     sticks_list = str(rc.rcChansOut)
 
-    if sticks_list[0] == 0:
-        sticks_list[0] = 1500
+    if sticks_list[0] == "0":
+        sticks_list[0] = "1500"
+
+    print sticks_list
 
     bpub.publish(std_msgs.msg.String(sticks_list))
 

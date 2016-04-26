@@ -95,32 +95,32 @@ a.fin_x = cops[0].cur_pos_x
 a.fin_y = cops[0].cur_pos_y
 a.fin_z = cops[0].cur_alt
 
-offs_x = [-1.0, 1.0, -1.0, 1.0]
-offs_y = [1.0, -1.0, -1.0, 1.0]
+offs_x = [0.0, 2.0, 0.0, 2.0]
+offs_y = [0.0, 0.0, 2.0, 2.0]
 
 while True:
     io = 0
 
     for cop in cops:
         if abs(a.stick_map[0]) < 0.01 and abs(a.stick_map[1]) < 0.01 and abs(a.stick_map[2]) < 0.01:
-            a.fin_x = cops[0].cur_pos_x
-            a.fin_y = cops[0].cur_pos_y
+            a.fin_x = cops[0].cur_pos_x + offs_x[io]
+            a.fin_y = cops[0].cur_pos_y + offs_y[io]
             a.fin_z = cops[0].cur_alt
 
-            cop.set_velocity(0.0,0.0,0.0)
+            #cop.set_velocity(0.0,0.0,0.0)
 
         else:
-            a.fin_x = cops[0].cur_pos_x + a.x_offset
-            a.fin_y = cops[0].cur_pos_y + a.y_offset
+            a.fin_x = cops[0].cur_pos_x + a.x_offset + offs_x[io]
+            a.fin_y = cops[0].cur_pos_y + a.y_offset + offs_y[io]
             a.fin_z = cops[0].cur_alt + a.z_offset
 
-            cop.update(a.fin_x, a.fin_y, a.fin_z)
+        cop.update(a.fin_x, a.fin_y, a.fin_z)
 
-        #cop.update(a.fin_x + offs_x[io]*2.0, a.fin_y + offs_y[io]*2.0, a.fin_z)
+            #cop.update(a.fin_x + offs_x[io]*2.5, a.fin_y + offs_y[io]*2.5, a.fin_z)
 
         time.sleep(0.1)
 
-    io = io + 1 
+        io = io + 1 
 
     #time.sleep(0.025)
 

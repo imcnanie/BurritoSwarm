@@ -495,12 +495,12 @@ class posVel:
                 if True: #else:    #this switch is gonna cause isses
                     master_scalar = 1.0
 
-                    #master_hype = sqrt((cx - fx)**2.0 + (cy - fy)**2.0)
+                    master_hype = sqrt((cx - fx)**2.0 + (cy - fy)**2.0)
 
-                    #if master_hype > 1.1:
-                    #    master_scalar = 1.0
-                    #else:
-                    #    master_scalar = master_hype
+                    if master_hype > 1.0:
+                        master_scalar = 1.0
+                    else:
+                        master_scalar = master_hype
 
                     self.vx = sin(beta) * master_scalar
                     self.vy = cos(beta) * master_scalar
