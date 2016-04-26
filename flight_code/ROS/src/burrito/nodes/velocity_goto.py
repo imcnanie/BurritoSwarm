@@ -341,9 +341,9 @@ class posVel:
 
         self.last_sign_dist = 0.0
 
-        # publisher for mavros/setpoint_position/local
+        # publisher for mavros/copter*/setpoint_position/local
         self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
-        # subscriber for mavros/local_position/local
+        # subscriber for mavros/copter*/local_position/local
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
 
     def temp(self, topic):
@@ -396,7 +396,10 @@ class posVel:
 
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
-        while abs(self.cur_alt - alt) > 0.2:        
+        while abs(self.cur_alt - alt) > 0.2:
+
+            print self.cur_alt - alt
+        
             self.set_velocity(0, 0, 2.5)
 
         time.sleep(0.1)
@@ -463,7 +466,7 @@ class posVel:
                 glob_vy = cos(vector_rad)
 
                 beta = ((vector_rad-copter_rad) * (180.0/pi) + 360.0*100.0) % (360.0)
-                beta = beta / (180.0/pi)
+                beta = (beta + 90.0) / (180.0/pi)
 
                 #print beta
 
@@ -490,20 +493,29 @@ class posVel:
                     self.last_sign_dist = 0.0
 
                 if True: #else:    #this switch is gonna cause isses
-                    self.vx = sin(beta)
-                    self.vy = cos(beta)
+                    master_scalar = 1.0
+
+                    #master_hype = sqrt((cx - fx)**2.0 + (cy - fy)**2.0)
+
+                    #if master_hype > 1.1:
+                    #    master_scalar = 1.0
+                    #else:
+                    #    master_scalar = master_hype
+
+                    self.vx = sin(beta) * master_scalar
+                    self.vy = cos(beta) * master_scalar
 
                     #print "THE VIX: ", self.vx, " THE VIY: ", self.vy
 
             if True:
-                if not self.alt_control:
+                if self.alt_control:
                     pid_offset = self.pid_alt.update(self.cur_alt)
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude+pid_offset)
                 else:
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
 
             if True:
-                print self.vx, self.vy
+                #print self.vx, self.vy
 
                 self.pub_vel.publish(msg)
             

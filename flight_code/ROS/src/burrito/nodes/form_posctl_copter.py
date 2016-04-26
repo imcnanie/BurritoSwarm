@@ -106,13 +106,17 @@ while True:
             a.fin_x = cops[0].cur_pos_x
             a.fin_y = cops[0].cur_pos_y
             a.fin_z = cops[0].cur_alt
+
+            cop.set_velocity(0.0,0.0,0.0)
+
         else:
             a.fin_x = cops[0].cur_pos_x + a.x_offset
             a.fin_y = cops[0].cur_pos_y + a.y_offset
             a.fin_z = cops[0].cur_alt + a.z_offset
 
+            cop.update(a.fin_x, a.fin_y, a.fin_z)
+
         #cop.update(a.fin_x + offs_x[io]*2.0, a.fin_y + offs_y[io]*2.0, a.fin_z)
-        cop.update(a.fin_x, a.fin_y, a.fin_z)
 
         time.sleep(0.1)
 

@@ -37,6 +37,10 @@ while True:
     print rc.rcChansOut
 
     sticks_list = str(rc.rcChansOut)
+
+    if sticks_list[0] == 0:
+        sticks_list[0] = 1500
+
     bpub.publish(std_msgs.msg.String(sticks_list))
 
     rate.sleep()
