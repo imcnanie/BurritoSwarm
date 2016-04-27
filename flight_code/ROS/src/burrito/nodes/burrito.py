@@ -1,3 +1,11 @@
+#
+# burrito.py
+#
+# flightcode for burritocopter
+# Josh Jacobs and Ian McNanie
+# 2016
+#
+
 import socket
 import math
 import time
@@ -221,8 +229,6 @@ if __name__ == '__main__':
         coord = []
         for i in range(4): coord.append(0.0)
 
-
-        
         coord[2] = vl.dists[0]
         coord[3] = vl.dists[1]
 

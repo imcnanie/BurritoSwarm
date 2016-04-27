@@ -17,6 +17,7 @@ import time
 import threading
 import thread
 import pid_controller
+
 print "broadcasting"
 
 import utm
@@ -26,6 +27,7 @@ import utm
 #import mavros
 #mavros.set_namespace()
 #pub = SP.get_pub_position_local(queue_size=10)
+
 class brekinIt:
     def __init__(self, copter_id="1", mavros_string="/mavros/copter1"):
         #rospy.init_node('velocity_goto')
@@ -74,7 +76,6 @@ class brekinIt:
     def handle_global_pose(self, msg):
         self.current_lat = msg.latitude
         self.current_lon = msg.longitude
-
 
         if not self.setHome:
             self.home_lat = self.current_lat
@@ -307,8 +308,9 @@ class brekinIt:
             #self.attitude_publish = False
 
 class posVel:
-    def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
-        rospy.init_node('velocity_goto_'+copter_id)
+    def __init__(self, copter_id = "1"):
+        mavros_string = "/mavros/copter"+copter_id
+        #rospy.init_node('velocity_goto_'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
 
         self.pid_alt = pid_controller.PID()
@@ -330,21 +332,25 @@ class posVel:
         self.vy = 0.0
         self.vz = 0.0
 
-        self.alt_control = False
+        self.pose_open = []
+
+        self.alt_control = True
         self.override_nav = False
-        self.reached = False
+        self.reached = True
         self.done = False
 
         self.last_sign_dist = 0.0
+
+        # publisher for mavros/copter*/setpoint_position/local
+        self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
+        # subscriber for mavros/copter*/local_position/local
+        self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
 
     def temp(self, topic):
         pass
 
     def start_subs(self):
-        # publisher for mavros/setpoint_position/local
-        self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
-        # subscriber for mavros/local_position/local
-        self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
+        pass
 
     def update(self, com_x, com_y, com_z):
         self.alt_control = True
@@ -390,11 +396,16 @@ class posVel:
 
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
-        while abs(self.cur_alt - alt) > 0.2:        
+        while abs(self.cur_alt - alt) > 0.2:
+
+            #print self.cur_alt - alt
+        
             self.set_velocity(0, 0, 2.5)
 
         time.sleep(0.1)
         self.set_velocity(0, 0, 0)
+
+        self.final_alt = alt
         
         rospy.loginfo("Reached target Alt!")
 
@@ -409,6 +420,8 @@ class posVel:
     def handle_pose(self, msg):
         pos = msg.pose.pose.position
         qq = msg.pose.pose.orientation
+
+        self.pose_open = qq
 
         q = (msg.pose.pose.orientation.x,
              msg.pose.pose.orientation.y,
@@ -446,16 +459,18 @@ class posVel:
 
                 copter_rad = self.cur_rad
                 vector_rad = atan(slope)
-                if self.final_pos_x < self.cur_pos_x:
-                    vector_rad = -vector_rad
+                if self.final_pos_y < self.cur_pos_y:
+                    vector_rad = vector_rad - pi
 
                 glob_vx = sin(vector_rad)
                 glob_vy = cos(vector_rad)
 
                 beta = ((vector_rad-copter_rad) * (180.0/pi) + 360.0*100.0) % (360.0)
-                beta = beta / (180.0/pi)
+                beta = (beta + 90.0) / (180.0/pi)
 
-                if not self.reached:
+                #print beta
+
+                if True: # not self.reached:   #this is issues
                     cx = self.cur_pos_x
                     cy = self.cur_pos_y
                     fx = self.final_pos_x
@@ -470,16 +485,25 @@ class posVel:
                     if self.last_sign_dist > 0.0 and sign_dist < 0.0:
                         self.reached = True
 
-                    print "THE B: ", sign_dist, " ", self.reached
+                    #print "THE", self.last_sign_dist, sign_dist, self.reached
 
                     self.last_sign_dist = sign_dist 
 
                 if self.reached:
                     self.last_sign_dist = 0.0
 
-                else:
-                    self.vx = sin(beta)
-                    self.vy = cos(beta)
+                if True: #else:    #this switch is gonna cause isses
+                    master_scalar = 1.0
+
+                    master_hype = sqrt((cx - fx)**2.0 + (cy - fy)**2.0)
+
+                    if master_hype > 1.0:
+                        master_scalar = 1.0
+                    else:
+                        master_scalar = master_hype
+
+                    self.vx = sin(beta) * master_scalar
+                    self.vy = cos(beta) * master_scalar
 
                     #print "THE VIX: ", self.vx, " THE VIY: ", self.vy
 
@@ -491,6 +515,8 @@ class posVel:
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
 
             if True:
+                #print self.vx, self.vy
+
                 self.pub_vel.publish(msg)
             
             rate.sleep()
@@ -521,11 +547,12 @@ if __name__ == '__main__':
     pv.takeoff_velocity()
     print "out of takeoff"
 
-    utm_coords = utm.from_latlon(47.3980341, 8.5459503)
+    utm_coords = utm.from_latlon(37.8733893, -122.3026196)
 
     print "going to gps", utm_coords
     pv.update(utm_coords[0], utm_coords[1], 40.0)
-    while not pv.reached  or True or False or True or True or False:
+
+    while not pv.reached:
         time.sleep(0.025)
 
     print "at gps, waiting"
