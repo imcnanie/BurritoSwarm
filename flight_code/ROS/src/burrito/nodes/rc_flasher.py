@@ -1,3 +1,5 @@
+# Written by Josh Jacobs
+
 import paramiko
 
 def flash():
