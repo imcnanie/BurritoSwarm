@@ -38,8 +38,9 @@ while True:
 
     sticks_list = str(rc.rcChansOut)
 
-    #if sticks_list[0] == "0":
-    #    sticks_list[0] = "1500"
+    if sticks_list[1] == "0":
+        sticks_list = "[1500, 1500, 1500, 1500]"
+        print "FAILSAFE -----------", rc.rcChansOut
 
     print sticks_list
 
