@@ -305,6 +305,7 @@ class rcOverride:
 
 class posVel:
     def __init__(self, copter_id = "1"):
+        self.copter_id = copter_id
         mavros_string = "/mavros/copter"+copter_id
         #rospy.init_node('velocity_goto_'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
@@ -394,7 +395,7 @@ class posVel:
         self.alt_control = False
         while abs(self.cur_alt - alt) > 0.2:
 
-            #print self.cur_alt - alt
+            print self.cur_alt - alt
         
             self.set_velocity(0, 0, 2.5)
 
@@ -432,6 +433,7 @@ class posVel:
         self.cur_pos_y = pos.y
         self.cur_alt = pos.z
 
+        
     def navigate(self):
         rate = rospy.Rate(30)   # 30hz
         magnitude = 1  # in meters/sec
@@ -443,6 +445,10 @@ class posVel:
         )
         i =0
 
+        self.home_lat = self.cur_pos_x
+        self.home_lon = self.cur_pos_y
+        self.home_alt = self.cur_alt
+        
         while not rospy.is_shutdown():
             if not self.override_nav:  # heavy stuff right about here
                 vector_base = self.final_pos_x - self.cur_pos_x
@@ -518,13 +524,87 @@ class posVel:
             rate.sleep()
             i +=1
 
+
+    def land_velocity(self):
+        self.set_velocity(0, 0, -1.0)
+        while self.cur_alt > self.home_alt+5:
+            self.update(0, 0, -1.0)
+            print "landing: ", self.cur_alt
+        while self.cur_alt > self.home_alt:
+            self.update(0, 0, -0.3)
+            print "slowly landing: ", self.cur_alt
+        print "Landed, disarming"
+        self.set_velocity(0, 0, -0.02)
+            
+    def get_copter_id(self):
+        return self.copter_id
+            
+    def get_lat_lon_alt(self):
+        return (self.cur_pos_x, self.cur_pos_y, self.cur_alt)
+
+    def get_home_lat_lon_alt(self):
+        return (self.home_lat, self.home_lon, self.home_alt)
+
     def start_navigating(self):
         t = Thread(target = self.navigate, args = ())
         t.daemon = True
         t.start()
 
+class SmartRTL:
+    def __init__(self, copters):
+        self.initial_alt_drop = 5
+        self.copters = copters
+        self.sorted_copters = []
+        copters_by_alt = {}
+        for cop in copters:
+            copters_by_alt[cop] = cop.get_lat_lon_alt()[-1]
+
+        self.sorted_copters = sorted(copters_by_alt)
+                
+        print "SORTED COPTERS", [c.get_copter_id() for c in self.sorted_copters]
+
+        for x in self.sorted_copters:
+            #self.raise_cops(self.sorted_copters[::-1])
+            self.land_cop(x)
+
+    def raise_cops(self,cop):
+        cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
+        self.raise_height = self.cur_alt + 5
+        cop.update(cur_pos_x, cur_pos_y, self.raise_height)
+        while cur_alt < self.raise_height:
+            print "Copter", cop.copter_id, " altitude: ",cur_alt
+        cop.set_velocity(0.0,0.0,0.0)
+    
+    def land_cop(self,cop):
+        cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
+        home_lat, home_lon, home_alt = cop.get_home_lat_lon_alt()
+        
+        print "RTLing Copter", cop.copter_id
+        self.drop_height = cur_alt-self.initial_alt_drop
+        
+        print "Copter", cop.copter_id, " droping..."
+        time.sleep(1)
+        
+        cop.update(cur_pos_x, cur_pos_y, self.drop_height)
+        while cur_alt > self.drop_height+1:
+            cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
+            print "cur_alt: ", cur_alt, "check", self.drop_height+1
+            #print "Copter", cop.copter_id, " altitude: ",cur_alt
+        cop.set_velocity(0.0,0.0,0.0)
+        
+        print "Copter", cop.copter_id, "going to home location..."
+        time.sleep(1)
+        
+        cop.update(home_lat, home_lon, self.drop_height)
+        while not cop.reached:
+            cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
+            print "Copter", cop.copter_id, " drop height", self.drop_height," altitude: ", cur_alt
+        cop.set_velocity(0.0,0.0,0.0)
+        
+        cop.land_velocity()
         
 if __name__ == '__main__':
+    rospy.init_node("velocity_goto_test")
     pv = posVel()
     pv.start_subs()
     pv.subscribe_pose_thread()    
@@ -545,9 +625,9 @@ if __name__ == '__main__':
 
     utm_coords = utm.from_latlon(37.8733893, -122.3026196)
 
-    print "going to gps", utm_coords
-    pv.update(utm_coords[0], utm_coords[1], 40.0)
-
+    print "going to gps", utm_coords, "current: ", pv.get_lat_lon_alt()
+    #pv.update(utm_coords[0], utm_coords[1], 40.0)
+    pv.update(465717.78528424853, 5249399.629721744, 40.0) 
     while not pv.reached:
         time.sleep(0.025)
 
@@ -555,7 +635,10 @@ if __name__ == '__main__':
     time.sleep(2.0)
 
     print "done"
-    pv.land_velocity()
+    
+    copters = [pv]
+    SmartRTL(copters)
+    #pv.land_velocity()
 
     print "Landed!"
 
