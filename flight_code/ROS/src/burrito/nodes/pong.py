@@ -83,15 +83,15 @@ for cop in cops:
 
 i = 1
 
-for cop in cops:
-    #print i
-    cop.setmode(custom_mode = "OFFBOARD")
-    cop.arm()
-    time.sleep(0.1)
+if False: #trying safetakeoff for now
+    for cop in cops:
+        cop.setmode(custom_mode = "OFFBOARD")
+        cop.arm()
+        time.sleep(0.1)
 
-    cop.takeoff_velocity(alt = 1.0) # very short
+        cop.takeoff_velocity(alt = 1.0) # very short
 
-    i = i +1
+        i = i +1
 
 print "ready"
 
@@ -118,6 +118,9 @@ lstick = 0.0
 
 center_x = 0.0
 center_y = 0.0
+
+if True:
+    velocity_goto.SafeTakeoff(cops, offs_x, offs_y, alt = 1.0)
 
 while True:
     print " "
