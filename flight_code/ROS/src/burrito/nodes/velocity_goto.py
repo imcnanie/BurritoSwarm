@@ -394,9 +394,12 @@ class posVel:
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
         while abs(self.cur_alt - alt) > 0.2:
+<<<<<<< HEAD
 
             print self.cur_alt - alt
         
+=======
+>>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
             self.set_velocity(0, 0, 2.5)
 
         time.sleep(0.1)
@@ -455,7 +458,11 @@ class posVel:
                 vector_height = self.final_pos_y - self.cur_pos_y
                 try:
                     slope = vector_base/(vector_height+0.000001)
+<<<<<<< HEAD
                     p_slope = -1*vector_height/(vector_base+0.000001)
+=======
+                    p_slope = -vector_height/(vector_base+0.000001)
+>>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
                 except:
                     print "This should never happen..."
 
@@ -553,6 +560,7 @@ class posVel:
         t.daemon = True
         t.start()
 
+<<<<<<< HEAD
 class SmartRTL:
     def __init__(self, copters):
         self.initial_alt_drop = 5
@@ -615,6 +623,58 @@ if __name__ == '__main__':
     rospy.init_node("velocity_goto_test")
     pv = posVel(copter_id = "1")
     #pv2 = posVel(copter_id = "2")
+=======
+
+class SafeTakeoff:
+    def __init__(self, copters, offsets_x, offsets_y, alt = 20.0):
+        self.cops = copters
+
+        self.offs_x = offsets_x
+        self.offs_y = offsets_y
+        
+        self.ids = []
+        for i in range(len(self.cops)):
+            self.ids.append(i)
+
+        self.offs_hype = []
+        for o in range(len(self.cops)):
+            h = sqrt(self.offs_y[o] **2.0 + self.offs_x[o] **2.0)
+            self.offs_hype.append(h)
+
+        self.alt = alt
+
+        running_x = 0.0
+        running_y = 0.0
+        for cop in copters:
+            running_x = running_x + cop.cur_pos_x
+            running_y = running_y + cop.cur_pos_y
+
+        self.center_x = running_x / float(len(copters))
+        self.center_y = running_y / float(len(copters))
+
+        self.sorted_ids = [x for (y,x) in sorted(zip(self.offs_hype, self.ids))]
+
+        for i in self.sorted_ids[::-1]:
+            self.takeoff_cop(i)
+
+    def takeoff_cop(self, id):
+        self.cops[id].setmode(custom_mode = "OFFBOARD")
+        self.cops[id].arm()
+
+        time.sleep(0.25)
+
+        self.cops[id].takeoff_velocity(alt = 0.5)
+        self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
+
+        while not self.cops[id].reached:
+            time.sleep(0.1)
+
+        
+if __name__ == '__main__':
+    rospy.init_node("velocity_goto")
+
+    pv = posVel()
+>>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
     pv.start_subs()
     #pv2.start_subs()
     pv.subscribe_pose_thread()
