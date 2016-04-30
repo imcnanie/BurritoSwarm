@@ -382,7 +382,7 @@ class posVel:
         print "Arm: ", arm(True)
         
     def disarm(self):
-        arm = rospy.ServiceProxy(self.mavros_string+'/cmd/disarming', mavros_msgs.srv.CommandBool)  
+        arm = rospy.ServiceProxy(self.mavros_string+'/cmd/arming', mavros_msgs.srv.CommandBool)  
         print "Disarm: ", arm(False)
 
     def setmode(self,base_mode=0,custom_mode="OFFBOARD",delay=0.1):
@@ -394,12 +394,6 @@ class posVel:
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
         while abs(self.cur_alt - alt) > 0.2:
-<<<<<<< HEAD
-
-            print self.cur_alt - alt
-        
-=======
->>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
             self.set_velocity(0, 0, 2.5)
 
         time.sleep(0.1)
@@ -458,11 +452,7 @@ class posVel:
                 vector_height = self.final_pos_y - self.cur_pos_y
                 try:
                     slope = vector_base/(vector_height+0.000001)
-<<<<<<< HEAD
-                    p_slope = -1*vector_height/(vector_base+0.000001)
-=======
                     p_slope = -vector_height/(vector_base+0.000001)
->>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
                 except:
                     print "This should never happen..."
 
@@ -560,7 +550,6 @@ class posVel:
         t.daemon = True
         t.start()
 
-<<<<<<< HEAD
 class SmartRTL:
     def __init__(self, copters):
         self.initial_alt_drop = 5
@@ -618,12 +607,6 @@ class SmartRTL:
         #cop.update(0.0,0.0,0.0)
         
         cop.land_velocity()
-        
-if __name__ == '__main__':
-    rospy.init_node("velocity_goto_test")
-    pv = posVel(copter_id = "1")
-    #pv2 = posVel(copter_id = "2")
-=======
 
 class SafeTakeoff:
     def __init__(self, copters, offsets_x, offsets_y, alt = 20.0):
@@ -674,7 +657,6 @@ if __name__ == '__main__':
     rospy.init_node("velocity_goto")
 
     pv = posVel()
->>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
     pv.start_subs()
     #pv2.start_subs()
     pv.subscribe_pose_thread()
