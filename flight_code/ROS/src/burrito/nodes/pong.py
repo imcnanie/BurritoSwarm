@@ -83,15 +83,15 @@ for cop in cops:
 
 i = 1
 
-for cop in cops:
-    #print i
-    cop.setmode(custom_mode = "OFFBOARD")
-    cop.arm()
-    time.sleep(0.1)
+if False: #trying safetakeoff for now
+    for cop in cops:
+        cop.setmode(custom_mode = "OFFBOARD")
+        cop.arm()
+        time.sleep(0.1)
 
-    cop.takeoff_velocity()
+        cop.takeoff_velocity(alt = 1.0) # very short
 
-    i = i +1
+        i = i +1
 
 print "ready"
 
@@ -105,7 +105,7 @@ a.fin_x = cops[0].cur_pos_x
 a.fin_y = cops[0].cur_pos_y
 a.fin_z = cops[0].cur_alt
 
-offs_x = [0.0, -6.0, -6.0, 6.0, 6.0]
+offs_x = [0.0, -6.5, -6.5, 6.5, 6.5]
 offs_y = [0.0, 0.8, -0.8, 0.8, -0.8]
 
 adj_offs_y = [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -119,6 +119,9 @@ lstick = 0.0
 center_x = 0.0
 center_y = 0.0
 
+if True:
+    velocity_goto.SafeTakeoff(cops, offs_x, offs_y, alt = 1.0)
+
 while True:
     print " "
     print "WELCOME TO PONG!!"
@@ -127,8 +130,6 @@ while True:
 
     while True:
         io = 0
-
-        #print b.click
 
         if b.click == "A": break
 
@@ -152,42 +153,43 @@ while True:
     center_x = cops[0].cur_pos_x
     center_y = cops[0].cur_pos_y
 
+    adj_offs_y = [0.0, 0.0, 0.0, 0.0, 0.0]
+
+    ball_vx = 0.0
+    ball_vy = 0.0
+
+    rstick = 0.0
+    lstick = 0.0
+
     print " "
     print "great job! get ready..."
     print " "
     time.sleep(0.5)
 
+    ball_dir = -1.0
     ball_vx = 0.5
     ball_vy = 0.7
 
     while True:
-        io = 0
-
-        if b.click == "Pause":
-            print "game paused..."
-            while True:
-                if b.click == "Pause":
-                    print "game unpaused!"
-                    break
-                time.sleep(0.05)
-
         if rstick < 5.0 and a.stick_map[2] < 0.0:
-            rstick = rstick - a.stick_map[2]*0.3 
+            rstick = rstick - a.stick_map[2]*0.075
         if rstick > -5.0 and a.stick_map[2] > 0.0:
-            rstick = rstick - a.stick_map[2]*0.3
+            rstick = rstick - a.stick_map[2]*0.075
 
         if lstick < 5.0 and a.stick_map[0] > 0.0:
-            lstick = lstick + a.stick_map[0]*0.3
+            lstick = lstick + a.stick_map[0]*0.075
         if lstick > -5.0 and a.stick_map[0] < 0.0:
-            lstick = lstick + a.stick_map[0]*0.3 
+            lstick = lstick + a.stick_map[0]*0.075
 
-        adj_offs_y[1] = offs_y[1] + rstick
-        adj_offs_y[2] = offs_y[2] + rstick
+        adj_offs_y[1] = offs_y[1] + lstick
+        adj_offs_y[2] = offs_y[2] + lstick
 
-        adj_offs_y[3] = offs_y[3] + lstick
-        adj_offs_y[4] = offs_y[4] + lstick
+        adj_offs_y[3] = offs_y[3] + rstick
+        adj_offs_y[4] = offs_y[4] + rstick
 
         adj_offs_y[0] = offs_y[0]
+
+        io = 0
 
         for cop in cops:
             if True:
@@ -196,26 +198,30 @@ while True:
 
                 cop.update(a.fin_x, a.fin_y, 1.0)
                 
-            time.sleep(0.01)
-
             io = io + 1
 
-        offs_x[0] = offs_x[0] + ball_vx*0.05
-        offs_y[0] = offs_y[0] + ball_vy*0.05
+            time.sleep(0.01)
 
-        if abs(offs_y[0]) > 4.3: # ball motion handling
+        offs_x[0] = offs_x[0] + ball_vx*0.075*ball_dir
+        offs_y[0] = offs_y[0] + ball_vy*0.075
+
+        if abs(offs_y[0]) > 5.0:
             ball_vy = -ball_vy
 
-        if offs_x[0] > 5.5:
-            print "DANGER"
-            if abs(offs_y[0] - rstick) < 0.8:
-                ball_vx = -ball_vx
-        if offs_x[0] < -5.5:
-            print "DANGER"
-            if abs(offs_y[0] - lstick) < 0.8:
-                ball_vx = -ball_vx
+        ls = (cops[1].cur_pos_y + cops[2].cur_pos_y)/2.0
+        rs = (cops[3].cur_pos_y + cops[4].cur_pos_y)/2.0
 
-        if abs(offs_x[0]) > 6.0:
+        if cops[0].cur_pos_x - center_x > 5.0:
+            if abs(cops[0].cur_pos_y - rs) < 1.7:
+                ball_dir = -1.0
+                print "SLAM!"
+
+        if cops[0].cur_pos_x - center_x < -5.0:            
+            if abs(cops[0].cur_pos_y - ls) < 1.7:
+                ball_dir = 1.0
+                print "SLAM!"
+
+        if abs(cops[0].cur_pos_x - center_x) > 7.0:
             print " "
             print " "
             print "DAAAAAMN YOU SUCK! TRY AGAIN!"

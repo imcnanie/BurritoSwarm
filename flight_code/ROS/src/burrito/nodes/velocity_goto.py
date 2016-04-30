@@ -394,9 +394,12 @@ class posVel:
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
         while abs(self.cur_alt - alt) > 0.2:
+<<<<<<< HEAD
 
             print self.cur_alt - alt
         
+=======
+>>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
             self.set_velocity(0, 0, 2.5)
 
         time.sleep(0.1)
@@ -406,13 +409,13 @@ class posVel:
         
         rospy.loginfo("Reached target Alt!")
 
-    def land_velocity(self):
-        self.alt_control = False
-        self.set_velocity(0, 0, -1)
-        while self.cur_alt > 0.2: # not for real ground landing
-            print "landing: ", self.cur_alt
+    ## def land_velocity(self):
+    ##     self.alt_control = False
+    ##     self.set_velocity(0, 0, -1)
+    ##     while self.cur_alt > 0.2: # not for real ground landing
+    ##         print "landing: ", self.cur_alt
 
-        self.set_velocity(0, 0, 0)
+    ##     self.set_velocity(0, 0, 0)
 
     def handle_pose(self, msg):
         pos = msg.pose.pose.position
@@ -436,7 +439,7 @@ class posVel:
         
     def navigate(self):
         rate = rospy.Rate(30)   # 30hz
-        magnitude = 1  # in meters/sec
+        magnitude = 0.25  # in meters/sec
 
         msg = SP.TwistStamped(
             header=SP.Header(
@@ -455,7 +458,11 @@ class posVel:
                 vector_height = self.final_pos_y - self.cur_pos_y
                 try:
                     slope = vector_base/(vector_height+0.000001)
-                    p_slope = vector_height/(vector_base+0.000001)
+<<<<<<< HEAD
+                    p_slope = -1*vector_height/(vector_base+0.000001)
+=======
+                    p_slope = -vector_height/(vector_base+0.000001)
+>>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
                 except:
                     print "This should never happen..."
 
@@ -526,15 +533,18 @@ class posVel:
 
 
     def land_velocity(self):
-        self.set_velocity(0, 0, -1.0)
-        while self.cur_alt > self.home_alt+5:
-            self.update(0, 0, -1.0)
+        while self.cur_alt > 7.0:
+            self.update(self.home_lat, self.home_lon, 7.0)
             print "landing: ", self.cur_alt
-        while self.cur_alt > self.home_alt:
-            self.update(0, 0, -0.3)
+        self.update(self.home_lat, self.home_lon, 5.0)
+        alts = 5.0
+        while self.cur_alt > 0.3:
+            alts = alts - 0.1
+            self.update(self.home_lat, self.home_lon, alts)
             print "slowly landing: ", self.cur_alt
+            time.sleep(0.5)
         print "Landed, disarming"
-        self.set_velocity(0, 0, -0.02)
+        self.update(self.home_lat, self.home_lon, 0)
             
     def get_copter_id(self):
         return self.copter_id
@@ -550,6 +560,7 @@ class posVel:
         t.daemon = True
         t.start()
 
+<<<<<<< HEAD
 class SmartRTL:
     def __init__(self, copters):
         self.initial_alt_drop = 5
@@ -563,17 +574,20 @@ class SmartRTL:
                 
         print "SORTED COPTERS", [c.get_copter_id() for c in self.sorted_copters]
 
-        for x in self.sorted_copters:
-            #self.raise_cops(self.sorted_copters[::-1])
+        for w in self.sorted_copters[:-1]:
+            self.raise_cops(w)
+            
+        for x in self.sorted_copters[::-1]:
             self.land_cop(x)
 
     def raise_cops(self,cop):
         cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
-        self.raise_height = self.cur_alt + 5
+        self.raise_height = cur_alt + 5
         cop.update(cur_pos_x, cur_pos_y, self.raise_height)
-        while cur_alt < self.raise_height:
+        while cur_alt < self.raise_height-1:
+            cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
             print "Copter", cop.copter_id, " altitude: ",cur_alt
-        cop.set_velocity(0.0,0.0,0.0)
+        #cop.set_velocity(0.0,0.0,0.0)
     
     def land_cop(self,cop):
         cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
@@ -586,11 +600,11 @@ class SmartRTL:
         time.sleep(1)
         
         cop.update(cur_pos_x, cur_pos_y, self.drop_height)
-        while cur_alt > self.drop_height+1:
+        while cur_alt > self.drop_height+2.0:
             cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
-            print "cur_alt: ", cur_alt, "check", self.drop_height+1
+            print "cur_alt: ", cur_alt, "check", self.drop_height+1.0
             #print "Copter", cop.copter_id, " altitude: ",cur_alt
-        cop.set_velocity(0.0,0.0,0.0)
+        #cop.update(0.0,0.0,0.0)
         
         print "Copter", cop.copter_id, "going to home location..."
         time.sleep(1)
@@ -598,36 +612,102 @@ class SmartRTL:
         cop.update(home_lat, home_lon, self.drop_height)
         while not cop.reached:
             cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
+            time.sleep(0.025)
+            #cop.update(home_lat, home_lon, self.drop_height)
             print "Copter", cop.copter_id, " drop height", self.drop_height," altitude: ", cur_alt
-        cop.set_velocity(0.0,0.0,0.0)
+        #cop.update(0.0,0.0,0.0)
         
         cop.land_velocity()
         
 if __name__ == '__main__':
     rospy.init_node("velocity_goto_test")
+    pv = posVel(copter_id = "1")
+    #pv2 = posVel(copter_id = "2")
+=======
+
+class SafeTakeoff:
+    def __init__(self, copters, offsets_x, offsets_y, alt = 20.0):
+        self.cops = copters
+
+        self.offs_x = offsets_x
+        self.offs_y = offsets_y
+        
+        self.ids = []
+        for i in range(len(self.cops)):
+            self.ids.append(i)
+
+        self.offs_hype = []
+        for o in range(len(self.cops)):
+            h = sqrt(self.offs_y[o] **2.0 + self.offs_x[o] **2.0)
+            self.offs_hype.append(h)
+
+        self.alt = alt
+
+        running_x = 0.0
+        running_y = 0.0
+        for cop in copters:
+            running_x = running_x + cop.cur_pos_x
+            running_y = running_y + cop.cur_pos_y
+
+        self.center_x = running_x / float(len(copters))
+        self.center_y = running_y / float(len(copters))
+
+        self.sorted_ids = [x for (y,x) in sorted(zip(self.offs_hype, self.ids))]
+
+        for i in self.sorted_ids[::-1]:
+            self.takeoff_cop(i)
+
+    def takeoff_cop(self, id):
+        self.cops[id].setmode(custom_mode = "OFFBOARD")
+        self.cops[id].arm()
+
+        time.sleep(0.25)
+
+        self.cops[id].takeoff_velocity(alt = 0.5)
+        self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
+
+        while not self.cops[id].reached:
+            time.sleep(0.1)
+
+        
+if __name__ == '__main__':
+    rospy.init_node("velocity_goto")
+
     pv = posVel()
+>>>>>>> b57cf98284069255ccf5d08f8f4fcb880746c0a0
     pv.start_subs()
-    pv.subscribe_pose_thread()    
+    #pv2.start_subs()
+    pv.subscribe_pose_thread()
+    #pv2.subscribe_pose_thread()
 
     time.sleep(0.1)
 
     pv.start_navigating()
+    #pv2.start_navigating()
 
     time.sleep(0.1)
 
     print "set mode"
     pv.setmode(custom_mode="OFFBOARD")
+    #pv2.setmode(custom_mode="OFFBOARD")
     pv.arm()
 
     time.sleep(0.1)
     pv.takeoff_velocity()
+    
+    #pv2.arm()
+
+    time.sleep(0.1)
+    #pv2.takeoff_velocity()
     print "out of takeoff"
 
-    utm_coords = utm.from_latlon(37.8733893, -122.3026196)
-
+    #utm_coords = utm.from_latlon(37.8733893, -122.3026196)
+    utm_coords = utm.from_latlon(37.873178, -122.302849)
     print "going to gps", utm_coords, "current: ", pv.get_lat_lon_alt()
     #pv.update(utm_coords[0], utm_coords[1], 40.0)
-    pv.update(465717.78528424853, 5249399.629721744, 40.0) 
+    pv.update(465717.78528424399, 5249399.629721744, 40.0)
+    #pv2.update(465717.78528424399, 5249399.629721744, 20.0)
+    #pv.update(pv.get_lat_lon_alt()[0], pv.get_lat_lon_alt()[1], 40.0) 
     while not pv.reached:
         time.sleep(0.025)
 
