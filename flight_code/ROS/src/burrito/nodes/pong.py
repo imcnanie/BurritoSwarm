@@ -107,6 +107,7 @@ a.fin_z = cops[0].cur_alt
 
 offs_x = [0.0, -6.5, -6.5, 6.5, 6.5]
 offs_y = [0.0, 0.8, -0.8, 0.8, -0.8]
+offs_alt = [0.0, 2.0, 2.0, 2.0, 2.0]
 
 adj_offs_y = [0.0, 0.0, 0.0, 0.0, 0.0]
 
@@ -123,6 +124,7 @@ if True:
     velocity_goto.SafeTakeoff(cops, offs_x, offs_y, alt = 1.0)
 
 while True:
+    print " "
     print " "
     print "WELCOME TO PONG!!"
     print " "
@@ -144,7 +146,7 @@ while True:
                 a.fin_y = cops[0].cur_pos_y + a.y_offset + offs_y[io]
                 a.fin_z = cops[0].cur_alt + a.z_offset
 
-            cop.update(a.fin_x, a.fin_y, 1.0)
+            cop.update(a.fin_x, a.fin_y, 15.0 + offs_alt[io])
   
             time.sleep(0.05)
 
@@ -171,6 +173,18 @@ while True:
     ball_vy = 0.7
 
     while True:
+        if b.click == "Loiter":
+            b.click = ""
+            print "GAME PAUSED!"
+            print " "
+            print "press pause again to continue."
+            while True:
+                if b.click == "Loiter":
+                    b.click = "Loiter"
+                    break
+        if b.click == "RTL":
+            break
+
         if rstick < 5.0 and a.stick_map[2] < 0.0:
             rstick = rstick - a.stick_map[2]*0.075
         if rstick > -5.0 and a.stick_map[2] > 0.0:
@@ -196,7 +210,7 @@ while True:
                 a.fin_x = center_x + offs_x[io]
                 a.fin_y = center_y + adj_offs_y[io]
 
-                cop.update(a.fin_x, a.fin_y, 1.0)
+                cop.update(a.fin_x, a.fin_y, 15.0 + offs_alt[io])
                 
             io = io + 1
 
@@ -232,3 +246,16 @@ while True:
 
             time.sleep(2.0)
             break
+
+    if b.click == "RTL":
+        break
+
+print "copter landing!"
+
+velocity_goto.SmartRTL(cops)
+
+print "so long!"
+
+time.sleep(1.0)
+
+

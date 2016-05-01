@@ -403,14 +403,6 @@ class posVel:
         
         rospy.loginfo("Reached target Alt!")
 
-    ## def land_velocity(self):
-    ##     self.alt_control = False
-    ##     self.set_velocity(0, 0, -1)
-    ##     while self.cur_alt > 0.2: # not for real ground landing
-    ##         print "landing: ", self.cur_alt
-
-    ##     self.set_velocity(0, 0, 0)
-
     def handle_pose(self, msg):
         pos = msg.pose.pose.position
         qq = msg.pose.pose.orientation
@@ -563,10 +555,10 @@ class SmartRTL:
                 
         print "SORTED COPTERS", [c.get_copter_id() for c in self.sorted_copters]
 
-        for w in self.sorted_copters[:-1]:
+        for w in self.sorted_copters[::-1][:-1]:
             self.raise_cops(w)
             
-        for x in self.sorted_copters[::-1]:
+        for x in self.sorted_copters:
             self.land_cop(x)
 
     def raise_cops(self,cop):
@@ -585,7 +577,7 @@ class SmartRTL:
         print "RTLing Copter", cop.copter_id
         self.drop_height = cur_alt-self.initial_alt_drop
         
-        print "Copter", cop.copter_id, " droping..."
+        print "Copter", cop.copter_id, " dropping..."
         time.sleep(1)
         
         cop.update(cur_pos_x, cur_pos_y, self.drop_height)
