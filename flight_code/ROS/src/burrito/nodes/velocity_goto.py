@@ -2,6 +2,7 @@
 import roslib
 import rospy
 import tf
+import std_msgs
 from math import *
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import NavSatFix
@@ -338,10 +339,17 @@ class posVel:
 
         self.last_sign_dist = 0.0
 
+        # for local button handling
+        self.click = " "
+        self.button_sub = rospy.Subscriber("abpause_buttons", std_msgs.msg.String, self.handle_buttons)
+
         # publisher for mavros/copter*/setpoint_position/local
         self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
         # subscriber for mavros/copter*/local_position/local
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
+
+    def handle_buttons(self, msg):
+        self.click = str(msg)[6:]
 
     def temp(self, topic):
         pass
@@ -439,6 +447,10 @@ class posVel:
         self.home_alt = self.cur_alt
         
         while not rospy.is_shutdown():
+            if self.click == "ABORT":
+                self.disarm()
+                break
+
             if not self.override_nav:  # heavy stuff right about here
                 vector_base = self.final_pos_x - self.cur_pos_x
                 vector_height = self.final_pos_y - self.cur_pos_y
