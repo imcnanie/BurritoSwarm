@@ -18,13 +18,15 @@ if True:
 
     cop = velocity_goto.posVel(copter_id = "1")
 
+
+if is_test:
+    
     cop.start_subs()
     time.sleep(1.0)
 
     cop.subscribe_pose_thread()
     time.sleep(0.1)
-
-if is_test:
+    
     cop.start_navigating()
     time.sleep(0.1)
 
@@ -32,7 +34,7 @@ if is_test:
     cop.arm()
     time.sleep(0.1)
 
-cop.takeoff_velocity()
+    cop.takeoff_velocity()
 
 print "ready"
 
