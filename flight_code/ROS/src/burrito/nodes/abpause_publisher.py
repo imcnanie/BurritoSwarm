@@ -18,7 +18,7 @@ import buttonHandler
 
 def postMode(modeID):
     if True:
-        set_mode = rospy.ServiceProxy('/mavros/set_mode', mavros_msgs.srv.SetMode)
+        set_mode = rospy.ServiceProxy('/mavros/copter1/set_mode', mavros_msgs.srv.SetMode)
         ret = set_mode(base_mode=0, custom_mode=modeID)
         print "Changing modes to",modeID,": ", ret
         time.sleep(0.1)
@@ -33,9 +33,15 @@ while True:
     if bh.changed():
         #print bh.buttonState
 
-        if bh.buttonState["A"][1] == "Super Long" and bh.buttonState["B"][1] == "Super Long" and bh.buttonState["Loiter"][1] == "Super Long":
+        if bh.buttonState["A"][1] == "Short" and bh.buttonState["B"][1] == "Short" and bh.buttonState["Loiter"][1] == "Short":
             print "ABORT"
             bpub.publish(std_msgs.msg.String("ABORT"))
+	if bh.buttonState["Preset1"][1] == "Short":
+            print "MANUAL"
+            postMode("MANUAL")
+	if bh.buttonState["Fly"][1] == "Short":
+            print "POSCTL"
+            postMode("POSCTL")
 
     try:
         pass
