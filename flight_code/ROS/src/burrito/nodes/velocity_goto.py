@@ -252,8 +252,8 @@ class brekinIt:
             self.x = 0
             self.y = 0
             self.z = 10
-            self.set_velocity(0, 0, 2.5)
-        
+            #self.set_velocity(0, 0, 2.5)
+            self.set_velocity(0, 0, 0.5)
 
         time.sleep(0.1)
         
@@ -402,7 +402,7 @@ class posVel:
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
         while abs(self.cur_alt - alt) > 0.2:
-            self.set_velocity(0, 0, 2.5)
+            self.set_velocity(0, 0, 1.7)
 
         time.sleep(0.1)
         self.set_velocity(0, 0, 0)
@@ -513,6 +513,18 @@ class posVel:
             if True:
                 if self.alt_control:
                     pid_offset = self.pid_alt.update(self.cur_alt)
+                    if pid_offset > 1.0:
+                        pid_offset = 1.0
+                    if pid_offset < -1.0:
+                        pid_offset = -1.0
+                    if self.vy > 0.5:
+                        self.vy = 0.5
+                    if self.vy < -0.5:
+                        self.vy = -0.5
+                    if self.vx > 0.5:
+                        self.vx = 0.5
+                    if self.vx < -0.5:
+                        self.vx = -0.5
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude+pid_offset)
                 else:
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
@@ -532,7 +544,7 @@ class posVel:
             print "landing: ", self.cur_alt
         self.update(self.home_lat, self.home_lon, 5.0)
         alts = 5.0
-        while self.cur_alt > 0.3:
+        while self.cur_alt < 0.45:
             alts = alts - 0.1
             self.update(self.home_lat, self.home_lon, alts)
             print "slowly landing: ", self.cur_alt
