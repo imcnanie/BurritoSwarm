@@ -18,7 +18,7 @@ class artoo:
     def __init__(self):
         self.stick_map = []
 
-        self.mod_scalar = 2.0 #careful
+        self.mod_scalar = 0.75 #careful
 
         self.x_offset = 0.0
         self.y_offset = 0.0
@@ -45,8 +45,8 @@ class artoo:
         except:
             pass
 
-        self.x_offset = self.stick_map[1] * self.mod_scalar
-        self.y_offset = -self.stick_map[2] * self.mod_scalar
+        self.x_offset = self.x_offset + self.stick_map[1] * self.mod_scalar
+        self.y_offset = self.y_offset - self.stick_map[2] * self.mod_scalar
         self.z_offset = self.stick_map[0]
 
     def start_subbing(self):
@@ -125,27 +125,19 @@ while True:
 
         offs_yaw = offs_yaw + a.stick_map[3]
 
+        offs_r = offs_r + 0.0 #(a.stick_map[7]+2.0) #breaks sometimes
+
         print a.stick_map[7]
-
-        if abs(a.stick_map[1]) > 0.01:
-            center_x = center_x + a.x_offset
-        else:
-            center_x = center_x
-
-        if abs(a.stick_map[2]) > 0.01:
-            center_y = center_y + a.y_offset
-        else:
-            center_y = center_y
 
         offs_x[io] = cos(cop_radian)*offs_r
         offs_y[io] = sin(cop_radian)*offs_r
 
         a.fin_x = center_x + offs_x[io]
-        a.fin_y = center_y + offs_y[io]
+        a.fin_y = center_y + offs_y[io] 
 
         a.fin_z = 10.0 + io*1.2 #staggering
 
-        cop.update(a.fin_x, a.fin_y, a.fin_z)
+        cop.update(a.fin_x + a.x_offset, a.fin_y + a.y_offset, a.fin_z)
 
         time.sleep(0.1)
 
