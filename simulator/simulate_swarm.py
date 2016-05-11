@@ -58,9 +58,9 @@ for i in range(14, cops+14):
         subprocess.call(["git", "clone", "https://github.com/imcnanie/Firmware.git"])
         subprocess.call(["git submodule update --init --recursive"], shell=True)
         #working gazebo commit
-	os.chdir(os.path.join(os.path.abspath(os.path.curdir),"Firmware"))
-        subprocess.call(["git", "reset", "--hard", "8810ee33a4d44fbcc83606c175bff024ce937e68"])
-	os.chdir(os.path.join(os.path.abspath(os.path.curdir),".."))
+	#os.chdir(os.path.join(os.path.abspath(os.path.curdir),"Firmware"))
+        #subprocess.call(["git", "reset", "--hard", "8810ee33a4d44fbcc83606c175bff024ce937e68"])
+	#os.chdir(os.path.join(os.path.abspath(os.path.curdir),".."))
         time.sleep(1)
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),u'Firmware'))
         if i == 14:

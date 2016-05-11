@@ -67,9 +67,11 @@ time.sleep(0.1)
 cop.start_navigating()
 time.sleep(0.1)
 
-cop.setmode(custom_mode = "OFFBOARD")
+#cop.setmode(custom_mode = "MANUAL")
 cop.arm()
-time.sleep(0.1)
+time.sleep(0.5)
+
+cop.setmode(custom_mode = "OFFBOARD")
 
 cop.takeoff_velocity()
 
