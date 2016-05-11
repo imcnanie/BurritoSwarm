@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import rosnode
 import roslib
 import rospy
 from nav_msgs.msg import Odometry
@@ -15,8 +16,9 @@ import os
 
 import velocity_goto
 import buttonHandler
+import count_copters
 
-limit = 1
+limit = count_copters.count_copters()
 
 def postMode(modeID, copid):
     if True:
