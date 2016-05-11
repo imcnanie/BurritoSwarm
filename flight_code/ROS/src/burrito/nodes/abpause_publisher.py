@@ -16,7 +16,7 @@ import os
 import velocity_goto
 import buttonHandler
 
-limit = 99
+limit = 1
 
 def postMode(modeID, copid):
     if True:
@@ -51,13 +51,25 @@ while True:
             print "MANUAL"
             for i in range(limit):
                 copid = 'copter' + str(i+1)
-                postMode("MANUAL", copid)
+                postMode("STABILIZE", copid)
 
-	if bh.buttonState["Fly"][1] == "Short":
-            print "POSCTL"
+	if bh.buttonState["Preset2"][1] == "Short":
+            print "GUIDED"
             for i in range(limit):
                 copid = 'copter' + str(i+1)
-                postMode("POSCTL", copid)
+                postMode("GUIDED", copid)
+
+	#if bh.buttonState["RTL"][1] == "Short":
+        #    print "LAND"
+        #    for i in range(limit):
+        #        copid = 'copter' + str(i+1)
+        #        postMode("LAND", copid)
+
+	if bh.buttonState["Fly"][1] == "Short":
+            print "LOITER"
+            for i in range(limit):
+                copid = 'copter' + str(i+1)
+                postMode("LOITER", copid)
 
     try:
         pass
