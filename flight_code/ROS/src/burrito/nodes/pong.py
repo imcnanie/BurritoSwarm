@@ -105,6 +105,7 @@ a.fin_x = cops[0].cur_pos_x
 a.fin_y = cops[0].cur_pos_y
 a.fin_z = cops[0].cur_alt
 
+#encodes offset of copters relative to copter1
 offs_x = [0.0, -6.5, -6.5, 6.5, 6.5]
 offs_y = [0.0, 0.8, -0.8, 0.8, -0.8]
 offs_alt = [0.0, 2.0, 2.0, 2.0, 2.0]
