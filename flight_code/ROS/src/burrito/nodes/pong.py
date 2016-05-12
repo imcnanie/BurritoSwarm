@@ -107,8 +107,8 @@ a.fin_z = cops[0].cur_alt
 
 #encodes offset of copters relative to copter1
 offs_x = [0.0, -6.5, -6.5, 6.5, 6.5]
-offs_y = [0.0, 0.8, -0.8, 0.8, -0.8]
-offs_alt = [0.0, 2.0, 2.0, 2.0, 2.0]
+offs_y = [0.0, 2.5, -2.5, 2.5, -2.5]
+offs_alt = [0.0, 2.0, 4.0, 2.0, 4.0]
 
 adj_offs_y = [0.0, 0.0, 0.0, 0.0, 0.0]
 
@@ -122,7 +122,7 @@ center_x = 0.0
 center_y = 0.0
 
 if True:
-    velocity_goto.SafeTakeoff(cops, offs_x, offs_y, alt = 1.0)
+    velocity_goto.SafeTakeoff(cops, offs_x, offs_y, alt = 10.0)
 
 while True:
     print " "

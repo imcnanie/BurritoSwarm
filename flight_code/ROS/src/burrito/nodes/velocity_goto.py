@@ -24,7 +24,7 @@ print "broadcasting"
 
 import utm
 
-IS_APM = True
+IS_APM = False
 
 class rcOverride:
     def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
@@ -270,11 +270,11 @@ class posVel:
 
             if True:
                 if self.alt_control:
-                    pid_offset = self.pid_alt.update(self.cur_alt)
-                    if pid_offset > 1.0:
-                        pid_offset = 1.0
-                    if pid_offset < -1.0:
-                        pid_offset = -1.0
+                    #pid_offset = self.pid_alt.update(self.cur_alt)
+                    #if pid_offset > 1.0:
+                    #    pid_offset = 1.0
+                    #if pid_offset < -1.0:
+                    #    pid_offset = -1.0
                     if self.vy > 0.5:
                         self.vy = 0.5
                     if self.vy < -0.5:
@@ -283,7 +283,16 @@ class posVel:
                         self.vx = 0.5
                     if self.vx < -0.5:
                         self.vx = -0.5
-                    msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude+pid_offset)
+
+                    #ned.
+                    if self.final_alt > self.cur_alt:
+                        self.vz = 0.5
+                    if self.final_alt < self.cur_alt:
+                        self.vz = -0.5
+                    if abs(self.final_alt-self.cur_alt) < 0.9:
+                        self.vz = 0.0
+
+                    msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
                 else:
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
 
@@ -420,7 +429,7 @@ class SafeTakeoff:
 
         time.sleep(0.25)
 
-        self.cops[id].takeoff_velocity(alt = 0.5)
+        self.cops[id].takeoff_velocity(alt = self.alt)
         self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
 
         while not self.cops[id].reached:
