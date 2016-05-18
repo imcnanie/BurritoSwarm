@@ -108,7 +108,7 @@ a.fin_z = cops[0].cur_alt
 #encodes offset of copters relative to copter1
 offs_x = [0.0, -6.5, -6.5, 6.5, 6.5]
 offs_y = [0.0, 2.5, -2.5, 2.5, -2.5]
-offs_alt = [0.0, 2.0, 4.0, 2.0, 4.0]
+offs_alt = [0.0, 3.0, 5.0, 3.0, 5.0]
 
 adj_offs_y = [0.0, 0.0, 0.0, 0.0, 0.0]
 
@@ -129,12 +129,14 @@ while True:
     print " "
     print "WELCOME TO PONG!!"
     print " "
-    print "center your squad-of-quads and press A to start!"
+    print "center your squad-of-quads and move throttle up to start!"
 
     while True:
         io = 0
 
-        if b.click == "A": break
+        #if b.click == "A": break
+
+        if abs(a.stick_map[3]) > 0.5: break
 
         for cop in cops:
             if abs(a.stick_map[0]) < 0.01 and abs(a.stick_map[1]) < 0.01 and abs(a.stick_map[2]) < 0.01:
@@ -202,7 +204,7 @@ while True:
                 a.fin_x = center_x + offs_x[io]
                 a.fin_y = center_y + adj_offs_y[io]
 
-                cop.update(a.fin_x, a.fin_y, 15.0 + offs_alt[io])
+                cop.update(a.fin_x, a.fin_y, 22.0 + offs_alt[io])
                 
             io = io + 1
 
@@ -218,12 +220,12 @@ while True:
         rs = (cops[3].cur_pos_y + cops[4].cur_pos_y)/2.0
 
         if cops[0].cur_pos_x - center_x > 5.0:
-            if abs(cops[0].cur_pos_y - rs) < 1.7:
+            if abs(cops[0].cur_pos_y - rs) < 2.5:
                 ball_dir = -1.0
                 print "SLAM!"
 
         if cops[0].cur_pos_x - center_x < -5.0:            
-            if abs(cops[0].cur_pos_y - ls) < 1.7:
+            if abs(cops[0].cur_pos_y - ls) < 2.5:
                 ball_dir = 1.0
                 print "SLAM!"
 
