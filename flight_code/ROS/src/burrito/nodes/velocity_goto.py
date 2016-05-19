@@ -159,11 +159,13 @@ class posVel:
 
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
-        while abs(self.cur_alt - alt) > 0.2:
-            self.set_velocity(0, 0, 1.5)
+        while self.cur_alt < alt - 1:
+            print "CUR ALT: ", self.cur_alt, "GOAL: ", alt
+            #self.set_velocity(0, 0, 1.5)
+            self.update(self.cur_pos_x, self.cur_pos_y, alt)
  
         time.sleep(0.1)
-        self.set_velocity(0, 0, 0)
+        #self.set_velocity(0, 0, 0)
 
         self.final_alt = alt
         
@@ -270,11 +272,11 @@ class posVel:
 
             if True:
                 if self.alt_control:
-                    pid_offset = self.pid_alt.update(self.cur_alt)
-                    if pid_offset > 1.0:
-                        pid_offset = 1.0
-                    if pid_offset < -1.0:
-                        pid_offset = -1.0
+                    #pid_offset = self.pid_alt.update(self.cur_alt)
+                    #if pid_offset > 1.0:
+                    #    pid_offset = 1.0
+                    #if pid_offset < -1.0:
+                    #    pid_offset = -1.0
                     if self.vy > 0.5:
                         self.vy = 0.5
                     if self.vy < -0.5:
@@ -283,7 +285,16 @@ class posVel:
                         self.vx = 0.5
                     if self.vx < -0.5:
                         self.vx = -0.5
-                    msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude+pid_offset)
+
+                    #ned.
+                    if self.final_alt > self.cur_alt:
+                        self.vz = 0.5
+                    if self.final_alt < self.cur_alt:
+                        self.vz = -0.5
+                    if abs(self.final_alt-self.cur_alt) < 0.9:
+                        self.vz = 0.0
+
+                    msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
                 else:
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
 
@@ -400,16 +411,19 @@ class SafeTakeoff:
 
         self.alt = alt
 
-        running_x = 0.0
-        running_y = 0.0
-        for cop in copters:
-            running_x = running_x + cop.cur_pos_x
-            running_y = running_y + cop.cur_pos_y
+        #running_x = 0.0
+        #running_y = 0.0
+        #for cop in copters:
+        #    running_x = running_x + cop.cur_pos_x
+        #    running_y = running_y + cop.cur_pos_y
 
-        self.center_x = running_x / float(len(copters))
-        self.center_y = running_y / float(len(copters))
+        #self.center_x = running_x / float(len(copters))
+        #self.center_y = running_y / float(len(copters))
 
         self.sorted_ids = [x for (y,x) in sorted(zip(self.offs_hype, self.ids))]
+
+        self.center_x = self.cops[0].cur_pos_x
+        self.center_y = self.cops[0].cur_pos_y
 
         for i in self.sorted_ids[::-1]:
             self.takeoff_cop(i)
@@ -420,10 +434,12 @@ class SafeTakeoff:
 
         time.sleep(0.25)
 
-        self.cops[id].takeoff_velocity(alt = 0.5)
-        self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
+        self.cops[id].takeoff_velocity(alt = self.alt)
+        #self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
 
         while not self.cops[id].reached:
+            self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
+            print "not reached, x: ", self.cops[id].vx, " y: ", self.cops[id].vy, " alt: ",self.alt
             time.sleep(0.1)
 
         
