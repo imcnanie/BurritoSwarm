@@ -1,0 +1,6 @@
+<launch>
+	<arg name="copter_prefix" default="copter" />
+	<arg name="copter_id" default="1" />
+	     <node pkg="burrito" type="setpoint_odometry.py" name="setpoint_odom" ns="$(arg copter_prefix)$(arg copter_id)/hellacopters" output="screen">
+	     </node>
+</launch>
