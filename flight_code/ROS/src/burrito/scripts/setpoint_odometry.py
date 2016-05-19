@@ -52,7 +52,7 @@ class rcOverride:
         self.override_pub.publish(RC)
         
 
-class posVel:
+class PosVel:
     def __init__(self, copter_id = "1"):
         self.copter_id = copter_id
         mavros_string = "/copter"+copter_id+"/mavros"
@@ -97,8 +97,8 @@ class posVel:
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
 
     def odometryCb(self, msg):
-        #rospy.loginfo("YAW: "+str(msg.pose.pose.orientation.z))
-        #rospy.loginfo("LAT: "+str(msg.pose.pose.position.x)+" LON: "+str(msg.pose.pose.position.y)+" ALT: "+str(msg.pose.pose.position.z))
+        rospy.loginfo("YAW: "+str(msg.pose.pose.orientation.z))
+        rospy.loginfo("LAT: "+str(msg.pose.pose.position.x)+" LON: "+str(msg.pose.pose.position.y)+" ALT: "+str(msg.pose.pose.position.z))
         _lat = msg.pose.pose.position.x
         _lon = msg.pose.pose.position.y
         _alt = msg.pose.pose.position.z
@@ -450,14 +450,11 @@ class SafeTakeoff:
             print "not reached, x: ", self.cops[id].vx, " y: ", self.cops[id].vy, " alt: ",self.alt
             time.sleep(0.1)
 
-
-
-            
 if __name__ == '__main__':
     rospy.init_node("setpoint_odom")
-
-    print "broadcasting setpoint_odom"
-    pv = posVel()
+    print "setpoint_odom"
+    
+    pv = PosVel()
     pv.start_subs()
     pv.subscribe_pose_thread()
     pv.start_navigating()
@@ -465,7 +462,8 @@ if __name__ == '__main__':
     hz = rospy.Rate(10)
 
     reached_pub = rospy.Publisher('setpoint_odom/reached', Bool, queue_size=10)
-    rospy.Subscriber('/copter1/hellacopters/setpoint_odom/cmd_odom', Odometry, pv.odometryCb)
+    # TODO get current namespace
+    rospy.Subscriber('setpoint_odom/cmd_odom', Odometry, pv.odometryCb)
     while not rospy.is_shutdown():
         #rospy.loginfo("HEYYY")
         reached_pub.publish(Bool(pv.reached))
