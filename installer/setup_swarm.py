@@ -301,7 +301,7 @@ def main():
 			client = ssh.ssh_instance()
 			client.connect("10.1.1.10")
 			soloconf = client.command("cat /etc/sololink.conf")
-			soloconf = soloconf.replace("telemDestPort=14550","telemDestPort="+def_ports[cops.index(cop)])
+			soloconf = soloconf.replace(re.search("telemDestPort=..550", soloconf).group(0) ,"telemDestPort="+def_ports[cops.index(cop)])
 			client.command_blind('echo "' + new_soloconf + '" > /etc/sololink.conf')
 			print "echo '" + soloconf + "' > /etc/sololink.conf"
 			client.command_blind("md5sum /etc/sololink.conf > /etc/sololink.conf.md5")
@@ -309,7 +309,7 @@ def main():
 			client = ssh.ssh_instance()
 			client.connect("10.1.1.1")
 			artooconf = client.command("cat /etc/sololink.conf")
-			artooconf = artooconf.replace("telemDestPort=14550","telemDestPort="+def_ports[cops.index(cop)])
+			artooconf = artooconf.replace(re.search("telemDestPort=..550", artooconf).group(0),"telemDestPort="+def_ports[cops.index(cop)])
 			client.command_blind('echo "' + new_soloconf + '" > /etc/sololink.conf')
 			client.command_blind("md5sum /etc/sololink.conf > /etc/sololink.conf.md5")
 			client.command_blind("reboot")
