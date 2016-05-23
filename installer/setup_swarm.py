@@ -4,6 +4,7 @@ import time
 import wifi
 import ping
 import ssh
+import re
 
 ASK_TIME =1
 cont=True
