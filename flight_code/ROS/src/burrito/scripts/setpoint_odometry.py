@@ -99,12 +99,15 @@ class PosVel:
     def odometryCb(self, msg):
         rospy.loginfo("YAW: "+str(msg.pose.pose.orientation.z))
         rospy.loginfo("LAT: "+str(msg.pose.pose.position.x)+" LON: "+str(msg.pose.pose.position.y)+" ALT: "+str(msg.pose.pose.position.z))
+
         _lat = msg.pose.pose.position.x
         _lon = msg.pose.pose.position.y
         _alt = msg.pose.pose.position.z
-        _yaw = msg.pose.pose.orientation.z
-        self.update(_lat, _lon, _alt, yaw=_yaw)
-        
+        #_yaw = msg.pose.pose.orientation.z
+
+        self.update(_lat, _lon, _alt)
+        #self.update(_lat, _lon, _alt, yaw=_yaw)
+
     def handle_buttons(self, msg):
         self.click = str(msg)[6:]
 
@@ -459,12 +462,46 @@ if __name__ == '__main__':
     pv.subscribe_pose_thread()
     pv.start_navigating()
 
-    hz = rospy.Rate(10)
+    time.sleep(0.25)
+
+    hz = rospy.Rate(30)
+
+    if True:
+        msg = Odometry()
+        msg.header.stamp = rospy.Time.now()
+        msg.header.frame_id = "/copter" + pv.copter_id + "/"
+        msg.child_frame_id = 'hellacopters' # i.e. '/base_footprint'
+
+        home_pos = (msg.pose.pose.position.x,
+                    msg.pose.pose.position.y,
+                    msg.pose.pose.position.z)
+
+        msg.pose.pose.position.x = pv.home_lat
+        msg.pose.pose.position.y = pv.home_lon
+        msg.pose.pose.position.z = pv.home_alt
+
+        home_ori = (0.0, 0.0, 0.0, 0.0)
+
+        home_pub = rospy.Publisher(msg.header.frame_id+msg.child_frame_id+'/home_pos', Odometry, queue_size=10)
 
     reached_pub = rospy.Publisher('setpoint_odom/reached', Bool, queue_size=10)
     # TODO get current namespace
     rospy.Subscriber('setpoint_odom/cmd_odom', Odometry, pv.odometryCb)
     while not rospy.is_shutdown():
-        #rospy.loginfo("HEYYY")
         reached_pub.publish(Bool(pv.reached))
+        msg = Odometry()
+        msg.header.stamp = rospy.Time.now()
+        msg.header.frame_id = "/copter" + pv.copter_id + "/"
+        msg.child_frame_id = 'hellacopters' # i.e. '/base_footprint'
+
+        home_pos = (msg.pose.pose.position.x,
+                    msg.pose.pose.position.y,
+                    msg.pose.pose.position.z)
+
+        msg.pose.pose.position.x = pv.home_lat
+        msg.pose.pose.position.y = pv.home_lon
+        msg.pose.pose.position.z = pv.home_alt
+
+        home_pub.publish(msg)
+
         hz.sleep()
