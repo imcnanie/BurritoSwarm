@@ -3,6 +3,9 @@ import subprocess
 import time
 import os
 import sys
+import rospy
+
+rospy.init_node('simulate_swarm')
 
 print "How many copters to simulate: ",
 #key = raw_input()
@@ -119,3 +122,22 @@ for i in range(14, cops+14):
     os.chdir(os.path.join(os.path.abspath(os.path.curdir),"../.."))
     
 
+
+#def clean_sims():
+#    cmd = "pwd"
+
+
+    
+#rospy.on_shutdown(clean_sims)
+
+print "TEST"
+
+while not rospy.is_shutdown():
+    pass
+
+
+
+print "DANK"
+cmd = "sh $ROS_SRC_DIR/src/burrito/simulator/clean_simulators.sh"
+subprocess.Popen(cmd, stdout=subprocess.PIPE, 
+                 shell=True)

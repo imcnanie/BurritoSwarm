@@ -127,6 +127,7 @@ class CopterControl:
             self.takeoff_cop(i)
             
     def takeoff_cop(self, args):
+        print "TAKING OFF ", args['prefix'], " COPTER!!"
         self.setmode(prefix=args['prefix'], custom_mode="OFFBOARD")
         self.arm(prefix=args['prefix'])
         #self.cops[id].setmode(custom_mode = "OFFBOARD")
@@ -149,7 +150,7 @@ class CopterControl:
             hz.sleep()
 
     def publish_odom(self, odom_pub, lat, lon, alt, yaw=180, prefix="/copter1/", publish_odom_tf=True):
-        print "publishing mf odom"
+        #print "publishing mf odom"
         msg = Odometry()
         msg.header.stamp = rospy.Time.now()
         msg.header.frame_id = prefix # i.e. '/odom'
@@ -181,10 +182,11 @@ class CopterControl:
             tf_br.sendTransform(pos, ori, msg.header.stamp, msg.child_frame_id, msg.header.frame_id)
         
     def takeoff_velocity(self, pub, sub, prefix="/copter1/", alt=7):
+        print "TAKING OFF VELOCITY ", prefix, " COPTER"
         self.alt_control = False
 
         while sub.cur_alt < abs(alt - 1.0):
-            print "CUR ALT: ", sub.cur_alt, "GOAL: ", alt
+            #print "CUR ALT: ", sub.cur_alt, "GOAL: ", alt
             lat = sub.cur_pos_x
             lon = sub.cur_pos_y
             self.publish_odom(pub, lat, lon, self.alt, prefix=prefix)
@@ -287,4 +289,4 @@ if __name__ == "__main__":
 
     print "Takeoff success, landing"    
 
-    st = 
+    #st = 

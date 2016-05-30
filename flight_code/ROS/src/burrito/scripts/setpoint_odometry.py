@@ -19,6 +19,7 @@ import time
 import threading
 import thread
 import pid_controller
+import sys
 from random import randint
 
 import utm
@@ -92,7 +93,9 @@ class PosVel:
         self.button_sub = rospy.Subscriber("abpause_buttons", std_msgs.msg.String, self.handle_buttons)
 
         # publisher for mavros/copter*/setpoint_position/local
-        self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
+        #self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
+        print "THE MAVROS STRING IS: "+mavros_string
+        self.pub_vel = rospy.Publisher(mavros.get_topic('setpoint_velocity', 'cmd_vel'), SP.TwistStamped, queue_size=10)
         # subscriber for mavros/copter*/local_position/local
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
 
@@ -457,7 +460,7 @@ if __name__ == '__main__':
     rospy.init_node("setpoint_odom")
     print "setpoint_odom"
     
-    pv = PosVel()
+    pv = PosVel(sys.argv[1])
     pv.start_subs()
     pv.subscribe_pose_thread()
     pv.start_navigating()
