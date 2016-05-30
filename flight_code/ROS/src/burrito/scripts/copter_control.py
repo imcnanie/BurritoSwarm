@@ -48,51 +48,53 @@ class CopterControl:
             rospy.Subscriber(prefix+'mavros/global_position/local',
                              Odometry,
                              sub.handle_pose)
-            rospy.Subscriber(prefix+'hellacopters/',
+            rospy.Subscriber(prefix+'hellacopters/home_pos',
                              Odometry,
                              sub.handle_home)
             rospy.Subscriber(prefix+'hellacopters/setpoint_odom/reached',
                              Bool,
                              sub.handle_reached)
-            rospy.Subscriber(prefix+'')
-            self.cops_odom.append({"prefix":prefix, "pub":pub, "sub":sub, "hsub":hsub})
+            self.cops_odom.append({"prefix":prefix, "pub":pub, "sub":sub})
 
         self.sorted_copters = []
         copters_by_alt = {}
 
         time.sleep(0.25)
 
-        for cop in cops_odom:
-            copters_by_alt[cop] = cop['sub'].cur_alt
+        heights = [c['sub'].cur_alt for c in self.cops_odom]
 
-        self.sorted_copters = sorted(copters_by_alt)
+        #for cop in self.cops_odom:
+        #    copters_by_alt[cop] = cop['sub'].cur_alt
+
+        copters_by_alt = [a for (a, h) in sorted(zip(self.cops_odom, heights))]
+
+        self.sorted_copters = copters_by_alt
 
         for w in self.sorted_copters[::-1][:-1]:
             #self.raise_cops(w)
 
             raise_height = w['sub'].cur_alt + 5.0
 
-            self.publish_odom(w['sub'].cur_pos_x, w['sub'].cur_pos_y, raise_height)
+            self.publish_odom(w['pub'], w['sub'].cur_pos_x, w['sub'].cur_pos_y, raise_height)
             while cur_alt < raise_height-1.0:
                 time.sleep(0.1)
             
-        for x in self.sorted_copters:
+        for w in self.sorted_copters:
             #self.land_cop(x)
 
             drop_height = w['sub'].cur_pos_x - self.initial_alt_drop
 
             print "Copter dropping..."
 
-            self.publish_odom(w['sub'].cur_pos_x, w['sub'].cur_pos_y, drop_height)
+            self.publish_odom(w['pub'], w['sub'].cur_pos_x, w['sub'].cur_pos_y, drop_height)
             while w['sub'].cur_alt > drop_height+2.0:
                 time.sleep(0.01)
         
             print "Going to home location..."
             time.sleep(0.25)
 
-            self.publish_odom(w['hsub'].home_lat, w['hsub'].home_lon, w['hsub'].home_alt)
-            while not cop.reached:
-                cur_pos_x, cur_pos_y, cur_alt = cop.get_lat_lon_alt()
+            self.publish_odom(w['pub'], w['sub'].home_lat, w['sub'].home_lon, w['sub'].cur_alt)
+            while not w['sub'].reached:#reached
                 time.sleep(0.025)
 
             print "land!"
@@ -159,8 +161,8 @@ class CopterControl:
         msg.pose.pose.position = Point(lat, lon, alt)
 
         msg.pose.pose.position.x = lat
-        msg.pose.pose.position.x = lon
-        msg.pose.pose.position.x = alt
+        msg.pose.pose.position.y = lon
+        msg.pose.pose.position.z = alt
 
         pos = (msg.pose.pose.position.x,
                msg.pose.pose.position.y,
@@ -232,9 +234,9 @@ class CopterControl:
             self.cur_pos_y = 0.0
             self.cur_alt = 0.0
 
-            self.home_x = 0.0
-            self.home_y = 0.0
-            self.home_z = 0.0
+            self.home_lat = 0.0
+            self.home_lon = 0.0
+            self.home_alt = 0.0
 
             self.reached = False
 
@@ -289,4 +291,6 @@ if __name__ == "__main__":
 
     print "Takeoff success, landing"    
 
-    #st = 
+    sr = cc.smart_rtl()
+
+    print "SlAM!"
