@@ -36,9 +36,6 @@ class CopterControl:
     def __init__(self):
         self.num_cops = count_copters.count_copters()
 
-    def smart_rtl(self):        
-        self.initial_alt_drop = 5
-
         self.cops = ["/copter"+str(x+1)+"/" for x in range(self.num_cops)]
         self.cops_odom = []
 
@@ -54,7 +51,11 @@ class CopterControl:
             rospy.Subscriber(prefix+'hellacopters/setpoint_odom/reached',
                              Bool,
                              sub.handle_reached)
+
             self.cops_odom.append({"prefix":prefix, "pub":pub, "sub":sub})
+
+    def smart_rtl(self):        
+        self.initial_alt_drop = 5
 
         self.sorted_copters = []
         copters_by_alt = {}
@@ -107,20 +108,6 @@ class CopterControl:
 
         self.alt = alt
         
-        self.cops = ["/copter"+str(x+1)+"/" for x in range(self.num_cops)]
-        self.cops_odom = []
-
-        for prefix in self.cops:
-            pub = rospy.Publisher(prefix+'hellacopters/setpoint_odom/cmd_odom', Odometry, queue_size=10)
-            sub = self.Subscribers()
-            rospy.Subscriber(prefix+'mavros/global_position/local',
-                             Odometry,
-                             sub.handle_pose)
-            rospy.Subscriber(prefix+'hellacopters/setpoint_odom/reached',
-                             Bool,
-                             sub.handle_reached)
-            self.cops_odom.append({"prefix":prefix,"pub":pub,"sub":sub})
-
         self.center_x = self.cops_odom[0]['sub'].cur_pos_x
         self.center_y = self.cops_odom[0]['sub'].cur_pos_y
 
@@ -283,7 +270,7 @@ if __name__ == "__main__":
 
     cc = CopterControl()
 
-    print "Taking of ", cc.num_cops , " copters."
+    print "Taking off ", cc.num_cops , " copters."
     
     st = cc.safe_takeoff(initial_coords)
 
