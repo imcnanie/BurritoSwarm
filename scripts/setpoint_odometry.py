@@ -6,6 +6,7 @@ import std_msgs
 from math import *
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import NavSatFix
+from std_msgs.msg import Bool
 import geometry_msgs.msg
 import mavros
 import mavros_msgs.srv
@@ -18,16 +19,15 @@ import time
 import threading
 import thread
 import pid_controller
+import sys
 from random import randint
-
-print "broadcasting"
 
 import utm
 
 IS_APM = True
 
 class rcOverride:
-    def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
+    def __init__(self, copter_id = "1", mavros_string="/copter1/mavros"):
         rospy.init_node('rc_override'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
 
@@ -53,10 +53,10 @@ class rcOverride:
         self.override_pub.publish(RC)
         
 
-class posVel:
+class PosVel:
     def __init__(self, copter_id = "1"):
         self.copter_id = copter_id
-        mavros_string = "/mavros/copter"+copter_id
+        mavros_string = "/copter"+copter_id+"/mavros"
         #rospy.init_node('velocity_goto_'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
 
@@ -93,9 +93,23 @@ class posVel:
         self.button_sub = rospy.Subscriber("abpause_buttons", std_msgs.msg.String, self.handle_buttons)
 
         # publisher for mavros/copter*/setpoint_position/local
-        self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
+        #self.pub_vel = SP.get_pub_velocity_cmd_vel(queue_size=10)
+        print "THE MAVROS STRING IS: "+mavros_string
+        self.pub_vel = rospy.Publisher(mavros.get_topic('setpoint_velocity', 'cmd_vel'), SP.TwistStamped, queue_size=10)
         # subscriber for mavros/copter*/local_position/local
         self.sub = rospy.Subscriber(mavros.get_topic('local_position', 'local'), SP.PoseStamped, self.temp)
+
+    def odometryCb(self, msg):
+        rospy.loginfo("YAW: "+str(msg.pose.pose.orientation.z))
+        rospy.loginfo("LAT: "+str(msg.pose.pose.position.x)+" LON: "+str(msg.pose.pose.position.y)+" ALT: "+str(msg.pose.pose.position.z))
+
+        _lat = msg.pose.pose.position.x
+        _lon = msg.pose.pose.position.y
+        _alt = msg.pose.pose.position.z
+        #_yaw = msg.pose.pose.orientation.z
+
+        self.update(_lat, _lon, _alt)
+        #self.update(_lat, _lon, _alt, yaw=_yaw)
 
     def handle_buttons(self, msg):
         self.click = str(msg)[6:]
@@ -106,7 +120,7 @@ class posVel:
     def start_subs(self):
         pass
 
-    def update(self, com_x, com_y, com_z):
+    def update(self, com_x, com_y, com_z, yaw=0.0, vx=1.0, vy=1.0, vz=1.0):
         self.alt_control = True
         self.reached = False
         self.override_nav = False
@@ -442,55 +456,55 @@ class SafeTakeoff:
             print "not reached, x: ", self.cops[id].vx, " y: ", self.cops[id].vy, " alt: ",self.alt
             time.sleep(0.1)
 
-        
 if __name__ == '__main__':
-    rospy.init_node("velocity_goto")
-
-    pv = posVel()
+    rospy.init_node("setpoint_odom")
+    print "setpoint_odom"
+    
+    pv = PosVel(sys.argv[1])
     pv.start_subs()
-    #pv2.start_subs()
     pv.subscribe_pose_thread()
-    #pv2.subscribe_pose_thread()
-
-    time.sleep(0.1)
-
     pv.start_navigating()
-    #pv2.start_navigating()
 
-    time.sleep(0.1)
+    time.sleep(0.25)
 
-    print "set mode"
-    pv.setmode(custom_mode="OFFBOARD")
-    #pv2.setmode(custom_mode="OFFBOARD")
-    pv.arm()
+    hz = rospy.Rate(30)
 
-    time.sleep(0.1)
-    pv.takeoff_velocity()
-    
-    #pv2.arm()
+    if True:
+        msg = Odometry()
+        msg.header.stamp = rospy.Time.now()
+        msg.header.frame_id = "/copter" + pv.copter_id + "/"
+        msg.child_frame_id = 'hellacopters' # i.e. '/base_footprint'
 
-    time.sleep(0.1)
-    #pv2.takeoff_velocity()
-    print "out of takeoff"
+        home_pos = (msg.pose.pose.position.x,
+                    msg.pose.pose.position.y,
+                    msg.pose.pose.position.z)
 
-    #utm_coords = utm.from_latlon(37.8733893, -122.3026196)
-    utm_coords = utm.from_latlon(37.873178, -122.302849)
-    print "going to gps", utm_coords, "current: ", pv.get_lat_lon_alt()
-    #pv.update(utm_coords[0], utm_coords[1], 40.0)
-    pv.update(465717.78528424399, 5249399.629721744, 40.0)
-    #pv2.update(465717.78528424399, 5249399.629721744, 20.0)
-    #pv.update(pv.get_lat_lon_alt()[0], pv.get_lat_lon_alt()[1], 40.0) 
-    while not pv.reached:
-        time.sleep(0.025)
+        msg.pose.pose.position.x = pv.home_lat
+        msg.pose.pose.position.y = pv.home_lon
+        msg.pose.pose.position.z = pv.home_alt
 
-    print "at gps, waiting"
-    time.sleep(2.0)
+        home_ori = (0.0, 0.0, 0.0, 0.0)
 
-    print "done"
-    
-    copters = [pv]
-    SmartRTL(copters)
-    #pv.land_velocity()
+        home_pub = rospy.Publisher(msg.header.frame_id+msg.child_frame_id+'/home_pos', Odometry, queue_size=10)
 
-    print "Landed!"
+    reached_pub = rospy.Publisher('setpoint_odom/reached', Bool, queue_size=10)
+    # TODO get current namespace
+    rospy.Subscriber('setpoint_odom/cmd_odom', Odometry, pv.odometryCb)
+    while not rospy.is_shutdown():
+        reached_pub.publish(Bool(pv.reached))
+        msg = Odometry()
+        msg.header.stamp = rospy.Time.now()
+        msg.header.frame_id = "/copter" + pv.copter_id + "/"
+        msg.child_frame_id = 'hellacopters' # i.e. '/base_footprint'
 
+        home_pos = (msg.pose.pose.position.x,
+                    msg.pose.pose.position.y,
+                    msg.pose.pose.position.z)
+
+        msg.pose.pose.position.x = pv.home_lat
+        msg.pose.pose.position.y = pv.home_lon
+        msg.pose.pose.position.z = pv.home_alt
+
+        home_pub.publish(msg)
+
+        hz.sleep()

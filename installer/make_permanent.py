@@ -142,4 +142,4 @@ artoo.command_blind("chmod +x /etc/setupwifi.sh")
 artoo.command_blind("echo '" + rclocal + "' > /etc/rc5.d/S99rc.local")
 artoo.command_blind("chmod +x /etc/rc5.d/S99rc.local")
 print "Rebooting"
-#artoo.command_blind("reboot")
+artoo.command_blind("reboot")
