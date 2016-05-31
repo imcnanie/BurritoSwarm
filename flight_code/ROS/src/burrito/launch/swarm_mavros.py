@@ -14,7 +14,6 @@ except:
     copters = 1
 pros = []
 
-
 for i in range(copters):
     j = str(i + 15)
 
@@ -29,5 +28,9 @@ while not rospy.is_shutdown():
     pass #print "swarm_mavros.py is good"
 
 for pro in pros:
-    os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
-
+    try:
+	print "Killing"
+        #pro.kill()
+        os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
+    except:
+        print "failed to kill copters"
