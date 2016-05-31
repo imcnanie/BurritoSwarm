@@ -46,10 +46,6 @@ def inplace_change(filename, old_string, new_string):
         f.close()
     else:
         print 'No occurances of "{old_string}" found.'.format(**locals())
-
-
-
-
         
 for i in range(14, cops+14):
 
@@ -76,10 +72,6 @@ for i in range(14, cops+14):
     else:
         print filena, " exists."
         os.chdir(os.path.join(os.path.abspath(os.path.curdir),filena+'/Firmware'))
-
-
-    
-        
 
     print "filena"
     old = str(14)
@@ -130,14 +122,14 @@ for i in range(14, cops+14):
     
 #rospy.on_shutdown(clean_sims)
 
-print "TEST"
+print "Setup Finished"
 
 while not rospy.is_shutdown():
     pass
 
 
 
-print "DANK"
-cmd = "sh $ROS_SRC_DIR/src/burrito/simulator/clean_simulators.sh"
+print "Cleaning up simulators..."
+cmd = "sh $SOLO_ROS_WS/src/burrito/simulator/clean_simulators.sh"
 subprocess.Popen(cmd, stdout=subprocess.PIPE, 
                  shell=True)

@@ -27,5 +27,8 @@ while not rospy.is_shutdown():
     pass #print "swarm_mavros.py is good"
 
 for pro in pros:
-    os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
+    try:
+        os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
+    except:
+        print "failed to kill"
 
