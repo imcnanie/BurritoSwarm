@@ -1,8 +1,7 @@
-# BurritoSwarm
-Delivering burritos in a swarmy fashion
+# HellaCopters
+Swarming quadcopters and everything else that uses mavros!
 
 # Installation
-Dependencies:
 1. sudo apt-get install python-pip
 2. sudo pip install utm
 3. install mavros: https://github.com/mavlink/mavros/blob/master/mavros/README.md
