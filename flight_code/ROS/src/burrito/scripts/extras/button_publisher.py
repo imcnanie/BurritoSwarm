@@ -13,7 +13,6 @@ from threading import Thread
 import time
 import os
 
-import velocity_goto
 import buttonHandler
 
 def postMode(modeID):

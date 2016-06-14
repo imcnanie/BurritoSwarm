@@ -24,7 +24,7 @@ from random import randint
 
 import utm
 
-IS_APM = True
+IS_APM = False
 
 class rcOverride:
     def __init__(self, copter_id = "1", mavros_string="/copter1/mavros"):
@@ -83,7 +83,7 @@ class PosVel:
 
         self.alt_control = True
         self.override_nav = False
-        self.reached = True
+        self.reached = False
         self.done = False
 
         self.last_sign_dist = 0.0

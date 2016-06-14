@@ -76,7 +76,7 @@ class CopterControl:
 
             raise_height = w['sub'].cur_alt + 5.0
 
-            self.publish_odom(w['pub'], w['sub'].cur_pos_x, w['sub'].cur_pos_y, raise_height)
+            self.publish_odom(w['pub'], w['sub'].cur_pos_x, w['sub'].cur_pos_y, raise_height, prefix = w['prefix'])
             while cur_alt < raise_height-1.0:
                 time.sleep(0.1)
             
@@ -87,14 +87,14 @@ class CopterControl:
 
             print "Copter dropping..."
 
-            self.publish_odom(w['pub'], w['sub'].cur_pos_x, w['sub'].cur_pos_y, drop_height)
+            self.publish_odom(w['pub'], w['sub'].cur_pos_x, w['sub'].cur_pos_y, drop_height, prefix = w['prefix'])
             while w['sub'].cur_alt > drop_height+2.0:
                 time.sleep(0.01)
         
             print "Going to home location..."
             time.sleep(0.25)
 
-            self.publish_odom(w['pub'], w['sub'].home_lat, w['sub'].home_lon, w['sub'].cur_alt)
+            self.publish_odom(w['pub'], w['sub'].home_lat, w['sub'].home_lon, w['sub'].cur_alt, prefix = w['prefix'])
             while not w['sub'].reached:#reached
                 time.sleep(0.025)
 
@@ -113,9 +113,9 @@ class CopterControl:
 
         for i in self.cops_odom[::-1]:
             print "Taking off cop: ", i
-            self.takeoff_cop(i)
+            self.takeoff_cop(i, initial_coords)
             
-    def takeoff_cop(self, args):
+    def takeoff_cop(self, args, initial_coords):
         print "TAKING OFF ", args['prefix'], " COPTER!!"
         self.setmode(prefix=args['prefix'], custom_mode="OFFBOARD")
         self.arm(prefix=args['prefix'])
@@ -131,10 +131,15 @@ class CopterControl:
         #self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
 
         hz = rospy.Rate(10)
-        while not args['sub'].reached:
+        while True:# not args['sub'].reached:   #hmmm
             print "GOING TO POSITION"
-            lat = self.center_x + offs_x[self.cops_odom.index(args)]
-            lon = self.center_y + offs_y[self.cops_odom.index(args)]
+            # Finds digits in prefix
+            # the right way:
+            #iter = int([int(s) for s in args['prefix'].split() if s.isdigit()][0])
+            # the wrong way:
+            iter = int(args['prefix'][-2:-1]) - 1
+            lat = self.center_x + initial_coords[iter][0]
+            lon = self.center_y + initial_coords[iter][1]
             self.publish_odom(args['pub'], lat, lon, self.alt, prefix=args['prefix'])
             hz.sleep()
 
@@ -178,7 +183,7 @@ class CopterControl:
             #print "CUR ALT: ", sub.cur_alt, "GOAL: ", alt
             lat = sub.cur_pos_x
             lon = sub.cur_pos_y
-            self.publish_odom(pub, lat, lon, self.alt, prefix=prefix)
+            self.publish_odom(pub, lat, lon, alt, prefix=prefix)
             #self.set_velocity(0, 0, 1.5)
             #self.update(self.cur_pos_x, self.cur_pos_y, alt)
 
