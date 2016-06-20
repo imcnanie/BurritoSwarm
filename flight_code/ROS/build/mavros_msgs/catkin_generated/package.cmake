@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "mavros_msgs")
+set(mavros_msgs_MAINTAINER "Vladimir Ermakov <vooon341@gmail.com>")
+set(mavros_msgs_DEPRECATED "")
+set(mavros_msgs_VERSION "0.17.3")
+set(mavros_msgs_BUILD_DEPENDS "message_generation" "std_msgs" "geometry_msgs")
+set(mavros_msgs_RUN_DEPENDS "message_runtime" "std_msgs" "geometry_msgs")
+set(mavros_msgs_BUILDTOOL_DEPENDS "catkin")

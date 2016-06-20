@@ -1,0 +1,6 @@
+mavros/test_mavros
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/test_mavros/share/test_mavros/cmake/test_mavrosConfig-version.cmake /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/share/test_mavros/cmake/test_mavrosConfig-version.cmake
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/test_mavros/share/test_mavros/cmake/test_mavrosConfig.cmake /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/share/test_mavros/cmake/test_mavrosConfig.cmake
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/test_mavros/lib/libmavros_sitl_test.so /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/lib/libmavros_sitl_test.so
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/test_mavros/lib/pkgconfig/test_mavros.pc /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/lib/pkgconfig/test_mavros.pc
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/test_mavros/lib/test_mavros/sitl_test_node /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/lib/test_mavros/sitl_test_node

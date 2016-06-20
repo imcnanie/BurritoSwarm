@@ -1,0 +1,8 @@
+prefix=/home/bjork/BurritoSwarm/flight_code/ROS/install
+
+Name: mavros_msgs
+Description: Description of mavros_msgs
+Version: 0.17.3
+Cflags: -I/home/bjork/BurritoSwarm/flight_code/ROS/install/include
+Libs: -L/home/bjork/BurritoSwarm/flight_code/ROS/install/lib 
+Requires: geometry_msgs message_runtime std_msgs

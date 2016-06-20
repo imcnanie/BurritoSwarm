@@ -1,0 +1,8 @@
+prefix=/home/bjork/BurritoSwarm/flight_code/ROS/install
+
+Name: libmavconn
+Description: Description of libmavconn
+Version: 0.17.3
+Cflags: -I/home/bjork/BurritoSwarm/flight_code/ROS/install/include -I/usr/include -I/home/bjork/BurritoSwarm/flight_code/ROS/devel/include
+Libs: -L/home/bjork/BurritoSwarm/flight_code/ROS/install/lib -lmavconn -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+Requires: 

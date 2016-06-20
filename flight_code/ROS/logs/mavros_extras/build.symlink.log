@@ -1,0 +1,7 @@
+Linked: (/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/share/mavros_extras/cmake/mavros_extrasConfig.cmake, /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/mavros_extras/cmake/mavros_extrasConfig.cmake)
+Linked: (/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake, /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/mavros_extras/cmake/mavros_extrasConfig-version.cmake)
+Linked: (/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/libmavros_extras.so, /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/libmavros_extras.so)
+Linked: (/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/mavros_extras/gcs_image_bridge, /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/mavros_extras/gcs_image_bridge)
+Linked: (/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/mavros_extras/servo_state_publisher, /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/mavros_extras/servo_state_publisher)
+Linked: (/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/mavros_extras/copter_visualization, /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/mavros_extras/copter_visualization)
+Linked: (/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/pkgconfig/mavros_extras.pc, /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/pkgconfig/mavros_extras.pc)

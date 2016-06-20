@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "libmavconn")
+set(libmavconn_MAINTAINER "Vladimir Ermakov <vooon341@gmail.com>")
+set(libmavconn_DEPRECATED "")
+set(libmavconn_VERSION "0.17.3")
+set(libmavconn_BUILD_DEPENDS "boost" "mavlink" "libconsole-bridge-dev")
+set(libmavconn_RUN_DEPENDS "boost" "mavlink" "libconsole-bridge-dev")
+set(libmavconn_BUILDTOOL_DEPENDS "catkin")

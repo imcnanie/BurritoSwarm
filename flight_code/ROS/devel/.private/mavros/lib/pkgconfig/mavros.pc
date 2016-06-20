@@ -1,0 +1,8 @@
+prefix=/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros
+
+Name: mavros
+Description: Description of mavros
+Version: 0.17.3
+Cflags: -I/home/bjork/BurritoSwarm/flight_code/ROS/src/mavros/mavros/include -I/usr/include -I/usr/include/eigen3
+Libs: -L/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros/lib -lmavros -l:/usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: diagnostic_msgs diagnostic_updater pluginlib roscpp sensor_msgs nav_msgs std_msgs tf2_ros geometry_msgs libmavconn message_runtime eigen_conversions mavros_msgs

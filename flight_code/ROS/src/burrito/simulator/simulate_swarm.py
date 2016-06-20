@@ -46,17 +46,25 @@ def inplace_change(filename, old_string, new_string):
         f.close()
     else:
         print 'No occurances of "{old_string}" found.'.format(**locals())
+
+
         
 for i in range(14, cops+14):
-
+    subprocess.call(['cd $SOLO_ROS_WS/src/burrito'], shell=True)
     filena = "copter"+str(i-13)
-    if not os.path.exists((os.path.join(os.path.abspath(os.path.curdir),filena))):
+    print "DAMMM ", (os.path.join(os.path.abspath(os.path.curdir),filena))
+    print "DAMMM2 ", (os.path.join(os.environ['SOLO_ROS_WS']+'/src/burrito/simulator',filena))
+    #/home/bjork/.ros/copter1
+    if not os.path.exists((os.path.join(os.environ['SOLO_ROS_WS']+'/src/burrito/simulator',filena))):
+        
         print "Creating Copter ",i-13        
         subprocess.call(["mkdir",filena])
         
-        os.chdir(os.path.join(os.path.abspath(os.path.curdir),filena))
         
-        subprocess.call(["git", "clone", "https://github.com/imcnanie/Firmware.git"])
+        #subprocess.call(["git", "clone", "https://github.com/imcnanie/Firmware.git"])
+        subprocess.call(["git clone https://github.com/imcnanie/Firmware.git"], shell=True)
+        os.chdir(os.path.join(os.environ['SOLO_ROS_WS']+'/src/burrito/simulator',filena))
+
         subprocess.call(["git submodule update --init --recursive"], shell=True)
         #working gazebo commit
 	#os.chdir(os.path.join(os.path.abspath(os.path.curdir),"Firmware"))
@@ -106,7 +114,6 @@ for i in range(14, cops+14):
     inplace_change(path+"/src/modules/simulator/simulator_mavlink.cpp", old+"560", new+"560")
     
    
-
     
     print 'gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim\"'
     subprocess.call('gnome-terminal '+ '--working-directory='+path+ ' -e \"make posix_sitl_default jmavsim"', shell=True)

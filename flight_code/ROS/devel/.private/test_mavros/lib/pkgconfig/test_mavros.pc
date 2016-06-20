@@ -1,0 +1,8 @@
+prefix=/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/test_mavros
+
+Name: test_mavros
+Description: Description of test_mavros
+Version: 0.17.3
+Cflags: -I/usr/include -I/usr/include/eigen3
+Libs: -L/home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/test_mavros/lib -l:/usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: mavros mavros_extras roscpp std_msgs geometry_msgs tf2_ros eigen_conversions control_toolbox

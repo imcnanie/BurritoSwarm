@@ -1,0 +1,128 @@
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileRename
+[0m[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ParamPull
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ParamValue
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileList
+[0m[0m[0m[  0%] Built target std_msgs_generate_messages_py
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ManualControl
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_py
+[0m[0m[  0%] Built target geometry_msgs_generate_messages_py
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileRemove
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_PositionTarget
+[0m[0m[  0%] [  0%] [  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_ManualControl
+Built target _mavros_msgs_generate_messages_check_deps_PositionTarget
+Built target _mavros_msgs_generate_messages_check_deps_FileRemove
+Built target _mavros_msgs_generate_messages_check_deps_ParamPull
+[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ParamPush
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CommandBool
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_ParamValue
+[0mBuilt target _mavros_msgs_generate_messages_check_deps_FileList
+[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileChecksum
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_OverrideRCIn
+Built target _mavros_msgs_generate_messages_check_deps_FileRename
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileClose
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_OpticalFlowRad
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CommandInt
+[0m[0m[0m[0m[  0%] [  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_FileChecksum
+Built target _mavros_msgs_generate_messages_check_deps_OpticalFlowRad
+Built target _mavros_msgs_generate_messages_check_deps_CommandBool
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CommandCode
+[  0%] [0mBuilt target _mavros_msgs_generate_messages_check_deps_OverrideRCIn
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileRemoveDir
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_VFR_HUD
+[  0%] [0mBuilt target _mavros_msgs_generate_messages_check_deps_FileClose
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_StreamRate
+[0m[0m[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileRead
+Built target _mavros_msgs_generate_messages_check_deps_CommandInt
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_ParamPush
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_WaypointClear
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_RadioStatus
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandCode
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_StreamRate
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_FileRead
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileRemoveDir
+Built target _mavros_msgs_generate_messages_check_deps_WaypointClear
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileOpen
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_Waypoint
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileEntry
+[0m[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_VFR_HUD
+Built target _mavros_msgs_generate_messages_check_deps_RadioStatus
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ActuatorControl
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ParamSet
+[0m[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CommandTriggerControl
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_State
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_Waypoint
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_Mavlink
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandTriggerControl
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_State
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_RCOut
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileWrite
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileOpen
+[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_WaypointList
+[  0%] [0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_Mavlink
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileEntry
+Built target _mavros_msgs_generate_messages_check_deps_ParamSet
+Built target _mavros_msgs_generate_messages_check_deps_RCOut
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_ActuatorControl
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CommandHome
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CommandLong
+[0m[0m[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileMakeDir
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_RCIn
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_Vibration
+[0mBuilt target _mavros_msgs_generate_messages_check_deps_FileWrite
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_WaypointSetCurrent
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointList
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_AttitudeTarget
+[0m[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandLong
+Built target _mavros_msgs_generate_messages_check_deps_CommandHome
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_FileTruncate
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ParamGet
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_RCIn
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_FileMakeDir
+Built target _mavros_msgs_generate_messages_check_deps_Vibration
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointSetCurrent
+Built target _mavros_msgs_generate_messages_check_deps_AttitudeTarget
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CommandTOL
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_GlobalPositionTarget
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_CamIMUStamp
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_HomePosition
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileTruncate
+[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_WaypointPush
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_BatteryStatus
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_ParamGet
+[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_Altitude
+[0mBuilt target _mavros_msgs_generate_messages_check_deps_CamIMUStamp
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_HomePosition
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointPush
+[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_SetMode
+[0m[35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_WaypointPull
+[  0%] [35m[1mScanning dependencies of target _mavros_msgs_generate_messages_check_deps_ExtendedState
+[0m[0mBuilt target _mavros_msgs_generate_messages_check_deps_GlobalPositionTarget
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandTOL
+Built target _mavros_msgs_generate_messages_check_deps_BatteryStatus
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus
+[0m[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp
+[0m[  0%] Built target _mavros_msgs_generate_messages_check_deps_Altitude
+[  0%] Built target std_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus
+[0m[0m[  0%] [  0%] [35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp
+[0mBuilt target _mavros_msgs_generate_messages_check_deps_SetMode
+Built target _mavros_msgs_generate_messages_check_deps_ExtendedState
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointPull
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp
+[  0%] [0m[  0%] [  0%] Built target geometry_msgs_generate_messages_cpp
+Built target std_msgs_generate_messages_eus
+Built target geometry_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target mavros_msgs_generate_messages_py
+[0m[35m[1mScanning dependencies of target mavros_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target mavros_msgs_generate_messages_eus
+[0m[ 26%] Built target mavros_msgs_generate_messages_py
+[0m[35m[1mScanning dependencies of target mavros_msgs_generate_messages_lisp
+[0m[ 51%] Built target mavros_msgs_generate_messages_eus
+[ 75%] Built target mavros_msgs_generate_messages_lisp
+[100%] Built target mavros_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target mavros_msgs_generate_messages
+[0m[100%] Built target mavros_msgs_generate_messages

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/setup.sh

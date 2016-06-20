@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "catkin_tools_prebuild")
+set(catkin_tools_prebuild_MAINTAINER "jbohren <jbo@jhu.edu>")
+set(catkin_tools_prebuild_DEPRECATED "")
+set(catkin_tools_prebuild_VERSION "0.0.0")
+set(catkin_tools_prebuild_BUILD_DEPENDS )
+set(catkin_tools_prebuild_RUN_DEPENDS )
+set(catkin_tools_prebuild_BUILDTOOL_DEPENDS "catkin")

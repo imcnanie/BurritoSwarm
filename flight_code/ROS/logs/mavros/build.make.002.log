@@ -1,0 +1,5 @@
+[  0%] Built target mavros_msgs_generate_messages_cpp
+[ 27%] Built target mavros
+[ 30%] Built target mavros_node
+[ 33%] Built target gcs_bridge
+[100%] Built target mavros_plugins

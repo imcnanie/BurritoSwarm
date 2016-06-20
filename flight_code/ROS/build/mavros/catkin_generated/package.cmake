@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "mavros")
+set(mavros_MAINTAINER "Vladimir Ermakov <vooon341@gmail.com>")
+set(mavros_DEPRECATED "")
+set(mavros_VERSION "0.17.3")
+set(mavros_BUILD_DEPENDS "eigen" "mavlink" "angles" "cmake_modules" "boost" "diagnostic_updater" "eigen_conversions" "libmavconn" "pluginlib" "rosconsole_bridge" "roscpp" "tf2_ros" "diagnostic_msgs" "geometry_msgs" "mavros_msgs" "nav_msgs" "sensor_msgs" "std_msgs" "std_srvs")
+set(mavros_RUN_DEPENDS "message_runtime" "rospy" "boost" "diagnostic_updater" "eigen_conversions" "libmavconn" "pluginlib" "rosconsole_bridge" "roscpp" "tf2_ros" "diagnostic_msgs" "geometry_msgs" "mavros_msgs" "nav_msgs" "sensor_msgs" "std_msgs" "std_srvs" "eigen" "mavlink")
+set(mavros_BUILDTOOL_DEPENDS "catkin")

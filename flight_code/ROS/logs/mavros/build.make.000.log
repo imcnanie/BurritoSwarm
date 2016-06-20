@@ -1,0 +1,47 @@
+[35m[1mScanning dependencies of target mavros_msgs_generate_messages_cpp
+[0m[  0%] Built target mavros_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target mavros
+[0m[  3%] [  6%] [  9%] [ 12%] [ 15%] [32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/uas_data.cpp.o
+[0m[ 18%] [ 21%] [ 24%] [32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/uas_stringify.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/uas_timesync.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/uas_sensor_orientation.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/uas_frame_conversions.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/mavros.cpp.o
+[32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/uas_quaternion_utils.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/mavlink_diag.cpp.o
+[0m[0m[ 27%] [32mBuilding CXX object CMakeFiles/mavros.dir/src/lib/rosconsole_bridge.cpp.o
+[0m[31m[1mLinking CXX shared library /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros/lib/libmavros.so
+[0m[ 27%] Built target mavros
+[35m[1mScanning dependencies of target gcs_bridge
+[35m[1mScanning dependencies of target mavros_node
+[35m[1mScanning dependencies of target mavros_plugins
+[0m[ 30%] [32mBuilding CXX object CMakeFiles/gcs_bridge.dir/src/gcs_bridge.cpp.o
+[0m[0m[ 33%] [32mBuilding CXX object CMakeFiles/mavros_node.dir/src/mavros_node.cpp.o
+[0m[0m[ 39%] [ 39%] [ 42%] [ 45%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/sys_status.cpp.o
+[32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/sys_time.cpp.o
+[32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/dummy.cpp.o
+[0m[0m[0m[ 51%] [ 48%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/imu_pub.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/param.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/waypoint.cpp.o
+[0m[31m[1mLinking CXX executable /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros/lib/mavros/gcs_bridge
+[0m[ 54%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/rc_io.cpp.o
+[0m[ 54%] Built target gcs_bridge
+[ 57%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/command.cpp.o
+[0m[ 60%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/local_position.cpp.o
+[0m[31m[1mLinking CXX executable /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros/lib/mavros/mavros_node
+[0m[ 60%] Built target mavros_node
+[ 63%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/global_position.cpp.o
+[0m[ 66%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/setpoint_position.cpp.o
+[0m[ 69%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/safety_area.cpp.o
+[0m[ 72%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/3dr_radio.cpp.o
+[0m[ 75%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/setpoint_velocity.cpp.o
+[0m[ 78%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/setpoint_accel.cpp.o
+[0m[ 81%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/setpoint_attitude.cpp.o
+[0m[ 84%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/setpoint_raw.cpp.o
+[0m[ 87%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/vfr_hud.cpp.o
+[0m[ 90%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/ftp.cpp.o
+[0m[ 93%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/actuator_control.cpp.o
+[0m[ 96%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/manual_control.cpp.o
+[0m[100%] [32mBuilding CXX object CMakeFiles/mavros_plugins.dir/src/plugins/altitude.cpp.o
+[0m[31m[1mLinking CXX shared library /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros/lib/libmavros_plugins.so
+[0m[100%] Built target mavros_plugins

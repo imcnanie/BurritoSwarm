@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "mavros_extras")
+set(mavros_extras_MAINTAINER "Vladimir Ermakov <vooon341@gmail.com>")
+set(mavros_extras_DEPRECATED "")
+set(mavros_extras_VERSION "0.17.3")
+set(mavros_extras_BUILD_DEPENDS "cmake_modules" "image_transport" "cv_bridge" "mavros" "roscpp" "geometry_msgs" "mavros_msgs" "sensor_msgs" "std_msgs" "visualization_msgs" "urdf" "tf")
+set(mavros_extras_RUN_DEPENDS "image_transport" "cv_bridge" "mavros" "roscpp" "geometry_msgs" "mavros_msgs" "sensor_msgs" "std_msgs" "visualization_msgs" "urdf" "tf")
+set(mavros_extras_BUILDTOOL_DEPENDS "catkin")

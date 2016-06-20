@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "test_mavros")
+set(test_mavros_MAINTAINER "Vladimir Ermakov <vooon341@gmail.com>")
+set(test_mavros_DEPRECATED "")
+set(test_mavros_VERSION "0.17.3")
+set(test_mavros_BUILD_DEPENDS "angles" "cmake_modules" "roscpp" "std_msgs" "geometry_msgs" "tf2_ros" "mavros" "mavros_extras" "eigen" "eigen_conversions" "control_toolbox")
+set(test_mavros_RUN_DEPENDS "roscpp" "std_msgs" "geometry_msgs" "tf2_ros" "mavros" "mavros_extras" "eigen" "eigen_conversions" "control_toolbox")
+set(test_mavros_BUILDTOOL_DEPENDS "catkin")

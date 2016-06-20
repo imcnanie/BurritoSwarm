@@ -1,0 +1,23 @@
+[35m[1mScanning dependencies of target servo_state_publisher
+[35m[1mScanning dependencies of target copter_visualization
+[35m[1mScanning dependencies of target gcs_image_bridge
+[35m[1mScanning dependencies of target mavros_extras
+[0m[0m[  9%] [32mBuilding CXX object CMakeFiles/servo_state_publisher.dir/src/servo_state_publisher.cpp.o
+[0m[ 18%] [32mBuilding CXX object CMakeFiles/copter_visualization.dir/src/copter_visualization.cpp.o
+[0m[0m[ 27%] [32mBuilding CXX object CMakeFiles/gcs_image_bridge.dir/src/gcs_image_bridge.cpp.o
+[0m[0m[ 36%] [ 45%] [ 54%] [ 63%] [ 72%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/distance_sensor.cpp.o
+[32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/image_pub.cpp.o
+[32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/px4flow.cpp.o
+[0m[0m[0m[32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/vision_pose_estimate.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/mocap_pose_estimate.cpp.o
+[0m[31m[1mLinking CXX executable /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/mavros_extras/servo_state_publisher
+[0m[ 72%] Built target servo_state_publisher
+[ 81%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/vision_speed_estimate.cpp.o
+[0m[31m[1mLinking CXX executable /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/mavros_extras/copter_visualization
+[0m[ 81%] Built target copter_visualization
+[ 90%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/vibration.cpp.o
+[0m[100%] [32mBuilding CXX object CMakeFiles/mavros_extras.dir/src/plugins/cam_imu_sync.cpp.o
+[0m[31m[1mLinking CXX executable /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/mavros_extras/gcs_image_bridge
+[0m[100%] Built target gcs_image_bridge
+[31m[1mLinking CXX shared library /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/mavros_extras/lib/libmavros_extras.so
+[0m[100%] Built target mavros_extras

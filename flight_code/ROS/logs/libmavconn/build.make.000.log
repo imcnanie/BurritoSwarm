@@ -1,0 +1,8 @@
+[35m[1mScanning dependencies of target mavconn
+[0m[ 20%] [ 60%] [ 60%] [ 80%] [100%] [32mBuilding CXX object CMakeFiles/mavconn.dir/src/mavlink_helpers.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavconn.dir/src/tcp.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavconn.dir/src/serial.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavconn.dir/src/interface.cpp.o
+[0m[32mBuilding CXX object CMakeFiles/mavconn.dir/src/udp.cpp.o
+[0m[31m[1mLinking CXX shared library /home/bjork/BurritoSwarm/flight_code/ROS/devel/.private/libmavconn/lib/libmavconn.so
+[0m[100%] Built target mavconn

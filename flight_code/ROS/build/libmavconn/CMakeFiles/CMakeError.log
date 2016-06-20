@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec365035611/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec365035611.dir/build.make CMakeFiles/cmTryCompileExec365035611.dir/build
+make[1]: Entering directory `/home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec365035611.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec365035611.dir/CheckSymbolExists.c.o   -c /home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec365035611
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec365035611.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec365035611.dir/CheckSymbolExists.c.o  -o cmTryCompileExec365035611 -rdynamic 
+CMakeFiles/cmTryCompileExec365035611.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec365035611] Error 1
+make[1]: Leaving directory `/home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec365035611/fast] Error 2
+
+File /home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4247893421/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4247893421.dir/build.make CMakeFiles/cmTryCompileExec4247893421.dir/build
+make[1]: Entering directory `/home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4247893421.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec4247893421.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4247893421
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4247893421.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec4247893421.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4247893421 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec4247893421] Error 1
+make[1]: Leaving directory `/home/bjork/BurritoSwarm/flight_code/ROS/build/libmavconn/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec4247893421/fast] Error 2
+
+

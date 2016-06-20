@@ -1,0 +1,5 @@
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/libmavconn/cmake/libmavconnConfig-version.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/libmavconn/cmake/libmavconn-extras.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/libmavconn/cmake/libmavconnConfig.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/libmavconn.so
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/pkgconfig/libmavconn.pc

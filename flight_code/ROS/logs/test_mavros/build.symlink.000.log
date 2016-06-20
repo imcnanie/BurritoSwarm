@@ -1,0 +1,5 @@
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/test_mavros/cmake/test_mavrosConfig-version.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/test_mavros/cmake/test_mavrosConfig.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/libmavros_sitl_test.so
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/pkgconfig/test_mavros.pc
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/test_mavros/sitl_test_node

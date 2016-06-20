@@ -1,0 +1,1055 @@
+[  4%] Built target ASLUAV.xml-v1.0
+[  9%] Built target ASLUAV.xml-v2.0
+[ 13%] Built target ardupilotmega.xml-v1.0
+[ 18%] Built target ardupilotmega.xml-v2.0
+[ 22%] Built target autoquad.xml-v1.0
+[ 27%] Built target autoquad.xml-v2.0
+[ 31%] Built target common.xml-v1.0
+[ 36%] Built target common.xml-v2.0
+[ 40%] Built target matrixpilot.xml-v1.0
+[ 45%] Built target matrixpilot.xml-v2.0
+[ 50%] Built target minimal.xml-v1.0
+[ 54%] Built target minimal.xml-v2.0
+[ 59%] Built target paparazzi.xml-v1.0
+[ 63%] Built target paparazzi.xml-v2.0
+[ 68%] Built target python_array_test.xml-v1.0
+[ 72%] Built target python_array_test.xml-v2.0
+[ 77%] Built target slugs.xml-v1.0
+[ 81%] Built target slugs.xml-v2.0
+[ 86%] Built target test.xml-v1.0
+[ 90%] Built target test.xml-v2.0
+[ 95%] Built target ualberta.xml-v1.0
+[100%] Built target ualberta.xml-v2.0
+[36mInstall the project...
+[0m-- Install configuration: ""
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/config.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/protocol.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_request_data_stream.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_local_position_ned_system_global_offset.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_set_current.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps_rtcm_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_hil_sensor.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_camera_trigger.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_statustext.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_autopilot_version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_nav_controller_output.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_param_map_rc.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_param_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_safety_set_allowed_area.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_command_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_raw_pressure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_param_value.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_item.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_actuator_control_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_clear_all.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_command_long.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_request_partial_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_change_operator_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_item_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_servo_output_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_sys_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps_inject_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_current.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_att_pos_mocap.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_manual_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_system_time.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_heartbeat.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_vfr_hud.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_local_position_ned.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_wind_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_hil_rc_inputs_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_global_position_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_write_partial_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_set_actuator_control_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_raw_imu.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_attitude_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps2_rtk.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_terrain_check.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps2_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_set_position_target_global_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_vision_position_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_position_target_local_ned.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_optical_flow_rad.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_param_request_read.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_log_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_log_request_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_set_gps_global_origin.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_landing_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_set_attitude_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_rc_channels.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_adsb_vehicle.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_encapsulated_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_extended_sys_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_vibration.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_estimator_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_global_vision_position_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_local_position_ned_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_file_transfer_protocol.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_home_position.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_optical_flow.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps_raw_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_set_position_target_local_ned.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_log_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_item_reached.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_set_mode.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_named_value_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_vision_speed_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_hil_controls.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_global_position_int_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_command_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_data_transmission_handshake.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_control_system_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_log_erase.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_count.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_attitude_quaternion_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_hil_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_terrain_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_log_request_end.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/common.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_rc_channels_override.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_terrain_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_timesync.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_debug.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_scaled_imu.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_vicon_position_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_change_operator_control_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_named_value_float.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_scaled_imu2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_request_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_scaled_pressure2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_memory_vect.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_setup_signing.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_manual_setpoint.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_hil_gps.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_rc_channels_scaled.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_highres_imu.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_safety_allowed_area.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_serial_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_hil_state_quaternion.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_sim_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_data_stream.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_attitude.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_radio_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_scaled_pressure3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_auth_key.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_v2_extension.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_log_entry.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_set_home_position.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_message_interval.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps_global_origin.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_debug_vect.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_distance_sensor.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_hil_optical_flow.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_scaled_imu3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_power_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_attitude_quaternion.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_scaled_pressure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_battery_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_altitude.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_param_set.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_terrain_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_ping.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_rc_channels_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_follow_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_resource_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_gps_rtk.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_position_target_global_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/common/mavlink_msg_mission_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_7.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_1.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_6.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_0.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_8.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/python_array_test.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_5.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/python_array_test/mavlink_msg_array_test_4.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/mavlink_sha256.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/mavlink_conversions.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/mavlink_get_info.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta/mavlink_msg_radio_calibration.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta/mavlink_msg_ualberta_sys_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta/mavlink_msg_nav_filter_bias.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ualberta/ualberta.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/checksum.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/autoquad
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/autoquad/mavlink_msg_aq_telemetry_f.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/autoquad/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/autoquad/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/autoquad/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/autoquad/autoquad.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/autoquad/mavlink_msg_aq_esc_telemetry.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_asl_obctrl.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_aslctrl_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_sens_atmos.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/ASLUAV.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_sens_power.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_sens_batmon.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_aslctrl_debug.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_ekf_ext.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_fw_soaring_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_sensorpod_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_sens_mppt.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ASLUAV/mavlink_msg_asluav_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_fence_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_camera_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_set_mag_offsets.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gimbal_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_data16.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gopro_set_response.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_sensor_offsets.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_data96.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/ardupilotmega.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gimbal_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_mag_cal_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_ap_adc.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_rpm.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_limits_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gopro_get_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_digicam_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_remote_log_block_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_rally_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_mag_cal_progress.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_rangefinder.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_battery2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_digicam_configure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_rally_fetch_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_mount_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_mount_configure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_pid_tuning.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_radio.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_remote_log_data_block.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_meminfo.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_compassmot_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_mount_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_autopilot_version_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_ahrs3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gopro_heartbeat.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gopro_set_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_data32.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_data64.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_fence_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gopro_get_response.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_ekf_status_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_camera_feedback.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_gimbal_torque_cmd_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_hwstatus.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_fence_fetch_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_ahrs.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_ahrs2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_simstate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_airspeed_autocal.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_wind.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/ardupilotmega/mavlink_msg_led_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/test
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/test/test.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/test/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/test/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/test/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/test/mavlink_msg_test_types.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_directory.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f2_b.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_command.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_directory_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_command_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_buffer_function.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f14.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_read_req.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f8.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f13.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_altitudes.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f15.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f7.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_buffer_function_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f4.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f16.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f5.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/matrixpilot.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_airspeeds.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f6.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_flexifunction_set.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/matrixpilot/mavlink_msg_serial_udb_extra_f2_a.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/mavlink_msg_script_current.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/mavlink_msg_script_item.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/mavlink_msg_script_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/mavlink_msg_script_count.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/paparazzi.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/paparazzi/mavlink_msg_script_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/minimal
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/minimal/mavlink_msg_heartbeat.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/minimal/minimal.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/minimal/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/minimal/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/minimal/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_slugs_mobile_location.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_gps_date_time.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_boot.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_slugs_camera_order.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_cpu_load.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_control_surface.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_isr_location.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_status_gps.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_volt_sensor.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_slugs_navigation.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_ptz_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_ctrl_srfc_pt.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_novatel_diag.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_sensor_bias.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_diagnostic.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/slugs.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_slugs_configuration_camera.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_data_log.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_uav_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_mid_lvl_cmds.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/slugs/mavlink_msg_sensor_diag.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/mavlink_helpers.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v2.0/mavlink_types.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/protocol.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_request_data_stream.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_local_position_ned_system_global_offset.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_set_current.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps_rtcm_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_hil_sensor.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_camera_trigger.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_statustext.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_autopilot_version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_nav_controller_output.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_param_map_rc.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_param_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_safety_set_allowed_area.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_command_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_raw_pressure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_param_value.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_item.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_actuator_control_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_clear_all.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_command_long.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_request_partial_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_change_operator_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_item_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_servo_output_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_sys_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps_inject_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_current.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_att_pos_mocap.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_manual_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_system_time.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_heartbeat.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_vfr_hud.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_local_position_ned.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_wind_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_hil_rc_inputs_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_global_position_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_write_partial_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_set_actuator_control_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_raw_imu.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_attitude_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps2_rtk.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_terrain_check.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps2_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_set_position_target_global_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_vision_position_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_position_target_local_ned.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_optical_flow_rad.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_param_request_read.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_log_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_log_request_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_set_gps_global_origin.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_landing_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_set_attitude_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_rc_channels.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_adsb_vehicle.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_encapsulated_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_extended_sys_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_vibration.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_estimator_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_global_vision_position_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_local_position_ned_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_file_transfer_protocol.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_home_position.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_optical_flow.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps_raw_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_set_position_target_local_ned.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_log_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_item_reached.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_set_mode.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_named_value_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_vision_speed_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_hil_controls.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_global_position_int_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_command_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_data_transmission_handshake.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_control_system_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_log_erase.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_count.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_attitude_quaternion_cov.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_hil_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_terrain_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_log_request_end.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/common.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_rc_channels_override.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_terrain_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_timesync.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_debug.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_scaled_imu.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_vicon_position_estimate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_change_operator_control_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_named_value_float.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_scaled_imu2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_request_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_scaled_pressure2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_memory_vect.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_manual_setpoint.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_hil_gps.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_rc_channels_scaled.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_highres_imu.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_safety_allowed_area.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_serial_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_hil_state_quaternion.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_sim_state.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_data_stream.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_attitude.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_radio_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_scaled_pressure3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_auth_key.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_v2_extension.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_log_entry.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_set_home_position.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_message_interval.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps_global_origin.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_debug_vect.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_distance_sensor.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_hil_optical_flow.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_scaled_imu3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_power_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_attitude_quaternion.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_scaled_pressure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_battery_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_altitude.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_param_set.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_terrain_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_ping.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_rc_channels_raw.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_follow_target.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_resource_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_gps_rtk.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_position_target_global_int.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/common/mavlink_msg_mission_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_7.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_1.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_6.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_0.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_8.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/python_array_test.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_5.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/python_array_test/mavlink_msg_array_test_4.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/mavlink_conversions.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta/mavlink_msg_radio_calibration.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta/mavlink_msg_ualberta_sys_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta/mavlink_msg_nav_filter_bias.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ualberta/ualberta.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/checksum.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/autoquad
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/autoquad/mavlink_msg_aq_telemetry_f.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/autoquad/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/autoquad/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/autoquad/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/autoquad/autoquad.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/autoquad/mavlink_msg_aq_esc_telemetry.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_asl_obctrl.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_aslctrl_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_sens_atmos.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/ASLUAV.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_sens_power.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_sens_batmon.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_aslctrl_debug.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_ekf_ext.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_fw_soaring_data.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_sensorpod_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_sens_mppt.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ASLUAV/mavlink_msg_asluav_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_fence_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_camera_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_set_mag_offsets.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gimbal_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_data16.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gopro_set_response.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_sensor_offsets.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_data96.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/ardupilotmega.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gimbal_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_mag_cal_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_ap_adc.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_rpm.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_limits_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gopro_get_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_digicam_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_remote_log_block_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_rally_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_mag_cal_progress.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_rangefinder.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_battery2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_digicam_configure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_rally_fetch_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_mount_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_mount_configure.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_pid_tuning.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_radio.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_remote_log_data_block.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_meminfo.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_compassmot_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_mount_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_autopilot_version_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_ahrs3.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gopro_heartbeat.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gopro_set_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_data32.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_data64.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_fence_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gopro_get_response.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_ekf_status_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_camera_feedback.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_gimbal_torque_cmd_report.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_hwstatus.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_fence_fetch_point.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_ahrs.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_ahrs2.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_simstate.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_airspeed_autocal.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_wind.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/ardupilotmega/mavlink_msg_led_control.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/test
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/test/test.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/test/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/test/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/test/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/test/mavlink_msg_test_types.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_directory.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f2_b.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_command.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_directory_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_command_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_buffer_function.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f14.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_read_req.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f8.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f13.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_altitudes.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f15.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f7.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_buffer_function_ack.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f4.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f16.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f5.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/matrixpilot.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_airspeeds.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f6.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_flexifunction_set.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/matrixpilot/mavlink_msg_serial_udb_extra_f2_a.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/mavlink_msg_script_current.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/mavlink_msg_script_item.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/mavlink_msg_script_request_list.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/mavlink_msg_script_count.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/paparazzi.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/paparazzi/mavlink_msg_script_request.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/minimal
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/minimal/mavlink_msg_heartbeat.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/minimal/minimal.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/minimal/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/minimal/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/minimal/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_slugs_mobile_location.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_gps_date_time.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_boot.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_slugs_camera_order.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_cpu_load.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_control_surface.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_isr_location.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_status_gps.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_volt_sensor.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_slugs_navigation.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_ptz_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_ctrl_srfc_pt.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_novatel_diag.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_sensor_bias.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/version.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_diagnostic.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/testsuite.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/slugs.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_slugs_configuration_camera.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_data_log.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_uav_status.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_mid_lvl_cmds.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/slugs/mavlink_msg_sensor_diag.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/mavlink_helpers.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/include/mavlink/v1.0/mavlink_types.h
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/mavlink/cmake/mavlink-config.cmake
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/pkgconfig/mavlink.pc
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/mavlink/COPYING.txt
+-- Up-to-date: /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/mavlink/package.xml
++ [ -n  ]
++ echo_and_run cd /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink
++ echo + cd /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink
++ cd /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink
++ cd /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink
++ mkdir -p /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages
++ echo_and_run mkdir -p /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages
++ echo + mkdir -p /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages
++ mkdir -p /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages
++ echo_and_run /usr/bin/env PYTHONPATH=/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/opt/ros/jade/lib/python2.7/dist-packages /usr/bin/python2 /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/setup.py build --build-base /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink install --install-layout=deb --prefix=/home/bjork/BurritoSwarm/flight_code/ROS/devel
++ echo + /usr/bin/env+ /usr/bin/env PYTHONPATH=/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/opt/ros/jade/lib/python2.7/dist-packages /usr/bin/python2 /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/setup.py build --build-base /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink install --install-layout=deb --prefix=/home/bjork/BurritoSwarm/flight_code/ROS/devel
+ PYTHONPATH=/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/opt/ros/jade/lib/python2.7/dist-packages /usr/bin/python2 /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/setup.py build --build-base /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink install --install-layout=deb --prefix=/home/bjork/BurritoSwarm/flight_code/ROS/devel
++ /usr/bin/env PYTHONPATH=/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/lib/python2.7/dist-packages:/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages:/opt/ros/jade/lib/python2.7/dist-packages /usr/bin/python2 /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/setup.py build --build-base /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink install --install-layout=deb --prefix=/home/bjork/BurritoSwarm/flight_code/ROS/devel
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/common.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/slugs.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/python_array_test.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/matrixpilot.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/minimal.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/ardupilotmega.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/paparazzi.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/autoquad.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/ASLUAV.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/ualberta.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/test.xml for protocol 1.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/common.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/slugs.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/python_array_test.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/matrixpilot.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/minimal.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/ardupilotmega.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/paparazzi.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/autoquad.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/ASLUAV.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/ualberta.xml for protocol 2.0
+Building /home/bjork/BurritoSwarm/flight_code/ROS/src/mavlink/pymavlink/../message_definitions/v1.0/test.xml for protocol 2.0
+running build
+running build_py
+copying ./dialects/v10/matrixpilot.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/ualberta.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/python_array_test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/ASLUAV.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/ardupilotmega.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/minimal.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/autoquad.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/paparazzi.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/slugs.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/common.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v20/matrixpilot.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/ualberta.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/python_array_test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/ASLUAV.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/ardupilotmega.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/minimal.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/autoquad.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/paparazzi.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/slugs.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/common.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v10/common.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/slugs.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/python_array_test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/matrixpilot.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/minimal.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/ardupilotmega.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/paparazzi.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/autoquad.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/ASLUAV.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/ualberta.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v10/test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10
+copying ./dialects/v20/common.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/slugs.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/python_array_test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/matrixpilot.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/minimal.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/ardupilotmega.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/paparazzi.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/autoquad.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/ASLUAV.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/ualberta.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+copying ./dialects/v20/test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20
+running build_ext
+running build_scripts
+running install
+running bdist_egg
+running egg_info
+writing pymavlink.egg-info/PKG-INFO
+writing top-level names to pymavlink.egg-info/top_level.txt
+writing dependency_links to pymavlink.egg-info/dependency_links.txt
+reading manifest file 'pymavlink.egg-info/SOURCES.txt'
+writing manifest file 'pymavlink.egg-info/SOURCES.txt'
+installing library code to /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg
+running install_lib
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/mavnative.so -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/mavutil.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/fgFDM.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/java
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/java/lib
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/java/lib/Messages
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/java/lib/Messages/MAVLinkPayload.java -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/java/lib/Messages
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/java/lib/Messages/MAVLinkStats.java -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/java/lib/Messages
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/java/lib/Messages/MAVLinkMessage.java -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/java/lib/Messages
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/java/lib/Parser.java -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/java/lib
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_wlua.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_javascript.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/datatypes.xsd -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/xsvalUtils.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/xsvalSimpleTypes.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/xsvalSchema.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/xsvalBase.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/xml.xsd -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/pyxsval.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/xsvalXmlIf.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/minixsvWrapper.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/xsvalErrorHandler.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/XMLSchema.xsd -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/XInclude.xsd -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/minixsv/XMLSchema-instance.xsd -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlifBase.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlif4Dom.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlifDom.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlifElementTree.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlifODict.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlifUtils.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlifApi.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmliftest.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/xmlifMinidom.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/genxmlif/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/lib/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavcrc.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_swift.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavschema.xsd -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavtestgen.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v1.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v1.0/protocol.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v1.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v1.0/mavlink_conversions.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v1.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v1.0/checksum.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v1.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v1.0/mavlink_helpers.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v1.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v1.0/mavlink_types.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v1.0
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v2.0/protocol.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v2.0/mavlink_sha256.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v2.0/mavlink_conversions.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v2.0/mavlink_get_info.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v2.0/checksum.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v2.0/mavlink_helpers.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/C/include_v2.0/mavlink_types.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/C/include_v2.0
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_c.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavparse.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavtemplate.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_cs.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_python.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_java.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen_objc.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/generator/mavgen.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/mavparm.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/matrixpilot.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/ualberta.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/common.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/python_array_test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/ASLUAV.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/slugs.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/python_array_test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/ardupilotmega.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/matrixpilot.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/minimal.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/autoquad.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/minimal.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/ardupilotmega.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/paparazzi.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/autoquad.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/ASLUAV.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/paparazzi.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/slugs.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/ualberta.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/common.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v10/test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/matrixpilot.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/ualberta.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/common.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/python_array_test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/ASLUAV.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/slugs.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/python_array_test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/ardupilotmega.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/matrixpilot.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/minimal.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/autoquad.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/minimal.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/ardupilotmega.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/paparazzi.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/autoquad.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/ASLUAV.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/paparazzi.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/slugs.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/ualberta.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/common.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/test.xml -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/v20/test.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/dialects/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/mavnative
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/mavnative/mavlink_defaults.h -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/mavnative
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/quaternion.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/mavextra.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/rotmat.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/mavwp.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/__init__.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/mavexpression.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/lib.linux-x86_64-2.7/pymavlink/DFReader.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/mavutil.py to mavutil.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/fgFDM.py to fgFDM.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_wlua.py to mavgen_wlua.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_javascript.py to mavgen_javascript.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/xsvalUtils.py to xsvalUtils.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/xsvalSimpleTypes.py to xsvalSimpleTypes.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/xsvalSchema.py to xsvalSchema.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/xsvalBase.py to xsvalBase.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/pyxsval.py to pyxsval.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/xsvalXmlIf.py to xsvalXmlIf.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/minixsvWrapper.py to minixsvWrapper.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/minixsv/xsvalErrorHandler.py to xsvalErrorHandler.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlifBase.py to xmlifBase.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlif4Dom.py to xmlif4Dom.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlifDom.py to xmlifDom.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlifElementTree.py to xmlifElementTree.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlifODict.py to xmlifODict.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlifUtils.py to xmlifUtils.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlifApi.py to xmlifApi.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmliftest.py to xmliftest.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/xmlifMinidom.py to xmlifMinidom.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/genxmlif/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/lib/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavcrc.py to mavcrc.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_swift.py to mavgen_swift.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavtestgen.py to mavtestgen.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_c.py to mavgen_c.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavparse.py to mavparse.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavtemplate.py to mavtemplate.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_cs.py to mavgen_cs.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_python.py to mavgen_python.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_java.py to mavgen_java.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen_objc.py to mavgen_objc.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/generator/mavgen.py to mavgen.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/mavparm.py to mavparm.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/matrixpilot.py to matrixpilot.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/ualberta.py to ualberta.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/python_array_test.py to python_array_test.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/ASLUAV.py to ASLUAV.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/ardupilotmega.py to ardupilotmega.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/minimal.py to minimal.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/autoquad.py to autoquad.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/paparazzi.py to paparazzi.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/slugs.py to slugs.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/common.py to common.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v10/test.py to test.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/matrixpilot.py to matrixpilot.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/ualberta.py to ualberta.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/python_array_test.py to python_array_test.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/ASLUAV.py to ASLUAV.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/ardupilotmega.py to ardupilotmega.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/minimal.py to minimal.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/autoquad.py to autoquad.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/paparazzi.py to paparazzi.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/slugs.py to slugs.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/common.py to common.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/v20/test.py to test.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/dialects/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/quaternion.py to quaternion.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/mavextra.py to mavextra.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/rotmat.py to rotmat.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/mavwp.py to mavwp.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/__init__.py to __init__.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/mavexpression.py to mavexpression.pyc
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/pymavlink/DFReader.py to DFReader.pyc
+creating stub loader for mavnative.so
+byte-compiling /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/mavnative.py to mavnative.pyc
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+creating /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavgpslock.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavkml.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavparms.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavparmdiff.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavmission.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavextract.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavflighttime.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavgraph.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavtogpx.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavsearch.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/magfit_delta.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavflightmodes.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/magfit_gps.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/magfit.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavloss.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavfft.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/magfit_motors.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavtomfile.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavsigloss.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavlogdump.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavsummarize.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavgen.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/MPU6KSearch.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/scripts-2.7/mavplayback.py -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavgpslock.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavkml.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavparms.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavparmdiff.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavmission.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavextract.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavflighttime.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavgraph.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavtogpx.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavsearch.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/magfit_delta.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavflightmodes.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/magfit_gps.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/magfit.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavloss.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavfft.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/magfit_motors.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavtomfile.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavsigloss.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavlogdump.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavsummarize.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavgen.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/MPU6KSearch.py to 775
+changing mode of /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/scripts/mavplayback.py to 775
+copying pymavlink.egg-info/PKG-INFO -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO
+copying pymavlink.egg-info/SOURCES.txt -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO
+copying pymavlink.egg-info/dependency_links.txt -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO
+copying pymavlink.egg-info/top_level.txt -> /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO
+writing /home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg/EGG-INFO/native_libs.txt
+zip_safe flag not set; analyzing archive contents...
+pymavlink.generator.mavgen_c: module references __file__
+pymavlink.generator.mavgen_swift: module references __file__
+pymavlink.generator.mavgen_java: module references __file__
+pymavlink.generator.mavgen: module references __file__
+pymavlink.generator.lib.minixsv.__init__: module references __file__
+pymavlink.generator.lib.genxmlif.__init__: module references __file__
+creating 'dist/pymavlink-1.1.73-py2.7-linux-x86_64.egg' and adding '/home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg' to it
+removing '/home/bjork/BurritoSwarm/flight_code/ROS/build/mavlink/pymavlink/bdist.linux-x86_64/egg' (and everything under it)
+Processing pymavlink-1.1.73-py2.7-linux-x86_64.egg
+removing '/home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages/pymavlink-1.1.73-py2.7-linux-x86_64.egg' (and everything under it)
+creating /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages/pymavlink-1.1.73-py2.7-linux-x86_64.egg
+Extracting pymavlink-1.1.73-py2.7-linux-x86_64.egg to /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages
+pymavlink 1.1.73 is already the active version in easy-install.pth
+Installing mavgpslock.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavkml.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavparms.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavparmdiff.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavmission.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavextract.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavflighttime.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavgraph.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavtogpx.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavsearch.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing magfit_delta.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavflightmodes.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing magfit_gps.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing magfit.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavloss.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavfft.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing magfit_motors.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavtomfile.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavsigloss.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavlogdump.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavsummarize.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavgen.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing MPU6KSearch.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+Installing mavplayback.py script to /home/bjork/BurritoSwarm/flight_code/ROS/devel/bin
+
+Installed /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages/pymavlink-1.1.73-py2.7-linux-x86_64.egg
+Processing dependencies for pymavlink==1.1.73
+Finished processing dependencies for pymavlink==1.1.73

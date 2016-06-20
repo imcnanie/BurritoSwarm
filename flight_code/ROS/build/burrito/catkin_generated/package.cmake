@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "burrito")
+set(burrito_MAINTAINER "Ian McNanie <ianmcnanie@gmail.com>")
+set(burrito_DEPRECATED "")
+set(burrito_VERSION "0.0.0")
+set(burrito_BUILD_DEPENDS "mavros" "roscpp" "rospy" "std_msgs" "octomap")
+set(burrito_RUN_DEPENDS "octomap" "mavros" "roscpp" "rospy" "std_msgs")
+set(burrito_BUILDTOOL_DEPENDS "catkin")

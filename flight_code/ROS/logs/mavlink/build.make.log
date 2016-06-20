@@ -1,0 +1,22 @@
+[  4%] [  9%] [ 13%] Built target ardupilotmega.xml-v2.0
+Built target common.xml-v1.0
+Built target ASLUAV.xml-v1.0
+[ 18%] [ 22%] [ 27%] [ 31%] Built target ardupilotmega.xml-v1.0
+Built target autoquad.xml-v1.0
+Built target ASLUAV.xml-v2.0
+Built target autoquad.xml-v2.0
+[ 36%] Built target common.xml-v2.0
+[ 40%] [ 45%] [ 50%] [ 54%] Built target matrixpilot.xml-v1.0
+Built target minimal.xml-v1.0
+Built target matrixpilot.xml-v2.0
+Built target minimal.xml-v2.0
+[ 59%] [ 63%] [ 68%] Built target paparazzi.xml-v1.0
+[ 72%] Built target python_array_test.xml-v2.0
+Built target python_array_test.xml-v1.0
+Built target paparazzi.xml-v2.0
+[ 77%] Built target slugs.xml-v1.0
+[ 81%] [ 86%] Built target slugs.xml-v2.0
+Built target test.xml-v1.0
+[ 90%] Built target ualberta.xml-v1.0
+[ 95%] Built target test.xml-v2.0
+[100%] Built target ualberta.xml-v2.0

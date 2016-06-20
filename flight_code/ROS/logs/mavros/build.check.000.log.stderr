@@ -1,0 +1,28 @@
+[33m[1mCMake Warning[0m at /home/bjork/BurritoSwarm/flight_code/ROS/src/mavros/mavros/CMakeLists.txt:29 (find_package):
+  By not providing "FindEigen3.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "Eigen3", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "Eigen3" with any
+  of the following names:
+
+    Eigen3Config.cmake
+    eigen3-config.cmake
+
+  Add the installation prefix of "Eigen3" to CMAKE_PREFIX_PATH or set
+  "Eigen3_DIR" to a directory containing one of the above files.  If "Eigen3"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+[33m[1mCMake Warning[0m at /opt/ros/jade/share/cmake_modules/cmake/Modules/FindEigen.cmake:62 (message):
+  The FindEigen.cmake Module in the cmake_modules package is deprecated.
+
+  Please use the FindEigen3.cmake Module provided with Eigen.  Change
+  instances of find_package(Eigen) to find_package(Eigen3).  Check the
+  FindEigen3.cmake Module for the resulting CMake variable names.
+
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:33 (find_package)
+
+

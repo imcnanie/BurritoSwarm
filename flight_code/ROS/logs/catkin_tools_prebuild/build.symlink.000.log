@@ -1,0 +1,8 @@
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/./_setup_util.py
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/./setup.sh
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/./env.sh
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/./setup.bash
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/./setup.zsh
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/pkgconfig/catkin_tools_prebuild.pc

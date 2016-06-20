@@ -1,0 +1,8 @@
+prefix=/home/bjork/BurritoSwarm/flight_code/ROS/install
+
+Name: burrito
+Description: Description of burrito
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bjork/BurritoSwarm/flight_code/ROS/install/lib 
+Requires: 

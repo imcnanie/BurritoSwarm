@@ -1,0 +1,6 @@
+mavros/libmavconn
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/libmavconn/share/libmavconn/cmake/libmavconnConfig-version.cmake /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/share/libmavconn/cmake/libmavconnConfig-version.cmake
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/libmavconn/share/libmavconn/cmake/libmavconn-extras.cmake /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/share/libmavconn/cmake/libmavconn-extras.cmake
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/libmavconn/share/libmavconn/cmake/libmavconnConfig.cmake /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/share/libmavconn/cmake/libmavconnConfig.cmake
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/libmavconn/lib/libmavconn.so /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/lib/libmavconn.so
+/home/bjork/BurritoSwarm/flight_code/ROS/src/devel/.private/libmavconn/lib/pkgconfig/libmavconn.pc /home/bjork/BurritoSwarm/flight_code/ROS/src/devel/lib/pkgconfig/libmavconn.pc

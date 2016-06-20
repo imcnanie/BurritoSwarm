@@ -1,0 +1,8 @@
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/mavros/cmake/mavrosConfig-version.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/share/mavros/cmake/mavrosConfig.cmake
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/libmavros_plugins.so
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/libmavros.so
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/mavros/mavros_node
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/mavros/gcs_bridge
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/python2.7/dist-packages/mavros/__init__.py
+Symlinking /home/bjork/BurritoSwarm/flight_code/ROS/devel/lib/pkgconfig/mavros.pc

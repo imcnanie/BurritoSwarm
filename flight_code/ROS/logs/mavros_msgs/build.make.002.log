@@ -1,0 +1,64 @@
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_ParamPull
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileRename
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileList
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_ParamValue
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_ManualControl
+Built target _mavros_msgs_generate_messages_check_deps_ParamPush
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileRemove
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_PositionTarget
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandBool
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_OverrideRCIn
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileChecksum
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandInt
+[  0%] [  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandCode
+Built target _mavros_msgs_generate_messages_check_deps_FileClose
+Built target _mavros_msgs_generate_messages_check_deps_OpticalFlowRad
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_StreamRate
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileRemoveDir
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_VFR_HUD
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileRead
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_RadioStatus
+Built target _mavros_msgs_generate_messages_check_deps_WaypointClear
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileOpen
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_Waypoint
+Built target _mavros_msgs_generate_messages_check_deps_FileEntry
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_ActuatorControl
+Built target _mavros_msgs_generate_messages_check_deps_ParamSet
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_State
+[  0%] [  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandTriggerControl
+Built target _mavros_msgs_generate_messages_check_deps_FileWrite
+Built target _mavros_msgs_generate_messages_check_deps_Mavlink
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointList
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandLong
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_RCOut
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_RCIn
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointSetCurrent
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileMakeDir
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandHome
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_Vibration
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_CommandTOL
+Built target _mavros_msgs_generate_messages_check_deps_AttitudeTarget
+Built target _mavros_msgs_generate_messages_check_deps_ParamGet
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_FileTruncate
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_HomePosition
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointPush
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_SetMode
+Built target _mavros_msgs_generate_messages_check_deps_CamIMUStamp
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_GlobalPositionTarget
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_BatteryStatus
+[  0%] [  0%] Built target _mavros_msgs_generate_messages_check_deps_WaypointPull
+Built target _mavros_msgs_generate_messages_check_deps_Altitude
+[  0%] [  0%] [  0%] Built target geometry_msgs_generate_messages_cpp
+Built target std_msgs_generate_messages_cpp
+Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] [  0%] Built target geometry_msgs_generate_messages_lisp
+Built target std_msgs_generate_messages_lisp
+[  0%] Built target _mavros_msgs_generate_messages_check_deps_ExtendedState
+[ 25%] Built target mavros_msgs_generate_messages_cpp
+[ 70%] [ 74%] Built target mavros_msgs_generate_messages_lisp
+Built target mavros_msgs_generate_messages_eus
+[100%] Built target mavros_msgs_generate_messages_py
+[100%] Built target mavros_msgs_generate_messages

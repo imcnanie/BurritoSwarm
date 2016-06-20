@@ -1,0 +1,4 @@
+[  9%] Built target copter_visualization
+[ 18%] Built target gcs_image_bridge
+[ 27%] Built target servo_state_publisher
+[100%] Built target mavros_extras

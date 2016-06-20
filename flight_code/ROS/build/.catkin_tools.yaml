@@ -1,0 +1,6 @@
+devel_space: /home/bjork/BurritoSwarm/flight_code/ROS/devel
+install: false
+install_space: /home/bjork/BurritoSwarm/flight_code/ROS/install
+profile: default
+source_space: /home/bjork/BurritoSwarm/flight_code/ROS/src
+workspace: /home/bjork/BurritoSwarm/flight_code/ROS
