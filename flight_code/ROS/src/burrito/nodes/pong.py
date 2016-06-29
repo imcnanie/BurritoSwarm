@@ -132,14 +132,14 @@ while True:
     print " "
     print "WELCOME TO PONG!!"
     print " "
-    print "center your squad-of-quads and move throttle up to start!"
+    print "center your squad-of-quads and yaw hard right to start!"
 
     while True:
         io = 0
 
         #if b.click == "A": break
 
-        if abs(a.stick_map[3]) > 0.5: break
+        if a.stick_map[3] > 0.5: break
 
         for cop in cops:
             if abs(a.stick_map[0]) < 0.01 and abs(a.stick_map[1]) < 0.01 and abs(a.stick_map[2]) < 0.01:
@@ -179,8 +179,10 @@ while True:
     ball_vy = 0.7
 
     while True:
-        if b.click == "RTL":
-            break
+        if a.stick_map[3] < -0.5: break
+
+        #if b.click == "RTL":
+        #    break
 
         if rstick < 5.0*scale and a.stick_map[2] < 0.0:
             rstick = rstick - a.stick_map[2]*0.075
@@ -244,8 +246,10 @@ while True:
             time.sleep(2.0)
             break
 
-    if b.click == "RTL":
-        break
+    if abs(a.stick_map[3]) > 0.5: break
+
+    #if b.click == "RTL":
+    #    break
 
 print "copter landing!"
 
