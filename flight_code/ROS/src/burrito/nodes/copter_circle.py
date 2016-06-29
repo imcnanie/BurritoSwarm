@@ -18,7 +18,7 @@ class artoo:
     def __init__(self):
         self.stick_map = []
 
-        self.mod_scalar = 0.75 #careful
+        self.mod_scalar = 1.0 #careful
 
         self.x_offset = 0.0
         self.y_offset = 0.0
@@ -61,12 +61,12 @@ print "initializing copter..."
 cops = []
 
 for i in range(cop_num):
-    print str(i+1)
+    print "STR", str(i+1)
     cops.append(velocity_goto.posVel(copter_id = str(i+1)))
 
 for cop in cops:
     cop.start_subs()
-    time.sleep(1.0)
+    time.sleep(0.25)
 
     cop.subscribe_pose_thread()
     time.sleep(0.1)
@@ -127,7 +127,7 @@ while True:
 
         offs_r = offs_r + 0.0 #(a.stick_map[7]+2.0) #breaks sometimes
 
-        print a.stick_map[7]
+        print "STICK_MAP", a.stick_map[7]
 
         offs_x[io] = cos(cop_radian)*offs_r
         offs_y[io] = sin(cop_radian)*offs_r

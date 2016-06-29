@@ -24,7 +24,7 @@ print "broadcasting"
 
 import utm
 
-IS_APM = True
+IS_APM = False
 
 class rcOverride:
     def __init__(self, copter_id = "1", mavros_string="/copter1/mavros"):
@@ -116,6 +116,10 @@ class posVel:
 
         self.pid_alt.setPoint(self.final_alt)
 
+        dist = sqrt((self.final_pos_x - self.cur_pos_x)**2 + (self.final_pos_y - self.cur_pos_y)**2)
+
+        return dist
+
     def set_velocity(self, vel_x, vel_y, vel_z):
         self.override_nav = True
         self.vx = vel_x
@@ -159,7 +163,7 @@ class posVel:
 
     def takeoff_velocity(self, alt=7):
         self.alt_control = False
-        while self.cur_alt < alt - 1:
+        if self.cur_alt < alt - 1:
             print "CUR ALT: ", self.cur_alt, "GOAL: ", alt
             #self.set_velocity(0, 0, 1.5)
             self.update(self.cur_pos_x, self.cur_pos_y, alt)
@@ -193,7 +197,7 @@ class posVel:
         
     def navigate(self):
         rate = rospy.Rate(30)   # 30hz
-        magnitude = 1.0  # in meters/sec
+        magnitude = 1.5  # in meters/sec
 
         msg = SP.TwistStamped(
             header=SP.Header(
@@ -277,22 +281,24 @@ class posVel:
                     #    pid_offset = 1.0
                     #if pid_offset < -1.0:
                     #    pid_offset = -1.0
-                    if self.vy > 0.5:
-                        self.vy = 0.5
-                    if self.vy < -0.5:
-                        self.vy = -0.5
-                    if self.vx > 0.5:
-                        self.vx = 0.5
-                    if self.vx < -0.5:
-                        self.vx = -0.5
+                    if self.vy > 1.0:
+                        self.vy = 1.0
+                    if self.vy < -1.0:
+                        self.vy = -1.0
+                    if self.vx > 1.0:
+                        self.vx = 1.0
+                    if self.vx < -1.0:
+                        self.vx = -1.0
 
                     #ned.
-                    if self.final_alt > self.cur_alt:
-                        self.vz = 0.5
-                    if self.final_alt < self.cur_alt:
-                        self.vz = -0.5
-                    if abs(self.final_alt-self.cur_alt) < 0.9:
-                        self.vz = 0.0
+                    if abs(self.final_alt-self.cur_alt) < 1.0:
+                        self.vz = (self.final_alt-self.cur_alt)
+                    else:
+                        if self.final_alt > self.cur_alt:
+                            self.vz = 1.0
+                        if self.final_alt < self.cur_alt:
+                            self.vz = -1.0
+
 
                     msg.twist.linear = geometry_msgs.msg.Vector3(self.vx*magnitude, self.vy*magnitude, self.vz*magnitude)
                 else:
@@ -304,7 +310,7 @@ class posVel:
                 self.pub_vel.publish(msg)
             
             rate.sleep()
-            i +=1
+            i += 1
 
 
     def land_velocity(self):
@@ -394,7 +400,7 @@ class SmartRTL:
         #cop.land_velocity()
 
 class SafeTakeoff:
-    def __init__(self, copters, offsets_x, offsets_y, alt = 20.0):
+    def __init__(self, copters, offsets_x, offsets_y, alt = 20.0, sequential = False):
         self.cops = copters
 
         self.offs_x = offsets_x
@@ -403,11 +409,6 @@ class SafeTakeoff:
         self.ids = []
         for i in range(len(self.cops)):
             self.ids.append(i)
-
-        self.offs_hype = []
-        for o in range(len(self.cops)):
-            h = sqrt(self.offs_y[o] **2.0 + self.offs_x[o] **2.0)
-            self.offs_hype.append(h)
 
         self.alt = alt
 
@@ -420,27 +421,55 @@ class SafeTakeoff:
         #self.center_x = running_x / float(len(copters))
         #self.center_y = running_y / float(len(copters))
 
-        self.sorted_ids = [x for (y,x) in sorted(zip(self.offs_hype, self.ids))]
+        self.sorted_ids = [x for (y,x) in sorted(zip(self.ids, self.ids))]
 
         self.center_x = self.cops[0].cur_pos_x
         self.center_y = self.cops[0].cur_pos_y
 
+        last = 0
+
+        for i in range(len(self.sorted_ids[::-1])):
+            self.cops[i].setmode(custom_mode = "OFFBOARD")
+
+            self.cops[i].arm()
+
+            self.cops[i].takeoff_velocity(alt = alt + i*2.5)
+
+            if sequential:
+                while self.cops[i].cur_alt < alt + i*2.5 - 1.0:
+                    print "CUR ALT: ", self.cops[i].cur_alt, "GOAL:", alt + i*2.5
+                    self.cops[i].update(self.cops[i].cur_pos_x, self.cops[i].cur_pos_y, alt + i*2.5)
+
+            last = i
+
+        while self.cops[last].cur_alt < alt + last*2.5 - 1.0:
+            print last
+            print self.cops[last].cur_alt, " MORE TAN ", alt + last*2.5 - 1.0
+            #pass
+  
         for i in self.sorted_ids[::-1]:
             self.takeoff_cop(i)
 
+        all_reached = 0
+        while all_reached < len(self.sorted_ids) - 1:
+            all_reached = 0
+            for id in self.sorted_ids[::-1]:
+                if self.cops[id].reached:
+                    all_reached = all_reached + 1
+            print "ALL", all_reached
+
+        for i in self.sorted_ids[::-1]:
+            self.cops[i].update(self.cops[i].cur_pos_x, self.cops[i].cur_pos_y, alt)
+
+        while abs(self.cops[i].cur_alt - alt) > 1.0:
+            print "dank", abs(self.cops[i].cur_alt - alt)
+            pass
+
     def takeoff_cop(self, id):
-        self.cops[id].setmode(custom_mode = "OFFBOARD")
-        self.cops[id].arm()
-
-        time.sleep(0.25)
-
-        self.cops[id].takeoff_velocity(alt = self.alt)
-        #self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
-
-        while not self.cops[id].reached:
-            self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.alt)
+        if not self.cops[id].reached:
+            self.cops[id].update(self.center_x + self.offs_x[id], self.center_y + self.offs_y[id], self.cops[id].cur_alt)
             print "not reached, x: ", self.cops[id].vx, " y: ", self.cops[id].vy, " alt: ",self.alt
-            time.sleep(0.1)
+            
 
         
 if __name__ == '__main__':

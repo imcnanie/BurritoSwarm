@@ -105,10 +105,13 @@ a.fin_x = cops[0].cur_pos_x
 a.fin_y = cops[0].cur_pos_y
 a.fin_z = cops[0].cur_alt
 
+#bigness:
+scale = 1.25
+
 #encodes offset of copters relative to copter1
-offs_x = [0.0, -6.5, -6.5, 6.5, 6.5]
-offs_y = [0.0, 2.5, -2.5, 2.5, -2.5]
-offs_alt = [0.0, 3.0, 5.0, 3.0, 5.0]
+offs_x = [0.0, -6.5*scale, -6.5*scale, 6.5*scale, 6.5*scale]
+offs_y = [0.0, 2.5*scale, -2.5*scale, 2.5*scale, -2.5*scale]
+offs_alt = [0.0, 3.0, 3.0, 3.0, 3.0]
 
 adj_offs_y = [0.0, 0.0, 0.0, 0.0, 0.0]
 
@@ -179,14 +182,14 @@ while True:
         if b.click == "RTL":
             break
 
-        if rstick < 5.0 and a.stick_map[2] < 0.0:
+        if rstick < 5.0*scale and a.stick_map[2] < 0.0:
             rstick = rstick - a.stick_map[2]*0.075
-        if rstick > -5.0 and a.stick_map[2] > 0.0:
+        if rstick > -5.0*scale and a.stick_map[2] > 0.0:
             rstick = rstick - a.stick_map[2]*0.075
 
-        if lstick < 5.0 and a.stick_map[0] > 0.0:
+        if lstick < 5.0*scale and a.stick_map[0] > 0.0:
             lstick = lstick + a.stick_map[0]*0.075
-        if lstick > -5.0 and a.stick_map[0] < 0.0:
+        if lstick > -5.0*scale and a.stick_map[0] < 0.0:
             lstick = lstick + a.stick_map[0]*0.075
 
         adj_offs_y[1] = offs_y[1] + lstick
@@ -213,23 +216,23 @@ while True:
         offs_x[0] = offs_x[0] + ball_vx*0.075*ball_dir
         offs_y[0] = offs_y[0] + ball_vy*0.075
 
-        if abs(offs_y[0]) > 5.0:
+        if abs(offs_y[0]) > 5.0*scale:
             ball_vy = -ball_vy
 
         ls = (cops[1].cur_pos_y + cops[2].cur_pos_y)/2.0
         rs = (cops[3].cur_pos_y + cops[4].cur_pos_y)/2.0
 
-        if cops[0].cur_pos_x - center_x > 5.0:
-            if abs(cops[0].cur_pos_y - rs) < 2.5:
+        if cops[0].cur_pos_x - center_x > 5.0*scale:
+            if abs(cops[0].cur_pos_y - rs) < 2.5*scale:
                 ball_dir = -1.0
                 print "SLAM!"
 
-        if cops[0].cur_pos_x - center_x < -5.0:            
-            if abs(cops[0].cur_pos_y - ls) < 2.5:
+        if cops[0].cur_pos_x - center_x < -5.0*scale:            
+            if abs(cops[0].cur_pos_y - ls) < 2.5*scale:
                 ball_dir = 1.0
                 print "SLAM!"
 
-        if abs(cops[0].cur_pos_x - center_x) > 7.0:
+        if abs(cops[0].cur_pos_x - center_x) > 6.5*scale:
             print " "
             print " "
             print "DAAAAAMN YOU SUCK! TRY AGAIN!"
