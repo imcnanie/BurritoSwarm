@@ -27,7 +27,7 @@ import utm
 IS_APM = True
 
 class rcOverride:
-    def __init__(self, copter_id = "1", mavros_string="/mavros/copter1"):
+    def __init__(self, copter_id = "1", mavros_string="/copter1/mavros"):
         rospy.init_node('rc_override'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
 
@@ -56,7 +56,7 @@ class rcOverride:
 class posVel:
     def __init__(self, copter_id = "1"):
         self.copter_id = copter_id
-        mavros_string = "/mavros/copter"+copter_id
+        mavros_string = "/copter"+copter_id+"/mavros"
         #rospy.init_node('velocity_goto_'+copter_id)
         mavros.set_namespace(mavros_string)  # initialize mavros module with default namespace
 
